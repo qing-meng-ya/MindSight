@@ -1,16 +1,101 @@
-node_modules/
-build/
-dist/
-.env
-*.log
+# =========================
+# OS / Editor
+# =========================
 .DS_Store
 Thumbs.db
-coverage/
-.idea/
 .vscode/
-*.swp
-*.swo
-tmp/
-uploads/
-data/
-reports/
+.idea/
+
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Env files
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Node.js (former / latter)
+# =========================
+**/node_modules/
+**/.npm/
+**/.pnpm-store/
+**/.yarn/
+**/coverage/
+**/.cache/
+**/.parcel-cache/
+**/.vite/
+**/dist/
+**/build/
+
+# =========================
+# Python (组织病理CNN)
+# =========================
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.coverage
+**/htmlcov/
+**/.tox/
+**/.nox/
+**/.venv/
+**/venv/
+**/env/
+**/ENV/
+*.egg-info/
+*.egg
+.eggs/
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# ML artifacts / temp
+# =========================
+**/checkpoints/
+**/runs/
+**/wandb/
+**/outputs/
+**/tmp/
+**/temp/
+
+# =========================
+# Archives / binaries
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.pkl
+*.pt
+*.pth
+*.onnx
+
+# =========================
+# Temp files
+# =========================
+*.tmp
+~$*
+*.docx
+
+# =========================
+# Local projects (not for git)
+# =========================
+组织病理CNN/
+
+# =========================
+# Optional: local docs/screenshots
+# =========================
+屏幕截图*.png
