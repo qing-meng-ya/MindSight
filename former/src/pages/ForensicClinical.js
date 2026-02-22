@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { api } from '../services/api';
+import { diagnosisAPI } from '../services/api';
 
 const ForensicClinical = () => {
   const [activeSection, setActiveSection] = useState('rib-fracture');
@@ -28,9 +28,7 @@ const ForensicClinical = () => {
     try {
       const formData = new FormData();
       formData.append('image', file);
-      const res = await api.post('/diagnosis/rib-fracture', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
+      const res = await diagnosisAPI.predict(formData);
       setResult(res.data.data);
     } catch (error) {
       console.error('分析失败', error);

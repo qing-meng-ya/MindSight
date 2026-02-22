@@ -67,7 +67,7 @@ const DNABasics = () => {
 
       <div className="standard-card">
         <h3>法医DNA检材类型</h3>
-        <ul style={{ marginLeft: '20px', color: '#666', lineHeight: '1.8' }}>
+        <ul style={{ marginLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: '1.8' }}>
           <li><strong>血液</strong> - 最常用的检材，DNA含量丰富</li>
           <li><strong>口腔拭子</strong> - 无创采样，适用于活体采样</li>
           <li><strong>毛发</strong> - 必须带毛囊才能提取DNA</li>
@@ -79,7 +79,7 @@ const DNABasics = () => {
 
       <div className="standard-card">
         <h3>DNA提取方法</h3>
-        <ul style={{ marginLeft: '20px', color: '#666', lineHeight: '1.8' }}>
+        <ul style={{ marginLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: '1.8' }}>
           <li><strong> Chelex-100法</strong> - 快速简便，适用于少量检材</li>
           <li><strong>酚/氯仿法</strong> - DNA纯度高，回收率高</li>
           <li><strong>磁珠法</strong> - 自动化程度高，结果稳定</li>
@@ -192,7 +192,7 @@ const PaternityTest = () => {
 
       <div className="standard-card">
         <h3>判断标准</h3>
-        <ul style={{ marginLeft: '20px', color: '#666', lineHeight: '1.8' }}>
+        <ul style={{ marginLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: '1.8' }}>
           <li><strong>CPI ≥ 10000</strong> - 肯定生物学父亲关系</li>
           <li><strong>1000 ≤ CPI < 10000</strong> - 强烈支持生物学父亲关系</li>
           <li><strong>100 ≤ CPI < 1000</strong> - 支持生物学父亲关系</li>
@@ -215,7 +215,7 @@ const MixedStainAnalysis = () => {
 
       <div className="standard-card">
         <h3>混合斑分析步骤</h3>
-        <ol style={{ marginLeft: '20px', color: '#666', lineHeight: '1.8' }}>
+        <ol style={{ marginLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: '1.8' }}>
           <li><strong>初步判断</strong> - 观察峰的数量和分布，初步判断贡献者人数</li>
           <li><strong>分型拆分</strong> - 使用专业软件或手工分析拆分各组分</li>
           <li><strong>参照比对</strong> - 与已知样本进行比对</li>
@@ -230,7 +230,7 @@ const MixedStainAnalysis = () => {
 
       <div className="standard-card">
         <h3>注意事项</h3>
-        <ul style={{ marginLeft: '20px', color: '#666', lineHeight: '1.8' }}>
+        <ul style={{ marginLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', lineHeight: '1.8' }}>
           <li>混合斑检材需要更高的DNA质量要求</li>
           <li>结果解读需谨慎，避免主观臆断</li>
           <li>必要时进行多次实验验证</li>

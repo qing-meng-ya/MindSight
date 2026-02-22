@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  pathology-api:
+    build: .
+    container_name: pathology-cnn-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./evaluation_results:/app/evaluation_results
+    environment:
+      - PYTHONPATH=/app
+      - CUDA_VISIBLE_DEVICES=0  # 如果有GPU
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # 可选：添加Nginx反向代理
+  nginx:
+    image: nginx:alpine
+    container_name: pathology-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro  # SSL证书目录
+    depends_on:
+      - pathology-api
+    restart: unless-stopped
+
+  # 可选：添加Redis缓存
+  redis:
+    image: redis:alpine
+    container_name: pathology-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:

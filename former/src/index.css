@@ -6,8 +6,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: #f5f7fa;
-  color: #333;
+  background: #02203a;
+  color: white;
 }
 
 .auth-page {
@@ -15,7 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #035974 0%, #02203a 100%);
 }
 
 .auth-container {
@@ -29,7 +29,7 @@ body {
 
 .auth-container h1 {
   text-align: center;
-  color: #667eea;
+  color: #035974;
   margin-bottom: 10px;
 }
 
@@ -71,7 +71,7 @@ body {
 button {
   width: 100%;
   padding: 14px;
-  background: #667eea;
+  background: #035974;
   color: white;
   border: none;
   border-radius: 6px;
@@ -81,7 +81,8 @@ button {
 }
 
 button:hover:not(:disabled) {
-  background: #5568d3;
+  background: #21eaf2;
+  color: #02203a;
 }
 
 button:disabled {
@@ -123,18 +124,18 @@ button.secondary:hover:not(:disabled) {
 }
 
 .header {
-  background: white;
+  background: #035974;
   padding: 0 30px;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .header h1 {
   font-size: 20px;
-  color: #667eea;
+  color: #21eaf2;
 }
 
 .nav {
@@ -143,7 +144,7 @@ button.secondary:hover:not(:disabled) {
 }
 
 .nav a {
-  color: #555;
+  color: white;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -152,14 +153,20 @@ button.secondary:hover:not(:disabled) {
 
 .nav a:hover,
 .nav a.active {
-  background: #667eea;
-  color: white;
+  background: #21eaf2;
+  color: #02203a;
 }
 
 .header-right {
   display: flex;
   align-items: center;
   gap: 15px;
+}
+
+.email-info {
+  color: white;
+  font-size: 14px;
+  margin-right: 20px;
 }
 
 .logout-btn {
@@ -181,7 +188,7 @@ button.secondary:hover:not(:disabled) {
 .history-page h2,
 .admin-page h2 {
   margin-bottom: 30px;
-  color: #333;
+  color: #21eaf2;
 }
 
 .stats-cards {
@@ -192,15 +199,16 @@ button.secondary:hover:not(:disabled) {
 }
 
 .stat-card {
-  background: white;
+  background: #035974;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
+  color: white;
 }
 
 .stat-card h3 {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
   margin-bottom: 10px;
 }
@@ -208,34 +216,35 @@ button.secondary:hover:not(:disabled) {
 .stat-number {
   font-size: 36px;
   font-weight: bold;
-  color: #667eea;
+  color: #21eaf2;
 }
 
 .stat-link {
-  color: #667eea;
+  color: #21eaf2;
   text-decoration: none;
   font-weight: 500;
 }
 
 .data-table {
   width: 100%;
-  background: white;
+  background: #035974;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .data-table th,
 .data-table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .data-table th {
-  background: #f8f9fa;
+  background: rgba(33, 234, 242, 0.1);
   font-weight: 600;
-  color: #555;
+  color: #21eaf2;
 }
 
 .data-table tr:last-child td {
@@ -254,19 +263,20 @@ button.secondary:hover:not(:disabled) {
 }
 
 .dropzone {
-  border: 2px dashed #ddd;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 40px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
-  background: white;
+  background: rgba(3, 89, 116, 0.5);
+  color: white;
 }
 
 .dropzone:hover,
 .dropzone.active {
-  border-color: #667eea;
-  background: #f8f9ff;
+  border-color: #21eaf2;
+  background: rgba(33, 234, 242, 0.1);
 }
 
 .preview-image {
@@ -318,7 +328,7 @@ button.secondary:hover:not(:disabled) {
 
 .result-main h4 {
   font-size: 24px;
-  color: #667eea;
+  color: #21eaf2;
   margin-bottom: 15px;
 }
 
@@ -467,7 +477,7 @@ button.secondary:hover:not(:disabled) {
 .logo-text {
   font-size: 18px;
   font-weight: bold;
-  color: #667eea;
+  color: #21eaf2;
 }
 
 .partner-badge {
@@ -484,7 +494,7 @@ button.secondary:hover:not(:disabled) {
 }
 
 .nav-link {
-  color: #555;
+  color: white;
   text-decoration: none;
   padding: 8px 14px;
   border-radius: 6px;
@@ -497,8 +507,8 @@ button.secondary:hover:not(:disabled) {
 
 .nav-link:hover,
 .nav-link.active {
-  background: #667eea;
-  color: white;
+  background: #21eaf2;
+  color: #02203a;
 }
 
 .nav-link.protected .lock-icon {
@@ -556,17 +566,18 @@ button.secondary:hover:not(:disabled) {
 }
 
 .login-btn {
-  background: #667eea;
-  color: white;
+  background: #21eaf2;
+  color: #02203a;
   padding: 8px 20px;
   border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .footer {
-  background: #2d3748;
-  color: #fff;
+  background: #035974;
+  color: white;
   padding: 30px;
   text-align: center;
   margin-top: 60px;
@@ -592,13 +603,14 @@ button.secondary:hover:not(:disabled) {
 
 .page-header h1 {
   font-size: 28px;
-  color: #333;
+  color: #21eaf2;
   margin-bottom: 8px;
 }
 
 .page-header p {
-  color: #666;
-  font-size: 14px}
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
 
 /* ===== 功能卡片网格 ===== */
 .tool-grid {
@@ -620,31 +632,32 @@ button.secondary:hover:not(:disabled) {
 
 .tool-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: #21eaf2;
 }
 
 .tool-card-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #035974 0%, #21eaf2 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   margin-bottom: 16px;
+  color: white;
 }
 
 .tool-card h3 {
   font-size: 18px;
-  color: #333;
+  color: white;
   margin-bottom: 8px;
 }
 
 .tool-card p {
   font-size: 14px;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
 }
 
@@ -671,10 +684,10 @@ button.secondary:hover:not(:disabled) {
 }
 
 .sidebar {
-  background: white;
+  background: #035974;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   height: fit-content;
   position: sticky;
   top: 20px;
@@ -682,10 +695,10 @@ button.secondary:hover:not(:disabled) {
 
 .sidebar-title {
   font-size: 16px;
-  color: #333;
+  color: white;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #667eea;
+  border-bottom: 2px solid #21eaf2;
 }
 
 .sidebar-menu {
@@ -699,7 +712,7 @@ button.secondary:hover:not(:disabled) {
 .sidebar-menu a {
   display: block;
   padding: 10px 14px;
-  color: #555;
+  color: white;
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.3s;
@@ -708,8 +721,8 @@ button.secondary:hover:not(:disabled) {
 
 .sidebar-menu a:hover,
 .sidebar-menu a.active {
-  background: #667eea;
-  color: white;
+  background: #21eaf2;
+  color: #02203a;
 }
 
 .sidebar-menu a .badge {
@@ -729,15 +742,16 @@ button.secondary:hover:not(:disabled) {
 
 /* ===== 表单样式 ===== */
 .form-card {
-  background: white;
+  background: #035974;
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .form-card h2 {
   font-size: 22px;
-  color: #333;
+  color: #21eaf2;
   margin-bottom: 24px;
 }
 
@@ -770,8 +784,8 @@ button.secondary:hover:not(:disabled) {
 }
 
 .upload-zone:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
+  border-color: #21eaf2;
+  background: rgba(33, 234, 242, 0.1);
 }
 
 .upload-zone.has-image {
@@ -780,7 +794,7 @@ button.secondary:hover:not(:disabled) {
 
 .upload-icon {
   font-size: 48px;
-  color: #667eea;
+  color: #21eaf2;
   margin-bottom: 16px;
 }
 
@@ -822,7 +836,7 @@ button.secondary:hover:not(:disabled) {
 }
 
 .calculator-result h4 {
-  color: #667eea;
+  color: #21eaf2;
   margin-bottom: 16px;
 }
 
@@ -906,7 +920,7 @@ button.secondary:hover:not(:disabled) {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #667eea;
+  background: #035974;
   color: white;
   display: flex;
   align-items: center;
@@ -974,10 +988,10 @@ button.secondary:hover:not(:disabled) {
 }
 
 .tab.active {
-  background: white;
-  color: #667eea;
+  background: #21eaf2;
+  color: #02203a;
   font-weight: 500;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== 专家卡片 ===== */
@@ -994,7 +1008,7 @@ button.secondary:hover:not(:disabled) {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #035974 0%, #21eaf2 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -1010,7 +1024,7 @@ button.secondary:hover:not(:disabled) {
 }
 
 .expert-info .title {
-  color: #667eea;
+  color: #21eaf2;
   font-size: 14px;
   margin-bottom: 8px;
 }
@@ -1072,7 +1086,7 @@ button.secondary:hover:not(:disabled) {
 
 /* ===== 个人中心 ===== */
 .profile-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #035974 0%, #21eaf2 100%);
   border-radius: 12px;
   padding: 30px;
   color: white;
@@ -1091,7 +1105,7 @@ button.secondary:hover:not(:disabled) {
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  color: #667eea;
+  color: #035974;
 }
 
 .profile-info h2 {
@@ -1149,8 +1163,8 @@ button.secondary:hover:not(:disabled) {
 }
 
 .profile-tab.active {
-  background: #667eea;
-  color: white;
+  background: #21eaf2;
+  color: #02203a;
 }
 
 /* ===== 通知 ===== */
@@ -1445,7 +1459,7 @@ button.secondary:hover:not(:disabled) {
 }
 
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #035974 0%, #21eaf2 100%);
   border-radius: 16px;
   padding: 60px 40px;
   text-align: center;
@@ -1497,7 +1511,7 @@ button.secondary:hover:not(:disabled) {
 .nav-overview h2,
 .news-section h2 {
   margin-bottom: 24px;
-  color: #333;
+  color: #21eaf2;
 }
 
 .stats-section {

@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../services/AuthContext';
 
 const Dashboard = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const [stats, setStats] = useState({ total: 0, recent: [] });
-
-  useEffect(() => {
-    if (user) {
-      setStats({ total: 12, recent: [] });
-    }
-  }, [user]);
 
   const quickLinks = [
     { 
@@ -63,7 +56,7 @@ const Dashboard = () => {
       <div className="home-page">
         <section className="hero-section">
           <div className="hero-content">
-            <h1>⚖️ 司法鉴定助手</h1>
+            <h1>🔬 ForenHub</h1>
             <p className="hero-subtitle">湘雅司法鉴定中心合作平台</p>
             <p className="hero-desc">专业法医鉴定辅助工具平台，助力法医工作者和学习者提升工作效率</p>
             <div className="hero-actions">
@@ -79,7 +72,7 @@ const Dashboard = () => {
         </section>
 
         <section className="quick-access">
-          <h2>🚀 核心服务快捷入口</h2>
+          <h2>核心服务</h2>
           <div className="tool-grid">
             {quickLinks.map(link => (
               <Link to={link.path} key={link.id} className="tool-card">
@@ -92,30 +85,10 @@ const Dashboard = () => {
           </div>
         </section>
 
-        <section className="stats-section">
-          <h2>📊 数据概览</h2>
-          <div className="stats-cards">
-            <div className="stat-card">
-              <h3>AI诊断次数</h3>
-              <p className="stat-number">{stats.total}</p>
-            </div>
-            <div className="stat-card">
-              <h3>专家数量</h3>
-              <p className="stat-number">5+</p>
-            </div>
-            <div className="stat-card">
-              <h3>收录毒物</h3>
-              <p className="stat-number">50+</p>
-            </div>
-            <div className="stat-card">
-              <h3>技术标准</h3>
-              <p className="stat-number">20+</p>
-            </div>
-          </div>
-        </section>
+
 
         <section className="nav-overview">
-          <h2>🗂️ 功能板块导航</h2>
+          <h2>功能导航</h2>
           <div className="tool-grid">
             <Link to="/clinical" className="tool-card">
               <div className="tool-card-icon">🏥</div>

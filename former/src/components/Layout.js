@@ -24,10 +24,13 @@ const Layout = () => {
       <header className="header">
         <div className="header-left">
           <Link to="/" className="logo">
-            <span className="logo-icon">⚖️</span>
-            <span className="logo-text">司法鉴定助手</span>
+            <span className="logo-icon">🔬</span>
+            <span className="logo-text">ForenHub</span>
           </Link>
           <span className="partner-badge">湘雅司法鉴定中心合作</span>
+        </div>
+        <div className="header-right">
+          <span className="email-info">email: 3795858170@qq.com</span>
         </div>
         
         <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -57,7 +60,7 @@ const Layout = () => {
       </main>
       <footer className="footer">
         <div className="footer-content">
-          <p>© 2026 司法鉴定助手 | 湘雅司法鉴定中心合作</p>
+          <p>© 2026 ForenHub | 湘雅司法鉴定中心合作</p>
           <p className="footer-desc">专业法医鉴定辅助平台</p>
         </div>
       </footer>
