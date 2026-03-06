@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 | MindSight 法医助手</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <style>
+        .register-page {
+            display: grid;
+            gap: 28px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .role-select {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .role-option {
+            position: relative;
+            padding: 20px 16px;
+            background: rgba(17, 31, 49, 0.72);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.22s ease;
+            text-align: center;
+        }
+
+        .role-option:hover {
+            border-color: rgba(64, 216, 197, 0.4);
+            background: rgba(64, 216, 197, 0.05);
+        }
+
+        .role-option.selected {
+            border-color: var(--accent);
+            background: rgba(64, 216, 197, 0.1);
+        }
+
+        .role-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .role-option h4 {
+            margin: 0 0 6px;
+            font-size: 15px;
+        }
+
+        .role-option p {
+            margin: 0;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .form-card {
+            background: rgba(17, 31, 49, 0.85);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .role-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .role-features .features-col h5 {
+            margin: 0 0 8px;
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .role-features .features-col ul {
+            margin: 0;
+            padding-left: 14px;
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 700px) {
+            .role-select,
+            .role-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">MindSight 法医助手</a>
+            <button class="mobile-toggle" type="button">菜单</button>
+            <nav class="nav-links" data-open="false">
+                <a href="index.html">首页</a>
+                <a href="login.html">登录</a>
+                <a href="register.html" class="active">注册</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page register-page">
+        <section class="panel hero-intro reveal">
+            <p class="section-note">账号注册</p>
+            <h1 class="gradient-title">创建账号</h1>
+            <p class="subtitle">选择您的角色，不同角色拥有不同的功能权限，注册后不可更改。</p>
+        </section>
+
+        <section class="form-card reveal">
+            <h2 class="form-title">选择角色</h2>
+            <div class="role-select">
+                <label class="role-option" id="role-learner">
+                    <input type="radio" name="userRole" value="learner">
+                    <h4>法医学习者</h4>
+                    <p>学习知识、使用工具</p>
+                </label>
+                <label class="role-option" id="role-expert">
+                    <input type="radio" name="userRole" value="expert">
+                    <h4>法医工作者</h4>
+                    <p>专业工具、答疑</p>
+                </label>
+                <label class="role-option" id="role-client">
+                    <input type="radio" name="userRole" value="client">
+                    <h4>法医咨询者</h4>
+                    <p>初步检测、咨询</p>
+                </label>
+            </div>
+
+            <div class="role-features">
+                <div class="features-col">
+                    <h5>学习者权限</h5>
+                    <ul>
+                        <li>常用工具（预测+计算）</li>
+                        <li>知识库（法律/书籍）</li>
+                        <li>过往案例浏览</li>
+                        <li>社区讨论</li>
+                    </ul>
+                </div>
+                <div class="features-col">
+                    <h5>工作者权限</h5>
+                    <ul>
+                        <li>常用工具库（专业版）</li>
+                        <li>常用资料库</li>
+                        <li>在线答疑</li>
+                        <li>护理计算</li>
+                    </ul>
+                </div>
+                <div class="features-col">
+                    <h5>咨询者权限</h5>
+                    <ul>
+                        <li>初步检测工具</li>
+                        <li>在线咨询预约</li>
+                        <li>知识库（基础/FAQ）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="split">
+            <article class="form-card reveal">
+                <h2 class="form-title">填写信息</h2>
+                <form class="form" id="registerForm">
+                    <div class="field">
+                        <label for="registerName">姓名</label>
+                        <input id="registerName" type="text" placeholder="请输入真实姓名" required>
+                    </div>
+                    <div class="field">
+                        <label for="registerEmail">邮箱</label>
+                        <input id="registerEmail" type="email" placeholder="用于登录" required>
+                    </div>
+                    <div class="field">
+                        <label for="registerPhone">手机号</label>
+                        <input id="registerPhone" type="tel" placeholder="选填，用于接收通知">
+                    </div>
+                    <div class="field">
+                        <label for="registerPassword">密码</label>
+                        <input id="registerPassword" type="password" placeholder="至少6位，含字母+数字" required>
+                    </div>
+                    <div class="field">
+                        <label for="registerConfirmPassword">确认密码</label>
+                        <input id="registerConfirmPassword" type="password" placeholder="请再次输入密码" required>
+                    </div>
+                    <label class="helper inline" for="registerTerms">
+                        <input id="registerTerms" type="checkbox" required>
+                        我已阅读并同意平台服务条款
+                    </label>
+                    <button class="btn btn-primary btn-block" type="submit">注册并登录</button>
+                </form>
+                <p class="helper">已有账号？<a class="highlight" href="login.html">去登录</a></p>
+            </article>
+
+            <aside class="panel reveal">
+                <h2 class="form-title">注册须知</h2>
+                <div class="list">
+                    <div class="list-item">
+                        <h4>角色选择</h4>
+                        <p>请根据您的实际身份选择角色，不同角色功能不同。</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>注册后不可更改</h4>
+                        <p>角色在注册后锁定，如需更改请重新注册。</p>
+                    </div>
+                    <div class="list-item">
+                        <h4>信息真实性</h4>
+                        <p>请填写真实信息，以便使用平台各项服务。</p>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+    <script>
+        document.querySelectorAll('.role-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.role-option').forEach(o => o.classList.remove('selected'));
+                option.classList.add('selected');
+            });
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const password = document.getElementById('registerPassword').value;
+            const confirm = document.getElementById('registerConfirmPassword').value;
+            
+            if (password !== confirm) {
+                alert('两次密码输入不一致');
+                return;
+            }
+
+            const selectedRole = document.querySelector('.role-option.selected');
+            if (!selectedRole) {
+                alert('请选择您的角色');
+                return;
+            }
+
+            alert('注册成功！');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

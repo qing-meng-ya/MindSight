@@ -1,68 +1,55 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { useParticleNavigate } from '../components/Layout';
 import { useAuth } from '../services/AuthContext';
 
+const tabs = [
+  { id: 'analyses', label: '我的分析' },
+  { id: 'consults', label: '我的咨询' },
+  { id: 'favorites', label: '我的收藏' },
+  { id: 'settings', label: '账号设置' },
+];
+
 const Profile = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const { navigateWithParticles } = useParticleNavigate();
   const [activeTab, setActiveTab] = useState('analyses');
 
-  const tabs = [
-    { id: 'analyses', label: '我的分析' },
-    { id: 'consults', label: '我的咨询' },
-    { id: 'favorites', label: '我的收藏' },
-    { id: 'notifications', label: '消息通知' },
-    { id: 'settings', label: '账号设置' },
-  ];
+  const analyses = useMemo(
+    () => [
+      { id: 1, title: '骨折预测', summary: '左侧第 4 肋疑似骨折', date: '2026-03-14' },
+      { id: 2, title: '烧伤面积计算', summary: '估算面积 12%', date: '2026-03-12' },
+    ],
+    []
+  );
 
-  const analyses = [
-    { id: 1, type: '肋骨骨折AI诊断', result: '左侧第4、5、6肋骨骨折', date: '2026-01-20', status: '已完成' },
-    { id: 2, type: '护理依赖评估', result: '二级护理依赖', date: '2026-01-18', status: '已完成' },
-    { id: 3, type: '病理切片分析', result: '损伤病理改变', date: '2026-01-15', status: '已完成' },
-    { id: 4, type: '伤情自测', result: '中度损伤', date: '2026-01-10', status: '已完成' },
-  ];
+  const consults = useMemo(
+    () => [
+      { id: 1, title: '损伤等级咨询', summary: '等待专家回复', date: '2026-03-11' },
+      { id: 2, title: '影像分析复核', summary: '已完成', date: '2026-03-08' },
+    ],
+    []
+  );
 
-  const consults = [
-    { id: 1, title: '关于伤残等级评定', expert: '张主任', date: '2026-01-20', status: '待回复' },
-    { id: 2, title: '病理切片分析咨询', expert: '李教授', date: '2026-01-15', status: '已完成' },
-  ];
+  const favorites = useMemo(
+    () => [
+      { id: 1, title: '法医基础知识', type: '知识库' },
+      { id: 2, title: '标准规范文件', type: '资料库' },
+    ],
+    []
+  );
 
-  const favorites = [
-    { id: 1, title: '法医临床技术标准', type: '标准' },
-    { id: 2, title: '器官重量参考', type: '工具' },
-    { id: 3, title: 'PMI计算器', type: '工具' },
-    { id: 4, title: 'STR分型知识', type: '知识' },
-  ];
-
-  const notifications = [
-    { id: 1, content: '您的咨询问题已收到回复', time: '2小时前', read: false, icon: '💬' },
-    { id: 2, content: '专家"张主任"已接受您的预约', time: '1天前', read: false, icon: '✅' },
-    { id: 3, content: '您的分析报告已生成', time: '3天前', read: true, icon: '📋' },
-    { id: 4, content: '欢迎使用司法鉴定助手', time: '5天前', read: true, icon: '👋' },
-  ];
-
-  const renderTab = () => {
-    switch (activeTab) {
-      case 'analyses':
-        return <MyAnalyses data={analyses} />;
-      case 'consults':
-        return <MyConsults data={consults} />;
-      case 'favorites':
-        return <MyFavorites data={favorites} />;
-      case 'notifications':
-        return <MyNotifications data={notifications} />;
-      case 'settings':
-        return <AccountSettings user={user} />;
-      default:
-        return null;
-    }
+  const handleLogout = () => {
+    logout();
+    navigateWithParticles('/login');
   };
 
   return (
     <div className="page-container">
       <div className="profile-header">
-        <div className="profile-avatar">{user?.name?.charAt(0) || 'U'}</div>
+        <div className="profile-avatar">{(user?.name || user?.username || 'U').charAt(0)}</div>
         <div className="profile-info">
-          <h2>{user?.name || '用户'}</h2>
-          <p>{user?.role === 'admin' ? '管理员' : user?.role === 'expert' ? '专家' : user?.role === 'forensic' ? '法医' : '普通用户'}</p>
+          <h2>{user?.name || user?.username || '用户'}</h2>
+          <p>{user?.role || 'forensic'}</p>
         </div>
         <div className="profile-stats">
           <div className="profile-stat">
@@ -78,186 +65,103 @@ const Profile = () => {
             <div className="label">收藏</div>
           </div>
         </div>
+        <button type="button" className="header-logout-btn" onClick={handleLogout}>
+          退出登录
+        </button>
       </div>
 
       <div className="profile-tabs">
-        {tabs.map(tab => (
-          <div 
-            key={tab.id} 
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            type="button"
             className={`profile-tab ${activeTab === tab.id ? 'active' : ''}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            {tab.id === 'notifications' && notifications.filter(n => !n.read).length > 0 && (
-              <span className="notification-badge">
-                <span className="count">{notifications.filter(n => !n.read).length}</span>
-              </span>
-            )}
             {tab.label}
-          </div>
+          </button>
         ))}
       </div>
 
-      {renderTab()}
-    </div>
-  );
-};
+      {activeTab === 'analyses' && (
+        <div className="form-card">
+          <h2>我的分析</h2>
+          <div className="data-list">
+            {analyses.map((item) => (
+              <div key={item.id} className="data-list-item">
+                <div className="list-avatar">分</div>
+                <div className="list-content">
+                  <h4>{item.title}</h4>
+                  <p>{item.summary}</p>
+                </div>
+                <div className="list-meta">{item.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-const MyAnalyses = ({ data }) => {
-  const handleExport = (id) => {
-    alert(`导出分析报告 #${id}`);
-  };
+      {activeTab === 'consults' && (
+        <div className="form-card">
+          <h2>我的咨询</h2>
+          <div className="data-list">
+            {consults.map((item) => (
+              <div key={item.id} className="data-list-item">
+                <div className="list-avatar">咨</div>
+                <div className="list-content">
+                  <h4>{item.title}</h4>
+                  <p>{item.summary}</p>
+                </div>
+                <div className="list-meta">{item.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-  return (
-    <div className="form-card">
-      <h2>📊 我的分析</h2>
-      <div className="data-list">
-        {data.map(item => (
-          <div key={item.id} className="data-list-item">
-            <div className="list-avatar">🔬</div>
-            <div className="list-content">
-              <h4>{item.type}</h4>
-              <p>{item.result}</p>
+      {activeTab === 'favorites' && (
+        <div className="form-card">
+          <h2>我的收藏</h2>
+          <div className="data-list">
+            {favorites.map((item) => (
+              <div key={item.id} className="data-list-item">
+                <div className="list-avatar">藏</div>
+                <div className="list-content">
+                  <h4>{item.title}</h4>
+                  <p>{item.type}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'settings' && (
+        <div className="form-card">
+          <h2>账号设置</h2>
+          <div className="form-grid">
+            <div className="form-group">
+              <label>用户名</label>
+              <input type="text" value={user?.username || ''} disabled />
             </div>
-            <div className="list-meta">
-              <div>{item.date}</div>
-              <div style={{ color: '#28a745' }}>{item.status}</div>
+            <div className="form-group">
+              <label>姓名</label>
+              <input type="text" value={user?.name || ''} disabled />
             </div>
-            <div className="list-actions">
-              <button onClick={() => handleExport(item.id)}>导出报告</button>
-              <button className="secondary" onClick={() => alert('查看详情')}>详情</button>
+            <div className="form-group">
+              <label>角色</label>
+              <input type="text" value={user?.role || ''} disabled />
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
-const MyConsults = ({ data }) => {
-  return (
-    <div className="form-card">
-      <h2>💬 我的咨询</h2>
-      <div className="data-list">
-        {data.map(item => (
-          <div key={item.id} className="data-list-item">
-            <div className="list-avatar">👨‍⚕️</div>
-            <div className="list-content">
-              <h4>{item.title}</h4>
-              <p>{item.expert}</p>
-            </div>
-            <div className="list-meta">
-              <div>{item.date}</div>
-              <div style={{ color: item.status === '已完成' ? '#28a745' : '#f39c12' }}>{item.status}</div>
-            </div>
-            <div className="list-actions">
-              <button onClick={() => alert('查看对话')}>查看</button>
-            </div>
+          <div className="logout-panel">
+            <h3>账号操作</h3>
+            <button type="button" className="danger-btn" onClick={handleLogout}>
+              退出当前账号
+            </button>
           </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const MyFavorites = ({ data }) => {
-  return (
-    <div className="form-card">
-      <h2>⭐ 我的收藏</h2>
-      <div className="data-list">
-        {data.map(item => (
-          <div key={item.id} className="data-list-item">
-            <div className="list-avatar">📚</div>
-            <div className="list-content">
-              <h4>{item.title}</h4>
-              <p>{item.type}</p>
-            </div>
-            <div className="list-actions">
-              <button onClick={() => alert('跳转查看')}>查看</button>
-              <button className="secondary" onClick={() => alert('取消收藏')}>取消</button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const MyNotifications = ({ data }) => {
-  const [notifications, setNotifications] = useState(data);
-  const unreadCount = notifications.filter(n => !n.read).length;
-
-  const markAllRead = () => {
-    setNotifications(notifications.map(n => ({ ...n, read: true })));
-  };
-
-  return (
-    <div className="form-card">
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-        <h2>🔔 消息通知 {unreadCount > 0 && <span style={{ fontSize: '14px', color: '#e74c3c' }}>({unreadCount}未读)</span>}</h2>
-        {unreadCount > 0 && <button onClick={markAllRead} style={{ width: 'auto', padding: '8px 16px' }}>全部已读</button>}
-      </div>
-      
-      <div className="notification-list">
-        {notifications.map(item => (
-          <div key={item.id} className={`notification-item ${item.read ? '' : 'unread'}`}>
-            <div className="notification-icon">{item.icon}</div>
-            <div className="notification-content">
-              <p>{item.content}</p>
-              <span className="time">{item.time}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AccountSettings = ({ user }) => {
-  const [form, setForm] = useState({
-    name: user?.name || '',
-    email: user?.email || '',
-    phone: user?.phone || '',
-    role: user?.role || 'user',
-  });
-
-  const handleSave = () => {
-    alert('保存成功');
-  };
-
-  return (
-    <div className="form-card">
-      <h2>⚙️ 账号设置</h2>
-      
-      <div className="form-grid">
-        <div className="form-group">
-          <label>用户名</label>
-          <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
         </div>
-        <div className="form-group">
-          <label>邮箱</label>
-          <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-        </div>
-        <div className="form-group">
-          <label>手机号</label>
-          <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
-        </div>
-        <div className="form-group">
-          <label>用户角色</label>
-          <input type="text" value={form.role === 'admin' ? '管理员' : form.role === 'expert' ? '专家' : form.role === 'forensic' ? '法医' : '普通用户'} disabled />
-        </div>
-      </div>
-
-      <div className="form-actions">
-        <button onClick={handleSave}>保存修改</button>
-      </div>
-
-      <div style={{ marginTop: '40px', paddingTop: '20px', borderTop: '1px solid #eee' }}>
-        <h3 style={{ marginBottom: '16px' }}>安全设置</h3>
-        <div className="form-actions">
-          <button className="secondary">修改密码</button>
-          <button className="secondary">绑定手机</button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -1,70 +1,207 @@
-import React, { useState } from 'react';
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { buildPortalPath, roleList } from '../data/portalTree';
+import { useAuth } from '../services/AuthContext';
+
+const TRANSITION_MS = 90;
+const PARTICLE_COUNT = 28;
+
+const TransitionContext = createContext({ navigateWithParticles: () => {} });
+
+const createParticles = () => {
+  const seed = Date.now();
+  return Array.from({ length: PARTICLE_COUNT }, (_, index) => {
+    const angle = ((Math.PI * 2) / PARTICLE_COUNT) * index + Math.random() * 0.4;
+    const distance = 36 + Math.random() * 140;
+    return {
+      id: `${seed}-${index}`,
+      x: `${Math.random() * 100}%`,
+      y: `${Math.random() * 100}%`,
+      dx: `${Math.cos(angle) * distance}px`,
+      dy: `${Math.sin(angle) * distance}px`,
+      size: `${2 + Math.random() * 5}px`,
+      delay: `${Math.random() * 14}ms`,
+    };
+  });
+};
+
+export const useParticleNavigate = () => useContext(TransitionContext);
 
 const Layout = () => {
+  const navigate = useNavigate();
   const location = useLocation();
-  const [activeMenu, setActiveMenu] = useState('');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user } = useAuth();
+  const timerRef = useRef(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [transitionState, setTransitionState] = useState({
+    active: false,
+    particles: [],
+  });
 
-  const isActive = (path) => location.pathname.startsWith(path);
+  const navItems = useMemo(
+    () => [
+      { to: '/', label: '首页' },
+      ...roleList.map((role) => ({
+        to: buildPortalPath(role.key),
+        label: role.title,
+      })),
+    ],
+    []
+  );
 
-  const navItems = [
-    { path: '/', label: '首页', public: true },
-    { path: '/clinical', label: '法医临床', public: true },
-    { path: '/pathology', label: '法医病理', public: true },
-    { path: '/toxicology', label: '法医毒化', public: true },
-    { path: '/psychiatry', label: '法医精神病', public: true },
-    { path: '/evidence', label: '法医物证', public: true },
-    { path: '/expert', label: '专家咨询', public: true },
-    { path: '/profile', label: '个人中心', public: true },
-  ];
+  const navigateWithParticles = useCallback(
+    (to) => {
+      if (!to || to === location.pathname) {
+        setMobileOpen(false);
+        return;
+      }
+
+      if (timerRef.current) {
+        window.clearTimeout(timerRef.current);
+      }
+
+      setMobileOpen(false);
+      setTransitionState({ active: true, particles: createParticles() });
+
+      timerRef.current = window.setTimeout(() => {
+        navigate(to);
+        setTransitionState({ active: false, particles: [] });
+      }, TRANSITION_MS);
+    },
+    [location.pathname, navigate]
+  );
+
+  useEffect(
+    () => () => {
+      if (timerRef.current) {
+        window.clearTimeout(timerRef.current);
+      }
+    },
+    []
+  );
+
+  const value = useMemo(() => ({ navigateWithParticles }), [navigateWithParticles]);
+
+  const isActive = (to) => {
+    if (to === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(to);
+  };
 
   return (
-    <div className="layout">
-      <header className="header">
-        <div className="header-left">
-          <Link to="/" className="logo">
-            <span className="logo-icon">🔬</span>
-            <span className="logo-text">ForenHub</span>
-          </Link>
-          <span className="partner-badge">湘雅司法鉴定中心合作</span>
-        </div>
-        <div className="header-right">
-          <span className="email-info">email: 3795858170@qq.com</span>
-        </div>
-        
-        <button className="mobile-menu-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    <TransitionContext.Provider value={value}>
+      <div className="layout-shell">
+        <header className="site-header">
+          <button
+            type="button"
+            className="brand"
+            onClick={() => navigateWithParticles('/')}
+            aria-label="返回首页"
+          >
+            <span className="brand-mark">FH</span>
+            <span className="brand-text">
+              <strong>ForenHub</strong>
+              <em>法医分层工作台</em>
+            </span>
+          </button>
 
-        <nav className={`nav ${mobileMenuOpen ? 'open' : ''}`}>
-          {navItems.map(item => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`nav-link ${isActive(item.path) ? 'active' : ''}`}
-              onClick={() => {
-                setActiveMenu(item.path);
-                setMobileMenuOpen(false);
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </header>
-      <main className="main-content">
-        <Outlet />
-      </main>
-      <footer className="footer">
-        <div className="footer-content">
-          <p>© 2026 ForenHub | 湘雅司法鉴定中心合作</p>
-          <p className="footer-desc">专业法医鉴定辅助平台</p>
-        </div>
-      </footer>
-    </div>
+          <button
+            type="button"
+            className="mobile-toggle"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="切换菜单"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav className={`site-nav ${mobileOpen ? 'open' : ''}`}>
+            {navItems.map((item) => (
+              <button
+                key={item.to}
+                type="button"
+                className={`nav-link ${isActive(item.to) ? 'active' : ''}`}
+                onClick={() => navigateWithParticles(item.to)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="auth-actions">
+            {!user && (
+              <>
+                <button
+                  type="button"
+                  className={`auth-btn ${location.pathname === '/login' ? 'active' : ''}`}
+                  onClick={() => navigateWithParticles('/login')}
+                >
+                  登录
+                </button>
+                <button
+                  type="button"
+                  className={`auth-btn primary ${location.pathname === '/register' ? 'active' : ''}`}
+                  onClick={() => navigateWithParticles('/register')}
+                >
+                  注册
+                </button>
+              </>
+            )}
+
+            {user && (
+              <>
+                <span className="user-chip">{user.name || user.username || '已登录用户'}</span>
+                <button
+                  type="button"
+                  className={`auth-btn ${location.pathname === '/profile' ? 'active' : ''}`}
+                  onClick={() => navigateWithParticles('/profile')}
+                >
+                  个人中心
+                </button>
+              </>
+            )}
+          </div>
+        </header>
+
+        <main className="content-shell">
+          <Outlet />
+        </main>
+
+        <footer className="site-footer">
+          <p>ForenHub 模块化前端 | 粒子跳转过渡时长 0.09 秒</p>
+        </footer>
+
+        {transitionState.active && (
+          <div className="particle-overlay" aria-hidden="true">
+            {transitionState.particles.map((item) => (
+              <span
+                key={item.id}
+                className="particle-dot"
+                style={{
+                  left: item.x,
+                  top: item.y,
+                  width: item.size,
+                  height: item.size,
+                  animationDelay: item.delay,
+                  '--dx': item.dx,
+                  '--dy': item.dy,
+                }}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </TransitionContext.Provider>
   );
 };
 

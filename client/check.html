@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初步检测 | 法医咨询者 | MindSight</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        .workspace-page { display: grid; gap: 28px; }
+        .workspace-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px; background: rgba(17, 31, 49, 0.72); border: 1px solid var(--line); border-radius: var(--radius-md); }
+        .workspace-nav a { padding: 8px 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 999px; font-size: 13px; color: var(--text-muted); transition: all 0.2s ease; }
+        .workspace-nav a:hover, .workspace-nav a.active { background: rgba(64, 216, 197, 0.15); border-color: rgba(64, 216, 197, 0.5); color: var(--text-main); }
+        .check-section { display: grid; gap: 18px; }
+        .check-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+        .check-card { display: flex; flex-direction: column; padding: 22px; background: rgba(17, 31, 49, 0.8); border: 1px solid var(--line); border-radius: var(--radius-lg); transition: all 0.22s ease; }
+        .check-card:hover { transform: translateY(-4px); border-color: rgba(64, 216, 197, 0.5); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); }
+        .check-card h3 { margin: 0 0 10px; font-size: 18px; }
+        .check-card p { margin: 0 0 16px; color: var(--text-muted); font-size: 13px; flex: 1; }
+        .check-card .btn { align-self: flex-start; }
+        .info-card { background: rgba(255, 180, 84, 0.08); border: 1px solid rgba(255, 180, 84, 0.3); border-radius: var(--radius-md); padding: 18px; }
+        .info-card h4 { margin: 0 0 10px; color: #ffb454; font-size: 15px; }
+        .info-card p { margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+        .client-badge { display: inline-flex; padding: 2px 8px; background: rgba(95, 212, 143, 0.2); border: 1px solid rgba(95, 212, 143, 0.4); border-radius: 999px; font-size: 11px; color: #5fd48f; }
+        @media (max-width: 760px) { .check-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="../index.html">MindSight 法医助手</a>
+            <span class="client-badge">法医咨询者</span>
+            <button class="mobile-toggle" type="button" aria-label="展开导航">菜单</button>
+            <nav class="nav-links" data-open="false">
+                <a href="../index.html">首页</a>
+                <a href="check.html" class="active">初步检测</a>
+                <a href="consult.html">在线咨询</a>
+                <a href="knowledge.html">知识库</a>
+                <a href="../profile.html">个人中心</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page workspace-page">
+        <section class="panel hero-intro reveal">
+            <p class="section-note">法医咨询者工作台</p>
+            <h1 class="gradient-title">初步检测</h1>
+            <p class="subtitle">提供基础的法医检测分析工具，帮助您了解伤情情况。如需专业鉴定，请预约在线咨询。</p>
+        </section>
+
+        <nav class="workspace-nav reveal">
+            <a href="check.html" class="active">检测首页</a>
+            <a href="check-fracture.html">骨折分析</a>
+            <a href="check-joint.html">关节活动检测</a>
+            <a href="check-burn.html">烧伤面积检测</a>
+            <a href="check-handfoot.html">手足功能评估</a>
+        </nav>
+
+        <section class="check-section">
+            <h2 class="section-title">检测工具</h2>
+            <div class="check-grid">
+                <article class="check-card reveal">
+                    <h3>骨折分析</h3>
+                    <p>基于影像资料进行骨折类型和程度的初步分析，帮助您了解骨折情况。</p>
+                    <a href="check-fracture.html" class="btn btn-primary">开始分析</a>
+                </article>
+
+                <article class="check-card reveal">
+                    <h3>关节活动损失程度</h3>
+                    <p>评估关节活动受限程度，计算功能损失比例，支持肩/腕/腰颈关节。</p>
+                    <a href="check-joint.html" class="btn btn-primary">开始评估</a>
+                </article>
+
+                <article class="check-card reveal">
+                    <h3>烧伤面积计算</h3>
+                    <p>根据烧伤部位和面积进行专业计算，帮助评估烧伤严重程度。</p>
+                    <a href="check-burn.html" class="btn btn-primary">开始计算</a>
+                </article>
+
+                <article class="check-card reveal">
+                    <h3>手足功能评估</h3>
+                    <p>评估手足功能损伤程度，计算功能丧失比例，为后续咨询提供参考。</p>
+                    <a href="check-handfoot.html" class="btn btn-primary">开始评估</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="check-section reveal">
+            <div class="info-card">
+                <h4>温馨提示</h4>
+                <p>本工具仅提供初步参考，不能替代专业法医鉴定。如需正式鉴定报告，请通过「在线咨询」预约专业鉴定师。</p>
+            </div>
+        </section>
+
+        <section class="check-section reveal">
+            <h2 class="section-title">其他模块</h2>
+            <div class="check-grid">
+                <a href="consult.html" class="check-card">
+                    <h3>在线咨询</h3>
+                    <p>预约咨询、在线问答、查看鉴定师列表</p>
+                </a>
+                <a href="knowledge.html" class="check-card">
+                    <h3>知识库</h3>
+                    <p>法医基础知识、标准规范文件、常见问题解答</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+</body>
+</html>

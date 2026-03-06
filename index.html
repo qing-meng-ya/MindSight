@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindSight 法医助手 | 首页</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <style>
+        .home-page { display: grid; gap: 28px; }
+        .hero-intro { text-align: center; padding: 40px 24px; }
+        .role-section { display: grid; gap: 18px; }
+        .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+        .role-card {
+            background: rgba(17, 31, 49, 0.86);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: transform 0.22s ease, border-color 0.22s ease;
+        }
+        .role-card:hover { transform: translateY(-4px); border-color: rgba(64, 216, 197, 0.6); }
+        .role-card h3 { margin: 0 0 10px; font-size: 22px; font-family: "STZhongsong", "Songti SC", serif; }
+        .role-card > p { margin: 0 0 14px; color: var(--text-muted); font-size: 14px; }
+        .role-features { margin: 0 0 18px; padding-left: 18px; color: var(--text-muted); font-size: 13px; line-height: 1.8; }
+        .role-action { display: flex; justify-content: center; }
+        .tools-overview { display: grid; gap: 18px; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+        .tool-category { background: rgba(17, 31, 49, 0.72); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; }
+        .tool-category h4 { margin: 0 0 14px; font-size: 16px; color: var(--accent); }
+        .tool-list { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tool-item {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 12px; background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px;
+            font-size: 13px; color: var(--text-muted); transition: all 0.2s ease;
+        }
+        .tool-item:hover { background: rgba(64, 216, 197, 0.15); border-color: rgba(64, 216, 197, 0.5); color: var(--text-main); }
+        .stats-section { text-align: center; }
+        @media (max-width: 760px) { .role-grid, .tools-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">MindSight 法医助手</a>
+            <button class="mobile-toggle" type="button" aria-label="展开导航">菜单</button>
+            <nav class="nav-links" data-open="false">
+                <a href="index.html" class="active">首页</a>
+                <a href="login.html">登录</a>
+                <a href="register.html">注册</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page home-page">
+        <section class="hero-intro panel reveal">
+            <p class="section-note">司法辅助业务平台</p>
+            <h1 class="gradient-title">法医专业辅助系统</h1>
+            <p class="subtitle">面向法医学习者、工作者、咨询者的专业平台，提供工具、案例、知识与咨询服务。</p>
+        </section>
+
+        <section class="role-section">
+            <div class="section-head">
+                <h2 class="section-title">选择您的角色</h2>
+                <span class="section-note">不同角色拥有不同的功能权限</span>
+            </div>
+            <div class="role-grid">
+                <article class="role-card reveal">
+                    <h3>法医学习者</h3>
+                    <p>学习法医知识、使用计算工具、浏览案例与社区交流</p>
+                    <ul class="role-features">
+                        <li>常用工具（预测 + 计算）</li>
+                        <li>知识库（法律文件、专业书籍）</li>
+                        <li>过往案例浏览</li>
+                        <li>社区讨论</li>
+                    </ul>
+                    <div class="role-action">
+                        <a href="learner/tools.html" class="btn btn-primary">进入学习</a>
+                    </div>
+                </article>
+
+                <article class="role-card reveal">
+                    <h3>法医工作者</h3>
+                    <p>专业工具库、资料库、在线答疑与护理计算</p>
+                    <ul class="role-features">
+                        <li>常用工具库（预测 + 计算）</li>
+                        <li>常用资料库（标准文件/书籍/案件）</li>
+                        <li>在线答疑（社区答疑/专业解答）</li>
+                        <li>护理计算（误工/护理/营养期）</li>
+                    </ul>
+                    <div class="role-action">
+                        <a href="expert/tools.html" class="btn btn-primary">进入工作台</a>
+                    </div>
+                </article>
+
+                <article class="role-card reveal">
+                    <h3>法医咨询者</h3>
+                    <p>初步检测、在线咨询与基础知识查询</p>
+                    <ul class="role-features">
+                        <li>初步检测（骨折/关节/烧伤/手足）</li>
+                        <li>在线咨询（预约/问答/鉴定师）</li>
+                        <li>知识库（基础知识/标准规范/FAQ）</li>
+                    </ul>
+                    <div class="role-action">
+                        <a href="client/check.html" class="btn btn-primary">开始咨询</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="tools-overview">
+            <div class="section-head">
+                <h2 class="section-title">核心工具</h2>
+                <span class="section-note">专业法医计算与预测工具</span>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-category reveal">
+                    <h4>预测工具</h4>
+                    <div class="tool-list">
+                        <a href="learner/tools-fracture.html" class="tool-item">骨折预测</a>
+                        <a href="learner/tools-slice.html" class="tool-item">切片预测</a>
+                    </div>
+                </div>
+                <div class="tool-category reveal">
+                    <h4>计算估算工具</h4>
+                    <div class="tool-list">
+                        <a href="learner/tools-joint.html" class="tool-item">关节活动损失</a>
+                        <a href="learner/tools-death.html" class="tool-item">死亡时间估算</a>
+                        <a href="learner/tools-height.html" class="tool-item">身高推算</a>
+                        <a href="learner/tools-bsa.html" class="tool-item">体表面积估算</a>
+                        <a href="learner/tools-burn.html" class="tool-item">烧伤面积计算</a>
+                        <a href="learner/tools-alcohol.html" class="tool-item">血液酒精浓度</a>
+                        <a href="learner/tools-car.html" class="tool-item">车祸赔偿计算</a>
+                        <a href="learner/tools-injury.html" class="tool-item">工伤赔偿计算</a>
+                        <a href="learner/tools-scar.html" class="tool-item">瘢痕面积计算</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section panel reveal">
+            <h2 class="section-title">平台概览</h2>
+            <div class="kpi-grid">
+                <div class="kpi"><span class="label">注册用户</span><span class="value">1,280</span></div>
+                <div class="kpi"><span class="label">法医案例</span><span class="value">456</span></div>
+                <div class="kpi"><span class="label">咨询记录</span><span class="value">892</span></div>
+                <div class="kpi"><span class="label">工具使用</span><span class="value">5,670</span></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

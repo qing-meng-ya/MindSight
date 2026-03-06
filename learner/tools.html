@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用工具 | 法医学习者 | MindSight</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        .workspace-page { display: grid; gap: 28px; }
+        .workspace-nav { display: flex; flex-wrap: wrap; gap: 10px; padding: 16px; background: rgba(17, 31, 49, 0.72); border: 1px solid var(--line); border-radius: var(--radius-md); }
+        .workspace-nav a { padding: 8px 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 999px; font-size: 13px; color: var(--text-muted); transition: all 0.2s ease; }
+        .workspace-nav a:hover, .workspace-nav a.active { background: rgba(64, 216, 197, 0.15); border-color: rgba(64, 216, 197, 0.5); color: var(--text-main); }
+        .tools-section { display: grid; gap: 18px; }
+        .tool-section-card { background: rgba(17, 31, 49, 0.8); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px; }
+        .tool-section-card h3 { margin: 0 0 16px; font-size: 20px; }
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .tool-link { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: rgba(8, 14, 24, 0.58); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-sm); color: var(--text-main); transition: all 0.2s ease; }
+        .tool-link:hover { background: rgba(64, 216, 197, 0.1); border-color: rgba(64, 216, 197, 0.4); transform: translateX(4px); }
+        .tool-link .info h4 { margin: 0; font-size: 15px; }
+        .tool-link .info p { margin: 4px 0 0; font-size: 12px; color: var(--text-muted); }
+        .other-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+        .other-link { display: flex; align-items: center; gap: 12px; padding: 16px; background: rgba(17, 31, 49, 0.72); border: 1px solid var(--line); border-radius: var(--radius-md); color: var(--text-main); transition: all 0.2s ease; }
+        .other-link:hover { border-color: rgba(255, 180, 84, 0.5); background: rgba(255, 180, 84, 0.08); transform: translateY(-2px); }
+        .other-link h4 { margin: 0; font-size: 15px; }
+        .other-link p { margin: 4px 0 0; font-size: 12px; color: var(--text-muted); }
+        @media (max-width: 760px) { .tool-grid, .other-links { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="../index.html">MindSight 法医助手</a>
+            <button class="mobile-toggle" type="button" aria-label="展开导航">菜单</button>
+            <nav class="nav-links" data-open="false">
+                <a href="../index.html">首页</a>
+                <a href="tools.html" class="active">常用工具</a>
+                <a href="knowledge.html">知识库</a>
+                <a href="cases.html">过往案例</a>
+                <a href="community.html">社区</a>
+                <a href="../profile.html">个人中心</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page workspace-page">
+        <section class="panel hero-intro reveal">
+            <p class="section-note">法医学习者工作台</p>
+            <h1 class="gradient-title">常用工具</h1>
+            <p class="subtitle">提供骨折预测、切片预测及各类法医计算估算工具，辅助学习与实践。</p>
+        </section>
+
+        <nav class="workspace-nav reveal">
+            <a href="tools.html" class="active">工具首页</a>
+            <a href="tools-fracture.html">骨折预测</a>
+            <a href="tools-slice.html">切片预测</a>
+            <a href="tools-joint.html">关节活动损失</a>
+            <a href="tools-death.html">死亡时间估算</a>
+            <a href="tools-height.html">推算身高</a>
+            <a href="tools-bsa.html">体表面积估算</a>
+            <a href="tools-burn.html">烧伤面积计算</a>
+            <a href="tools-alcohol.html">血液酒精浓度</a>
+            <a href="tools-car.html">车祸赔偿</a>
+            <a href="tools-injury.html">工伤赔偿</a>
+            <a href="tools-scar.html">瘢痕面积</a>
+        </nav>
+
+        <section class="tools-section">
+            <div class="tool-section-card reveal">
+                <h3>预测工具</h3>
+                <div class="tool-grid">
+                    <a href="tools-fracture.html" class="tool-link">
+                        <div class="info"><h4>骨折预测</h4><p>基于影像的骨折预测分析</p></div>
+                    </a>
+                    <a href="tools-slice.html" class="tool-link">
+                        <div class="info"><h4>切片预测</h4><p>组织切片预测分析</p></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tool-section-card reveal">
+                <h3>计算估算工具</h3>
+                <div class="tool-grid">
+                    <a href="tools-joint.html" class="tool-link"><div class="info"><h4>关节活动损失</h4><p>肩/腕/腰颈关节计算</p></div></a>
+                    <a href="tools-death.html" class="tool-link"><div class="info"><h4>死亡时间估算</h4><p>PMI估算</p></div></a>
+                    <a href="tools-height.html" class="tool-link"><div class="info"><h4>推算身高</h4><p>骨骼身高推算</p></div></a>
+                    <a href="tools-bsa.html" class="tool-link"><div class="info"><h4>体表面积估算</h4><p>BSA计算</p></div></a>
+                    <a href="tools-burn.html" class="tool-link"><div class="info"><h4>烧伤面积计算</h4><p>烧伤面积估算</p></div></a>
+                    <a href="tools-alcohol.html" class="tool-link"><div class="info"><h4>血液酒精浓度</h4><p>BAC计算</p></div></a>
+                    <a href="tools-car.html" class="tool-link"><div class="info"><h4>车祸赔偿计算</h4><p>赔偿金额估算</p></div></a>
+                    <a href="tools-injury.html" class="tool-link"><div class="info"><h4>工伤赔偿计算</h4><p>工伤赔偿估算</p></div></a>
+                    <a href="tools-scar.html" class="tool-link"><div class="info"><h4>瘢痕面积计算</h4><p>瘢痕面积估算</p></div></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools-section reveal">
+            <h2 class="section-title">其他模块</h2>
+            <div class="other-links">
+                <a href="knowledge.html" class="other-link"><div><h4>知识库</h4><p>法律文件，专业书籍</p></div></a>
+                <a href="cases.html" class="other-link"><div><h4>过往案例</h4><p>历史案例浏览</p></div></a>
+                <a href="community.html" class="other-link"><div><h4>社区</h4><p>论坛讨论交流</p></div></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过往案例 | 法医学习者 | MindSight</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        .workspace-page { display: grid; gap: 28px; }
+        .breadcrumb { display: flex; gap: 8px; font-size: 13px; color: var(--text-muted); }
+        .breadcrumb a { color: var(--accent); }
+        
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(17, 31, 49, 0.72);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+        }
+        
+        .filter-bar select,
+        .filter-bar input {
+            padding: 10px 14px;
+            background: rgba(8, 14, 24, 0.68);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 13px;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 18px;
+        }
+        
+        .case-card {
+            background: rgba(17, 31, 49, 0.8);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            transition: all 0.22s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(64, 216, 197, 0.4);
+        }
+        
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .case-id {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .case-type {
+            padding: 3px 10px;
+            background: rgba(255, 180, 84, 0.15);
+            border: 1px solid rgba(255, 180, 84, 0.3);
+            border-radius: 999px;
+            font-size: 11px;
+            color: #ffb454;
+        }
+        
+        .case-card h4 {
+            margin: 0 0 10px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        
+        .case-desc {
+            margin: 0 0 14px;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        
+        .case-tags span {
+            padding: 3px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 999px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        
+        .case-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="../index.html">MindSight 法医助手</a>
+            <button class="mobile-toggle" type="button">≡</button>
+            <nav class="nav-links" data-open="false">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">常用工具</a>
+                <a href="knowledge.html">知识库</a>
+                <a href="cases.html" class="active">过往案例</a>
+                <a href="community.html">社区</a>
+                <a href="../profile.html">个人中心</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page workspace-page">
+        <nav class="breadcrumb reveal">
+            <a href="tools.html">常用工具</a> / <span>过往案例</span>
+        </nav>
+
+        <section class="panel hero-intro reveal">
+            <p class="section-note">法医学习者</p>
+            <h1 class="gradient-title">过往案例</h1>
+            <p class="subtitle">学习历史案例，了解法医鉴定的实际应用与分析方法。</p>
+        </section>
+
+        <div class="filter-bar reveal">
+            <select>
+                <option value="">全部类型</option>
+                <option value="injury">人身伤害</option>
+                <option value="death">死亡鉴定</option>
+                <option value="disability">伤残评定</option>
+                <option value="traffic">交通事故</option>
+                <option value="work">工伤鉴定</option>
+            </select>
+            <select>
+                <option value="">全部部位</option>
+                <option value="head">头部</option>
+                <option value="limb">四肢</option>
+                <option value="spine">脊柱</option>
+                <option value="chest">胸部</option>
+            </select>
+            <select>
+                <option value="">全部程度</option>
+                <option value="minor">轻微伤</option>
+                <option value="light">轻伤</option>
+                <option value="severe">重伤</option>
+            </select>
+            <input type="text" placeholder="搜索案例...">
+        </div>
+
+        <div class="cases-grid reveal">
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-id">CASE-2026-001</span>
+                    <span class="case-type">人身伤害</span>
+                </div>
+                <h4>右胫腓骨骨折伤残鉴定案例</h4>
+                <p class="case-desc">患者因外伤致右胫腓骨中段骨折，行内固定手术治疗后遗留功能障碍。经鉴定为十级伤残。</p>
+                <div class="case-tags">
+                    <span>胫腓骨骨折</span>
+                    <span>内固定</span>
+                    <span>十级伤残</span>
+                </div>
+                <div class="case-footer">
+                    <span>2026-01-15</span>
+                    <a href="#" style="color: var(--accent);">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-id">CASE-2026-002</span>
+                    <span class="case-type">死亡鉴定</span>
+                </div>
+                <h4>交通事故致颅脑损伤死亡鉴定</h4>
+                <p class="case-desc">死者因交通事故致严重颅脑损伤，经抢救无效死亡。鉴定死因为颅脑损伤致死。</p>
+                <div class="case-tags">
+                    <span>交通事故</span>
+                    <span>颅脑损伤</span>
+                    <span>死因鉴定</span>
+                </div>
+                <div class="case-footer">
+                    <span>2026-01-22</span>
+                    <a href="#" style="color: var(--accent);">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-id">CASE-2026-003</span>
+                    <span class="case-type">工伤鉴定</span>
+                </div>
+                <h4>高处坠落致多发伤工伤鉴定</h4>
+                <p class="case-desc">工人从高处坠落致胸椎骨折、左腕骨折及肋骨骨折。经评定为九级伤残。</p>
+                <div class="case-tags">
+                    <span>高处坠落</span>
+                    <span>多发伤</span>
+                    <span>九级伤残</span>
+                </div>
+                <div class="case-footer">
+                    <span>2026-02-05</span>
+                    <a href="#" style="color: var(--accent);">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-id">CASE-2026-004</span>
+                    <span class="case-type">伤残评定</span>
+                </div>
+                <h4>手功能丧失伤残鉴定分析</h4>
+                <p class="case-desc">左手碾压伤后遗功能障碍，拇指活动受限，手指感觉减退。评定为八级伤残。</p>
+                <div class="case-tags">
+                    <span>手外伤</span>
+                    <span>功能障碍</span>
+                    <span>八级伤残</span>
+                </div>
+                <div class="case-footer">
+                    <span>2026-02-18</span>
+                    <a href="#" style="color: var(--accent);">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-id">CASE-2026-005</span>
+                    <span class="case-type">交通事故</span>
+                </div>
+                <h4>颈部损伤致脊髓损伤鉴定</h4>
+                <p class="case-desc">交通事故致颈椎骨折合并脊髓损伤，四肢瘫。经鉴定为一级伤残。</p>
+                <div class="case-tags">
+                    <span>颈椎骨折</span>
+                    <span>脊髓损伤</span>
+                    <span>一级伤残</span>
+                </div>
+                <div class="case-footer">
+                    <span>2026-03-01</span>
+                    <a href="#" style="color: var(--accent);">查看详情 →</a>
+                </div>
+            </article>
+
+            <article class="case-card">
+                <div class="case-header">
+                    <span class="case-id">CASE-2026-006</span>
+                    <span class="case-type">人身伤害</span>
+                </div>
+                <h4>面部瘢痕形成伤残评定</h4>
+                <p class="case-desc">面部多处裂伤后遗留瘢痕，累计长度超过10cm。评定为十级伤残。</p>
+                <div class="case-tags">
+                    <span>面部损伤</span>
+                    <span>瘢痕</span>
+                    <span>十级伤残</span>
+                </div>
+                <div class="case-footer">
+                    <span>2026-03-10</span>
+                    <a href="#" style="color: var(--accent);">查看详情 →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区 | 法医学习者 | MindSight</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        .workspace-page { display: grid; gap: 28px; }
+        .breadcrumb { display: flex; gap: 8px; font-size: 13px; color: var(--text-muted); }
+        .breadcrumb a { color: var(--accent); }
+        
+        .community-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+            gap: 22px;
+            align-items: start;
+        }
+        
+        .post-form {
+            background: rgba(17, 31, 49, 0.85);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+        
+        .posts-list {
+            display: grid;
+            gap: 14px;
+        }
+        
+        .post-card {
+            background: rgba(17, 31, 49, 0.72);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            transition: all 0.2s ease;
+        }
+        
+        .post-card:hover {
+            border-color: rgba(64, 216, 197, 0.3);
+        }
+        
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(64, 216, 197, 0.35), rgba(255, 180, 84, 0.35));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .author-name { font-weight: 600; font-size: 14px; }
+        .author-role { font-size: 11px; color: var(--accent); }
+        
+        .post-time { font-size: 12px; color: var(--text-muted); }
+        
+        .post-title {
+            margin: 0 0 8px;
+            font-size: 16px;
+        }
+        
+        .post-excerpt {
+            margin: 0 0 12px;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .post-tags { display: flex; gap: 6px; }
+        .post-tags span {
+            padding: 3px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 999px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        
+        .post-stats { display: flex; gap: 14px; font-size: 12px; color: var(--text-muted); }
+        
+        .sidebar-section {
+            background: rgba(17, 31, 49, 0.72);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .sidebar-section h3 {
+            margin: 0 0 14px;
+            font-size: 15px;
+        }
+        
+        .hot-list { display: grid; gap: 10px; }
+        
+        .hot-item {
+            padding: 10px;
+            background: rgba(8, 14, 24, 0.5);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+        }
+        
+        .hot-item a { color: var(--text-main); }
+        .hot-item a:hover { color: var(--accent); }
+        .hot-item .views { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        
+        @media (max-width: 900px) {
+            .community-layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="../index.html">MindSight 法医助手</a>
+            <button class="mobile-toggle" type="button">≡</button>
+            <nav class="nav-links" data-open="false">
+                <a href="../index.html">首页</a>
+                <a href="tools.html">常用工具</a>
+                <a href="knowledge.html">知识库</a>
+                <a href="cases.html">过往案例</a>
+                <a href="community.html" class="active">社区</a>
+                <a href="../profile.html">个人中心</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page workspace-page">
+        <nav class="breadcrumb reveal">
+            <a href="tools.html">常用工具</a> / <span>社区</span>
+        </nav>
+
+        <section class="panel hero-intro reveal">
+            <p class="section-note">法医学习者</p>
+            <h1 class="gradient-title">社区</h1>
+            <p class="subtitle">与同行交流讨论，分享学习心得，探讨法医鉴定专业知识。</p>
+        </section>
+
+        <div class="community-layout">
+            <div class="main-content">
+                <div class="post-form reveal">
+                    <h3 style="margin: 0 0 14px;">发布新帖</h3>
+                    <form class="form">
+                        <div class="field">
+                            <input type="text" placeholder="帖子标题" style="width:100%;padding:12px;border:1px solid rgba(255,255,255,0.18);border-radius:10px;background:rgba(8,14,24,0.68);color:var(--text-main);">
+                        </div>
+                        <div class="field">
+                            <select style="width:100%;padding:10px;border:1px solid rgba(255,255,255,0.18);border-radius:10px;background:rgba(8,14,24,0.68);color:var(--text-muted);">
+                                <option value="">选择分类</option>
+                                <option value="analysis">损伤分析</option>
+                                <option value="pathology">病理研究</option>
+                                <option value="toxicology">毒物鉴定</option>
+                                <option value="procedure">流程规范</option>
+                                <option value="discussion">综合讨论</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <textarea placeholder="帖子内容..." style="width:100%;min-height:100px;padding:12px;border:1px solid rgba(255,255,255,0.18);border-radius:10px;background:rgba(8,14,24,0.68);color:var(--text-main);resize:vertical;"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="button">发布帖子</button>
+                    </form>
+                </div>
+
+                <div class="posts-list reveal">
+                    <article class="post-card">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <div class="author-avatar">陈</div>
+                                <div>
+                                    <div class="author-name">陈明远</div>
+                                    <div class="author-role">法医学习者</div>
+                                </div>
+                            </div>
+                            <span class="post-time">2小时前</span>
+                        </div>
+                        <h4 class="post-title"><a href="#">关于膝关节半月板损伤的鉴定要点讨论</a></h4>
+                        <p class="post-excerpt">最近在处理一起膝关节损伤案例，想请教各位关于半月板损伤的MRI阅片要点和伤残评定时机的问题...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span>损伤分析</span>
+                                <span>关节损伤</span>
+                            </div>
+                            <div class="post-stats">
+                                <span>� 23</span>
+                                <span>� 12</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <div class="author-avatar">林</div>
+                                <div>
+                                    <div class="author-name">林雨晴</div>
+                                    <div class="author-role">法医学习者</div>
+                                </div>
+                            </div>
+                            <span class="post-time">5小时前</span>
+                        </div>
+                        <h4 class="post-title"><a href="#">烧伤面积计算的新旧标准对比</a></h4>
+                        <p class="post-excerpt">对比了中国九分法和新九分法在烧伤面积计算中的应用差异，以及在法医鉴定中的实际操作...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span>烧伤</span>
+                                <span>鉴定标准</span>
+                            </div>
+                            <div class="post-stats">
+                                <span>� 45</span>
+                                <span>� 28</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post-card">
+                        <div class="post-header">
+                            <div class="post-author">
+                                <div class="author-avatar">张</div>
+                                <div>
+                                    <div class="author-name">张浩然</div>
+                                    <div class="author-role">法医工作者</div>
+                                </div>
+                            </div>
+                            <span class="post-time">昨天</span>
+                        </div>
+                        <h4 class="post-title"><a href="#">面部瘢痕鉴定的影像资料留存规范</a></h4>
+                        <p class="post-excerpt">分享在实际鉴定工作中关于面部瘢痕拍照存档的标准操作流程和注意事项...</p>
+                        <div class="post-footer">
+                            <div class="post-tags">
+                                <span>瘢痕</span>
+                                <span>操作规范</span>
+                            </div>
+                            <div class="post-stats">
+                                <span>� 67</span>
+                                <span>� 35</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <aside class="reveal">
+                <div class="sidebar-section">
+                    <h3>� 热门话题</h3>
+                    <div class="hot-list">
+                        <div class="hot-item">
+                            <a href="#">交通事故颅脑损伤鉴定要点</a>
+                            <div class="views">阅读 1.2k · 讨论 45</div>
+                        </div>
+                        <div class="hot-item">
+                            <a href="#">工伤鉴定与人身损害鉴定区别</a>
+                            <div class="views">阅读 980 · 讨论 32</div>
+                        </div>
+                        <div class="hot-item">
+                            <a href="#">酒精检测的标准操作流程</a>
+                            <div class="views">阅读 856 · 讨论 28</div>
+                        </div>
+                        <div class="hot-item">
+                            <a href="#">法医病理活检取材规范</a>
+                            <div class="views">阅读 723 · 讨论 21</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>� 社区规则</h3>
+                    <p style="color: var(--text-muted); font-size: 12px; line-height: 1.6;">
+                        1. 尊重他人，友善交流<br>
+                        2. 专业知识分享为主<br>
+                        3. 禁止发布敏感信息<br>
+                        4. 案例讨论请脱敏处理
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+</body>
+</html>

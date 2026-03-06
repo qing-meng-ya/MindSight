@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库 | 法医咨询者 | MindSight</title>
+    <link rel="stylesheet" href="../assets/css/site.css">
+    <style>
+        .workspace-page {
+            display: grid;
+            gap: 28px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+        }
+
+        .knowledge-tabs {
+            display: flex;
+            gap: 10px;
+            padding: 16px;
+            background: rgba(17, 31, 49, 0.72);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+        }
+
+        .knowledge-tabs button {
+            flex: 1;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .knowledge-tabs button:hover,
+        .knowledge-tabs button.active {
+            background: rgba(64, 216, 197, 0.15);
+            border-color: rgba(64, 216, 197, 0.5);
+            color: var(--text-main);
+        }
+
+        .knowledge-content {
+            display: none;
+        }
+
+        .knowledge-content.active {
+            display: grid;
+            gap: 22px;
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .doc-card {
+            display: flex;
+            flex-direction: column;
+            padding: 18px;
+            background: rgba(17, 31, 49, 0.8);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(64, 216, 197, 0.4);
+        }
+
+        
+
+        .doc-card h4 {
+            margin: 0 0 8px;
+            font-size: 16px;
+        }
+
+        .doc-card p {
+            margin: 0 0 12px;
+            color: var(--text-muted);
+            font-size: 13px;
+            flex: 1;
+        }
+
+        .doc-card .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .faq-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .faq-item {
+            padding: 18px;
+            background: rgba(17, 31, 49, 0.72);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+        }
+
+        .faq-item h4 {
+            margin: 0 0 10px;
+            font-size: 15px;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .faq-item .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(64, 216, 197, 0.1);
+            border-radius: 999px;
+            font-size: 11px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            background: rgba(8, 14, 24, 0.68);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            color: var(--text-main);
+            font-size: 14px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: rgba(64, 216, 197, 0.9);
+        }
+
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .category-tags span {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .category-tags span:hover,
+        .category-tags span.active {
+            background: rgba(64, 216, 197, 0.15);
+            border-color: rgba(64, 216, 197, 0.5);
+            color: var(--text-main);
+        }
+
+        .standards-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .standards-table th,
+        .standards-table td {
+            padding: 12px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+        }
+
+        .standards-table th {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--accent);
+        }
+
+        .standards-table td {
+            color: var(--text-muted);
+        }
+
+        .standards-table tr:hover td {
+            background: rgba(64, 216, 197, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="nav-inner">
+            <a class="brand" href="../index.html">MindSight 法医助手</a>
+            <span class="client-badge">法医咨询者</span>
+            <button class="mobile-toggle" type="button" aria-label="展开导航">≡</button>
+            <nav class="nav-links" data-open="false">
+                <a href="../index.html">首页</a>
+                <a href="check.html">初步检测</a>
+                <a href="consult.html">在线咨询</a>
+                <a href="knowledge.html" class="active">知识库</a>
+                <a href="../profile.html">个人中心</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page workspace-page">
+        <nav class="breadcrumb reveal">
+            <a href="check.html">初步检测</a> /
+            <span>知识库</span>
+        </nav>
+
+        <section class="panel hero-intro reveal">
+            <p class="section-note">法医咨询者</p>
+            <h1 class="gradient-title">知识库</h1>
+            <p class="subtitle">提供法医基础知识、标准规范文件和常见问题解答，帮助您了解法医鉴定相关知识。</p>
+        </section>
+
+        <div class="knowledge-tabs reveal">
+            <button class="active" data-tab="basic">基础知识</button>
+            <button data-tab="standards">标准规范</button>
+            <button data-tab="faq">常见问题</button>
+        </div>
+
+        <div class="knowledge-content active" id="tab-basic">
+            <div class="search-box reveal">
+                <input type="text" placeholder="搜索基础知识...">
+                <button class="btn btn-primary">搜索</button>
+            </div>
+
+            <div class="category-tags reveal">
+                <span class="active">全部</span>
+                <span>法医临床</span>
+                <span>法医病理</span>
+                <span>法医毒物</span>
+                <span>伤残评定</span>
+                <span>鉴定流程</span>
+            </div>
+
+            <div class="knowledge-grid reveal">
+                <article class="doc-card">
+                    
+                    <h4>法医临床鉴定概述</h4>
+                    <p>介绍法医临床鉴定的基础概念、鉴定范围和基本流程，适合初学者了解。</p>
+                    <div class="meta">
+                        <span>阅读量 2.3k</span>
+                        <span>法医临床</span>
+                    </div>
+                </article>
+                <article class="doc-card">
+                    
+                    <h4>骨折类型与分级</h4>
+                    <p>详细讲解各类骨折的形态分类、程度分级及鉴定要点。</p>
+                    <div class="meta">
+                        <span>阅读量 1.8k</span>
+                        <span>法医临床</span>
+                    </div>
+                </article>
+                <article class="doc-card">
+                    
+                    <h4>伤残等级评定标准</h4>
+                    <p>根据《人体损伤致残程度分级》详细说明各等级评定标准。</p>
+                    <div class="meta">
+                        <span>阅读量 3.2k</span>
+                        <span>伤残评定</span>
+                    </div>
+                </article>
+                <article class="doc-card">
+                    
+                    <h4>颅脑损伤鉴定</h4>
+                    <p>颅脑损伤的类型、临床表现及法医鉴定评估方法。</p>
+                    <div class="meta">
+                        <span>阅读量 1.5k</span>
+                        <span>法医临床</span>
+                    </div>
+                </article>
+                <article class="doc-card">
+                    
+                    <h4>脏器损伤鉴定</h4>
+                    <p>胸部、腹部脏器损伤的法医鉴定要点及评估方法。</p>
+                    <div class="meta">
+                        <span>阅读量 1.2k</span>
+                        <span>法医病理</span>
+                    </div>
+                </article>
+                <article class="doc-card">
+                    
+                    <h4>鉴定程序与规范</h4>
+                    <p>法医鉴定的法定程序、委托流程及报告出具规范。</p>
+                    <div class="meta">
+                        <span>阅读量 2.7k</span>
+                        <span>鉴定流程</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="knowledge-content" id="tab-standards">
+            <div class="search-box reveal">
+                <input type="text" placeholder="搜索标准规范...">
+                <button class="btn btn-primary">搜索</button>
+            </div>
+
+            <div class="panel reveal">
+                <h2 class="form-title">常用标准规范</h2>
+                <table class="standards-table">
+                    <thead>
+                        <tr>
+                            <th>标准编号</th>
+                            <th>标准名称</th>
+                            <th>适用范围</th>
+                            <th>发布时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GB/T 31147-2014</td>
+                            <td>人体损伤致残程度分级</td>
+                            <td>伤残评定</td>
+                            <td>2014年</td>
+                        </tr>
+                        <tr>
+                            <td>GA/T 1193-2014</td>
+                            <td>人身损害误工期、护理期、营养期评定规范</td>
+                            <td>三期评定</td>
+                            <td>2014年</td>
+                        </tr>
+                        <tr>
+                            <td>GA/T 914-2010</td>
+                            <td>人身损害受伤人员误工期、护理期、营养期评定准则</td>
+                            <td>三期评定</td>
+                            <td>2010年</td>
+                        </tr>
+                        <tr>
+                            <td>SF/Z JD0103003-2011</td>
+                            <td>法医临床检验规范</td>
+                            <td>临床检验</td>
+                            <td>2011年</td>
+                        </tr>
+                        <tr>
+                            <td>GA/T 147-2019</td>
+                            <td>法医学尸体检验技术规范</td>
+                            <td>尸体检验</td>
+                            <td>2019年</td>
+                        </tr>
+                        <tr>
+                            <td>GA/T 148-2019</td>
+                            <td>法医病理学检验规范</td>
+                            <td>病理检验</td>
+                            <td>2019年</td>
+                        </tr>
+                        <tr>
+                            <td>GA/T 842-2019</td>
+                            <td>血液酒精含量的检验方法</td>
+                            <td>酒精检测</td>
+                            <td>2019年</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="knowledge-content" id="tab-faq">
+            <div class="faq-list reveal">
+                <article class="faq-item">
+                    <span class="tag">伤残评定</span>
+                    <h4>什么情况下需要进行法医鉴定？</h4>
+                    <p>当发生人身伤害、工伤事故、交通事故等情况，双方对伤情存在争议，或需要法律诉讼依据时，应进行法医鉴定。鉴定结果可作为保险理赔、司法判决的重要依据。</p>
+                </article>
+                <article class="faq-item">
+                    <span class="tag">鉴定流程</span>
+                    <h4>法医鉴定的基本流程是什么？</h4>
+                    <p>基本流程包括：1.委托申请；2.提交材料（包括身份证明、病历资料、影像资料等）；3.缴纳费用；4.鉴定机构审核受理；5.法医检查/检验；6.出具鉴定意见书；7.领取报告。整个周期通常为15-30个工作日。</p>
+                </article>
+                <article class="faq-item">
+                    <span class="tag">费用说明</span>
+                    <h4>法医鉴定费用如何计算？</h4>
+                    <p>鉴定费用根据鉴定类型、复杂程度和工作量确定。简单鉴定（如单一骨折）费用较低，复杂鉴定（如多处损伤、精神鉴定）费用较高。具体费用可在委托时向鉴定机构咨询。</p>
+                </article>
+                <article class="faq-item">
+                    <span class="tag">伤残评定</span>
+                    <h4>伤残等级是如何划分的？</h4>
+                    <p>根据《人体损伤致残程度分级》，伤残等级分为一至十级，一级最重，十级最轻。等级越高，赔偿金额越高。评定需综合考虑器官缺损、功能障碍、日常生活能力等因素。</p>
+                </article>
+                <article class="faq-item">
+                    <span class="tag">注意事项</span>
+                    <h4>申请鉴定需要准备哪些材料？</h4>
+                    <p>通常需要：1.身份证明（身份证、户口本）；2.委托书（单位或法院出具）；3.病历资料（门诊/住院病历、诊断证明）；4.影像资料（X片、CT、MRI等）；5.费用缴纳凭证。具体材料清单可咨询鉴定机构。</p>
+                </article>
+                <article class="faq-item">
+                    <span class="tag">鉴定流程</span>
+                    <h4>对鉴定结果有异议怎么办？</h4>
+                    <p>如对鉴定结果有异议，可在收到报告之日起15个工作日内向原鉴定机构申请补充鉴定或重新鉴定。若仍有异议，可向上级司法鉴定管理部门投诉或向法院申请重新鉴定。</p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span data-year></span> MindSight 法医助手</p>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+    <script>
+        document.querySelectorAll('.knowledge-tabs button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.knowledge-tabs button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.knowledge-content').forEach(c => c.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.category-tags span').forEach(tag => {
+            tag.addEventListener('click', () => {
+                document.querySelectorAll('.category-tags span').forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
