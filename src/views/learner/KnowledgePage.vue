@@ -140,11 +140,11 @@ const learningPaths = ref([
 ])
 
 const resources = ref([
-  { id: 1, type: '法规标准', difficulty: 'easy', title: '人体损伤程度鉴定标准', desc: '最新版司法鉴定标准文件', prerequisites: '无', duration: '30分钟', views: 1250, progress: 60, collected: false },
-  { id: 2, type: '教材资料', difficulty: 'medium', title: '法医学概论', desc: '法医学基础理论教材', prerequisites: '法医入门', duration: '2小时', views: 890, progress: 0, collected: false },
-  { id: 3, type: '专题文章', difficulty: 'hard', title: '死亡时间推断研究进展', desc: '近年PMI研究综述', prerequisites: '法医病理学', duration: '1小时', views: 456, progress: 0, collected: false },
-  { id: 4, type: '教学视频', difficulty: 'medium', title: '法医病理学实操课程', desc: '尸体检验操作演示', prerequisites: '法医病理学', duration: '3小时', views: 2100, progress: 30, collected: false },
-  { id: 5, type: '法规标准', difficulty: 'easy', title: '医疗事故处理条例', desc: '相关法律法规汇编', prerequisites: '无', duration: '20分钟', views: 780, progress: 0, collected: false }
+  { id: 1, type: '法规标准', difficulty: 'A', title: '人体损伤程度鉴定标准', desc: '最新版司法鉴定标准文件', prerequisites: '无', duration: '30分钟', views: 1250, progress: 60, collected: false },
+  { id: 2, type: '教材资料', difficulty: 'B', title: '法医学概论', desc: '法医学基础理论教材', prerequisites: '法医入门', duration: '2小时', views: 890, progress: 0, collected: false },
+  { id: 3, type: '专题文章', difficulty: 'D', title: '死亡时间推断研究进展', desc: '近年PMI研究综述', prerequisites: '法医病理学', duration: '1小时', views: 456, progress: 0, collected: false },
+  { id: 4, type: '教学视频', difficulty: 'C', title: '法医病理学实操课程', desc: '尸体检验操作演示', prerequisites: '法医病理学', duration: '3小时', views: 2100, progress: 30, collected: false },
+  { id: 5, type: '法规标准', difficulty: 'A', title: '医疗事故处理条例', desc: '相关法律法规汇编', prerequisites: '无', duration: '20分钟', views: 780, progress: 0, collected: false }
 ])
 
 const filteredResources = computed(() => {
@@ -173,7 +173,7 @@ const relatedResources = computed(() => {
 })
 
 const getDifficultyLabel = (difficulty) => {
-  const map = { easy: '入门', medium: '进阶', hard: '精通' }
+  const map = { A: 'A级', B: 'B级', C: 'C级', D: 'D级', E: 'E级' }
   return map[difficulty] || difficulty
 }
 
@@ -367,17 +367,27 @@ const resetSearch = () => {
   border-radius: 4px;
 }
 
-.resource-difficulty.easy {
+.resource-difficulty.A {
   background: rgba(107, 203, 119, 0.15);
   color: #6bcb77;
 }
 
-.resource-difficulty.medium {
+.resource-difficulty.B {
+  background: rgba(64, 216, 197, 0.15);
+  color: #40d8c5;
+}
+
+.resource-difficulty.C {
   background: rgba(255, 217, 61, 0.15);
   color: #ffd93d;
 }
 
-.resource-difficulty.hard {
+.resource-difficulty.D {
+  background: rgba(255, 180, 84, 0.15);
+  color: #ffb454;
+}
+
+.resource-difficulty.E {
   background: rgba(255, 107, 107, 0.15);
   color: #ff6b6b;
 }

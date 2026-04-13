@@ -55,6 +55,24 @@ const routes = [
         name: 'learner-community',
         component: () => import('@/views/learner/CommunityPage.vue'),
         meta: { title: '学习社区' }
+      },
+      {
+        path: 'profile',
+        name: 'learner-profile',
+        component: () => import('@/views/learner/ProfilePage.vue'),
+        meta: { title: '个人空间' }
+      },
+      {
+        path: 'video-publish',
+        name: 'learner-video-publish',
+        component: () => import('@/views/learner/VideoPublishPage.vue'),
+        meta: { title: '发布视频' }
+      },
+      {
+        path: 'video-play/:id',
+        name: 'learner-video-play',
+        component: () => import('@/views/learner/VideoPlayPage.vue'),
+        meta: { title: '视频播放' }
       }
     ]
   },

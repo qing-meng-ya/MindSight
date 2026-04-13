@@ -9,6 +9,8 @@
           <router-link to="/learner/knowledge">知识库</router-link>
           <router-link to="/learner/cases">案例</router-link>
           <router-link to="/learner/community">社区</router-link>
+          <router-link to="/learner/video-publish">发布视频</router-link>
+          <router-link to="/learner/profile">个人空间</router-link>
         </nav>
         <div class="nav-auth">
           <span class="nav-greet">你好，{{ authStore.user?.name || '学习者' }}</span>

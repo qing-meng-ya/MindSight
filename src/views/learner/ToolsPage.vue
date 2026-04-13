@@ -32,24 +32,34 @@
         <div class="filter-options">
           <button 
             class="filter-btn" 
-            :class="{ active: filterDifficulty === 'all' }"
-            @click="filterDifficulty = 'all'"
+            :class="{ active: filterDifficulty === '' }"
+            @click="filterDifficulty = ''"
           >全部</button>
           <button 
             class="filter-btn" 
-            :class="{ active: filterDifficulty === 'easy' }"
-            @click="filterDifficulty = 'easy'"
-          >入门</button>
+            :class="{ active: filterDifficulty === 'A' }"
+            @click="filterDifficulty = 'A'"
+          >A级</button>
           <button 
             class="filter-btn" 
-            :class="{ active: filterDifficulty === 'medium' }"
-            @click="filterDifficulty = 'medium'"
-          >进阶</button>
+            :class="{ active: filterDifficulty === 'B' }"
+            @click="filterDifficulty = 'B'"
+          >B级</button>
           <button 
             class="filter-btn" 
-            :class="{ active: filterDifficulty === 'hard' }"
-            @click="filterDifficulty = 'hard'"
-          >精通</button>
+            :class="{ active: filterDifficulty === 'C' }"
+            @click="filterDifficulty = 'C'"
+          >C级</button>
+          <button 
+            class="filter-btn" 
+            :class="{ active: filterDifficulty === 'D' }"
+            @click="filterDifficulty = 'D'"
+          >D级</button>
+          <button 
+            class="filter-btn" 
+            :class="{ active: filterDifficulty === 'E' }"
+            @click="filterDifficulty = 'E'"
+          >E级</button>
         </div>
       </div>
     </div>
@@ -178,28 +188,11 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const filterMode = ref('all')
-const filterDifficulty = ref('all')
-
-const predictTools = ref([
-  { id: 1, name: '骨折预测', desc: '根据伤情预测骨折类型和程度', difficulty: 'medium', goal: '掌握骨折分类与鉴定要点', duration: '20分钟', inputs: 8, hasExercise: true },
-  { id: 2, name: '切片预测', desc: '组织切片图像AI辅助分析', difficulty: 'hard', goal: '理解病理切片判读方法', duration: '30分钟', inputs: 5, hasExercise: true }
-])
-
-const calcTools = ref([
-  { id: 3, name: '关节活动损失', desc: '肩/腕/腰颈关节活动度计算', difficulty: 'easy', goal: '掌握关节活动度测量方法', duration: '15分钟', inputs: 6, hasExercise: true },
-  { id: 4, name: '死亡时间估算', desc: '根据尸体现象推断PMI', difficulty: 'hard', goal: '了解PMI推断方法与误差', duration: '25分钟', inputs: 10, hasExercise: true },
-  { id: 5, name: '身高推算', desc: '根据长骨长度推算身高', difficulty: 'medium', goal: '掌握骨骼测量与身高推算', duration: '15分钟', inputs: 4, hasExercise: false },
-  { id: 6, name: '体表面积估算', desc: '使用Du Bois公式计算BSA', difficulty: 'easy', goal: '掌握BSA计算方法', duration: '10分钟', inputs: 3, hasExercise: false },
-  { id: 7, name: '烧伤面积计算', desc: '中国九分法估算烧伤面积', difficulty: 'medium', goal: '掌握烧伤面积估算方法', duration: '15分钟', inputs: 8, hasExercise: true },
-  { id: 8, name: '血液酒精浓度', desc: '根据饮酒量计算BAC', difficulty: 'easy', goal: '了解酒精代谢规律', duration: '10分钟', inputs: 5, hasExercise: true },
-  { id: 9, name: '车祸赔偿计算', desc: '交通事故赔偿金额估算', difficulty: 'hard', goal: '掌握赔偿计算方法', duration: '30分钟', inputs: 12, hasExercise: false },
-  { id: 10, name: '工伤赔偿计算', desc: '工伤保险待遇计算', difficulty: 'hard', goal: '掌握工伤赔偿标准', duration: '30分钟', inputs: 15, hasExercise: false },
-  { id: 11, name: '瘢痕面积计算', desc: '瘢痕面积与等级评估', difficulty: 'medium', goal: '掌握瘢痕评估方法', duration: '15分钟', inputs: 6, hasExercise: true }
-])
+const filterDifficulty = ref('')
 
 const filteredTools = computed(() => {
   let result = [...predictTools.value, ...calcTools.value]
-  if (filterDifficulty.value !== 'all') {
+  if (filterDifficulty.value) {
     result = result.filter(t => t.difficulty === filterDifficulty.value)
   }
   return result
@@ -207,7 +200,7 @@ const filteredTools = computed(() => {
 
 const filteredPredictTools = computed(() => {
   let result = predictTools.value
-  if (filterDifficulty.value !== 'all') {
+  if (filterDifficulty.value) {
     result = result.filter(t => t.difficulty === filterDifficulty.value)
   }
   return result
@@ -215,14 +208,14 @@ const filteredPredictTools = computed(() => {
 
 const filteredCalcTools = computed(() => {
   let result = calcTools.value
-  if (filterDifficulty.value !== 'all') {
+  if (filterDifficulty.value) {
     result = result.filter(t => t.difficulty === filterDifficulty.value)
   }
   return result
 })
 
 const getDifficultyLabel = (difficulty) => {
-  const map = { easy: '入门', medium: '进阶', hard: '精通' }
+  const map = { A: 'A级', B: 'B级', C: 'C级', D: 'D级', E: 'E级' }
   return map[difficulty] || difficulty
 }
 
@@ -232,7 +225,7 @@ const openTool = (tool) => {
 
 const resetFilter = () => {
   filterMode.value = 'all'
-  filterDifficulty.value = 'all'
+  filterDifficulty.value = ''
 }
 </script>
 
@@ -352,17 +345,27 @@ const resetFilter = () => {
   border-radius: 4px;
 }
 
-.tool-difficulty.easy {
+.tool-difficulty.A {
   background: rgba(107, 203, 119, 0.15);
   color: #6bcb77;
 }
 
-.tool-difficulty.medium {
+.tool-difficulty.B {
+  background: rgba(64, 216, 197, 0.15);
+  color: #40d8c5;
+}
+
+.tool-difficulty.C {
   background: rgba(255, 217, 61, 0.15);
   color: #ffd93d;
 }
 
-.tool-difficulty.hard {
+.tool-difficulty.D {
+  background: rgba(255, 180, 84, 0.15);
+  color: #ffb454;
+}
+
+.tool-difficulty.E {
   background: rgba(255, 107, 107, 0.15);
   color: #ff6b6b;
 }
