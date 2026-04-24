@@ -5,79 +5,64 @@
       <p class="section-note">通过工具掌握法医计算方法，提升实践能力</p>
     </div>
 
-    <!-- 顶部筛选 -->
     <div class="filter-bar panel">
       <div class="filter-group">
         <span class="filter-label">模式</span>
         <div class="filter-options">
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterMode === 'all' }"
-            @click="filterMode = 'all'"
-          >全部</button>
-          <button 
-            class="filter-btn" 
+          <button class="filter-btn" :class="{ active: filterMode === 'all' }" @click="filterMode = 'all'">
+            全部
+          </button>
+          <button
+            class="filter-btn"
             :class="{ active: filterMode === 'learn' }"
             @click="filterMode = 'learn'"
-          >学习模式</button>
-          <button 
-            class="filter-btn" 
+          >
+            学习模式
+          </button>
+          <button
+            class="filter-btn"
             :class="{ active: filterMode === 'quick' }"
             @click="filterMode = 'quick'"
-          >快速计算</button>
+          >
+            快速计算
+          </button>
         </div>
       </div>
       <div class="filter-group">
         <span class="filter-label">难度</span>
         <div class="filter-options">
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterDifficulty === '' }"
-            @click="filterDifficulty = ''"
-          >全部</button>
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterDifficulty === 'A' }"
-            @click="filterDifficulty = 'A'"
-          >A级</button>
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterDifficulty === 'B' }"
-            @click="filterDifficulty = 'B'"
-          >B级</button>
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterDifficulty === 'C' }"
-            @click="filterDifficulty = 'C'"
-          >C级</button>
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterDifficulty === 'D' }"
-            @click="filterDifficulty = 'D'"
-          >D级</button>
-          <button 
-            class="filter-btn" 
-            :class="{ active: filterDifficulty === 'E' }"
-            @click="filterDifficulty = 'E'"
-          >E级</button>
+          <button class="filter-btn" :class="{ active: filterDifficulty === '' }" @click="filterDifficulty = ''">
+            全部
+          </button>
+          <button class="filter-btn" :class="{ active: filterDifficulty === 'A' }" @click="filterDifficulty = 'A'">
+            A级
+          </button>
+          <button class="filter-btn" :class="{ active: filterDifficulty === 'B' }" @click="filterDifficulty = 'B'">
+            B级
+          </button>
+          <button class="filter-btn" :class="{ active: filterDifficulty === 'C' }" @click="filterDifficulty = 'C'">
+            C级
+          </button>
+          <button class="filter-btn" :class="{ active: filterDifficulty === 'D' }" @click="filterDifficulty = 'D'">
+            D级
+          </button>
+          <button class="filter-btn" :class="{ active: filterDifficulty === 'E' }" @click="filterDifficulty = 'E'">
+            E级
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- 预测工具 -->
     <div class="tool-category panel">
       <h2>预测工具</h2>
       <p class="category-desc">基于伤情数据预测损伤类型和程度</p>
       <div class="tool-grid">
-        <div 
-          v-for="tool in filteredPredictTools" 
-          :key="tool.id" 
-          class="tool-card"
-          @click="openTool(tool)"
-        >
+        <div v-for="tool in filteredPredictTools" :key="tool.id" class="tool-card" @click="openTool(tool)">
           <div class="tool-header">
             <span class="tool-name">{{ tool.name }}</span>
-            <span class="tool-difficulty" :class="tool.difficulty">{{ getDifficultyLabel(tool.difficulty) }}</span>
+            <span class="tool-difficulty" :class="tool.difficulty">
+              {{ getDifficultyLabel(tool.difficulty) }}
+            </span>
           </div>
           <p class="tool-desc">{{ tool.desc }}</p>
           <div class="tool-meta">
@@ -105,20 +90,16 @@
       </div>
     </div>
 
-    <!-- 计算估算工具 -->
     <div class="tool-category panel">
       <h2>计算估算工具</h2>
       <p class="category-desc">专业法医计算与估算工具</p>
       <div class="tool-grid">
-        <div 
-          v-for="tool in filteredCalcTools" 
-          :key="tool.id" 
-          class="tool-card"
-          @click="openTool(tool)"
-        >
+        <div v-for="tool in filteredCalcTools" :key="tool.id" class="tool-card" @click="openTool(tool)">
           <div class="tool-header">
             <span class="tool-name">{{ tool.name }}</span>
-            <span class="tool-difficulty" :class="tool.difficulty">{{ getDifficultyLabel(tool.difficulty) }}</span>
+            <span class="tool-difficulty" :class="tool.difficulty">
+              {{ getDifficultyLabel(tool.difficulty) }}
+            </span>
           </div>
           <p class="tool-desc">{{ tool.desc }}</p>
           <div class="tool-meta">
@@ -146,13 +127,11 @@
       </div>
     </div>
 
-    <!-- 空状态 -->
     <div class="empty-state panel" v-if="filteredTools.length === 0">
       <p>暂无符合条件的工具</p>
       <button class="btn btn-outline" @click="resetFilter">重置筛选</button>
     </div>
 
-    <!-- 学习模式说明 -->
     <section class="mode-info panel">
       <h3>两种模式的区别</h3>
       <div class="mode-comparison">
@@ -182,37 +161,51 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { getAllTools } from '../../utils/toolDataService.js'
 
 const router = useRouter()
 
 const filterMode = ref('all')
 const filterDifficulty = ref('')
+const allTools = getAllTools()
 
-const filteredTools = computed(() => {
-  let result = [...predictTools.value, ...calcTools.value]
+const predictTools = computed(() => {
+  let result = allTools.filter(
+    (tool) =>
+      tool.toolType === 'predict' ||
+      tool.formulaType.includes('predict') ||
+      tool.formulaType.includes('estimation') ||
+      tool.formulaType.includes('inference') ||
+      tool.formulaType.includes('pmi') ||
+      tool.formulaType.includes('diatom') ||
+      tool.formulaType.includes('weapon')
+  )
+
   if (filterDifficulty.value) {
-    result = result.filter(t => t.difficulty === filterDifficulty.value)
+    result = result.filter((tool) => tool.difficulty === filterDifficulty.value)
   }
+
   return result
 })
 
-const filteredPredictTools = computed(() => {
-  let result = predictTools.value
+const calcTools = computed(() => {
+  const predictIds = new Set(predictTools.value.map((tool) => tool.id))
+  let result = allTools.filter((tool) => !predictIds.has(tool.id))
+
   if (filterDifficulty.value) {
-    result = result.filter(t => t.difficulty === filterDifficulty.value)
+    result = result.filter((tool) => tool.difficulty === filterDifficulty.value)
   }
+
   return result
 })
 
-const filteredCalcTools = computed(() => {
-  let result = calcTools.value
-  if (filterDifficulty.value) {
-    result = result.filter(t => t.difficulty === filterDifficulty.value)
-  }
-  return result
-})
+const filteredTools = computed(() => [...predictTools.value, ...calcTools.value])
+
+const filteredPredictTools = computed(() => predictTools.value)
+
+const filteredCalcTools = computed(() => calcTools.value)
 
 const getDifficultyLabel = (difficulty) => {
   const map = { A: 'A级', B: 'B级', C: 'C级', D: 'D级', E: 'E级' }
@@ -220,7 +213,7 @@ const getDifficultyLabel = (difficulty) => {
 }
 
 const openTool = (tool) => {
-  console.log('打开工具:', tool.name)
+  router.push({ name: 'tool-detail', params: { id: tool.id } })
 }
 
 const resetFilter = () => {
@@ -470,7 +463,7 @@ const resetFilter = () => {
   .filter-bar {
     flex-direction: column;
   }
-  
+
   .mode-comparison {
     grid-template-columns: 1fr;
   }

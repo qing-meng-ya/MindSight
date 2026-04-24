@@ -818,8 +818,6 @@ a {
     }
 }
 
-
-
 @media (prefers-reduced-motion: reduce) {
     .book-page {
         transition: opacity 0.4s ease;
@@ -831,9 +829,3 @@ a {
         transform: none !important;
     }
 }
-
-
-
-
-
-

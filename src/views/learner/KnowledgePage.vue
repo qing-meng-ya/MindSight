@@ -5,20 +5,18 @@
       <p class="section-note">系统化学习法医知识，从这里开始</p>
     </div>
 
-    <!-- 顶部搜索 -->
     <div class="search-box panel">
-      <input 
-        v-model="searchKeyword" 
-        type="text" 
-        placeholder="搜索术语、法规、案例、疾病、损伤类型..." 
+      <input
+        v-model="searchKeyword"
+        type="text"
+        placeholder="搜索术语、法规、案例、疾病、损伤类型..."
         class="search-input"
       />
     </div>
 
-    <!-- 分类切换 -->
     <div class="filter-bar panel">
-      <button 
-        v-for="cat in categories" 
+      <button
+        v-for="cat in categories"
         :key="cat.id"
         class="filter-btn"
         :class="{ active: activeCategory === cat.id }"
@@ -28,17 +26,11 @@
       </button>
     </div>
 
-    <!-- 推荐路径 -->
     <section class="path-recommend panel" v-if="!searchKeyword && !activeCategory">
       <h2>推荐学习路径</h2>
       <p class="path-hint">根据您的学习阶段推荐</p>
       <div class="path-cards">
-        <div 
-          v-for="path in learningPaths" 
-          :key="path.id"
-          class="path-card"
-          @click="startPath(path)"
-        >
+        <div v-for="path in learningPaths" :key="path.id" class="path-card" @click="startPath(path)">
           <div class="path-header">
             <h3>{{ path.name }}</h3>
             <span class="path-level">{{ path.level }}</span>
@@ -52,17 +44,18 @@
       </div>
     </section>
 
-    <!-- 资源列表 -->
     <div class="resource-list">
       <div v-for="item in filteredResources" :key="item.id" class="resource-card panel">
         <div class="card-header">
           <span class="resource-type">{{ item.type }}</span>
-          <span class="resource-difficulty" :class="item.difficulty">{{ getDifficultyLabel(item.difficulty) }}</span>
+          <span class="resource-difficulty" :class="item.difficulty">
+            {{ getDifficultyLabel(item.difficulty) }}
+          </span>
         </div>
-        
+
         <h3 class="resource-title">{{ item.title }}</h3>
         <p class="resource-desc">{{ item.desc }}</p>
-        
+
         <div class="resource-meta">
           <span class="meta-item">
             <span class="meta-label">前置知识</span>
@@ -81,7 +74,7 @@
             <span class="meta-value">{{ item.progress }}%</span>
           </span>
         </div>
-        
+
         <div class="card-actions">
           <button class="btn btn-primary" @click="startLearning(item)">
             {{ item.progress ? '继续学习' : '开始学习' }}
@@ -93,19 +86,17 @@
       </div>
     </div>
 
-    <!-- 空状态 -->
     <div class="empty-state panel" v-if="filteredResources.length === 0">
       <h3>暂无相关资源</h3>
       <p>试试调整搜索条件或浏览其他分类</p>
       <button class="btn btn-outline" @click="resetSearch">重置筛选</button>
     </div>
 
-    <!-- 底部相关推荐 -->
     <section class="related-section panel" v-if="currentResource">
       <h3>相关推荐</h3>
       <div class="related-list">
-        <div 
-          v-for="rel in relatedResources" 
+        <div
+          v-for="rel in relatedResources"
           :key="rel.id"
           class="related-item"
           @click="startLearning(rel)"
@@ -119,7 +110,9 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
+import { getStandards, getSubjects } from '../../utils/toolDataService.js'
+import documentIndex from '../../data/documentIndex.json'
 
 const searchKeyword = ref('')
 const activeCategory = ref('')
@@ -133,42 +126,106 @@ const categories = ref([
   { id: 'video', name: '教学视频' }
 ])
 
-const learningPaths = ref([
-  { id: 1, name: '法医入门', level: '入门', desc: '法医学基本概念与理论', duration: '2小时', count: 12 },
-  { id: 2, name: '损伤鉴定', level: '进阶', desc: '损伤类型与鉴定方法', duration: '4小时', count: 18 },
-  { id: 3, name: '法医病理学', level: '精通', desc: '尸体检验与死亡原因', duration: '6小时', count: 15 }
-])
+const subjects = getSubjects()
+const standards = getStandards()
+const documents = documentIndex.documents ?? []
 
-const resources = ref([
-  { id: 1, type: '法规标准', difficulty: 'A', title: '人体损伤程度鉴定标准', desc: '最新版司法鉴定标准文件', prerequisites: '无', duration: '30分钟', views: 1250, progress: 60, collected: false },
-  { id: 2, type: '教材资料', difficulty: 'B', title: '法医学概论', desc: '法医学基础理论教材', prerequisites: '法医入门', duration: '2小时', views: 890, progress: 0, collected: false },
-  { id: 3, type: '专题文章', difficulty: 'D', title: '死亡时间推断研究进展', desc: '近年PMI研究综述', prerequisites: '法医病理学', duration: '1小时', views: 456, progress: 0, collected: false },
-  { id: 4, type: '教学视频', difficulty: 'C', title: '法医病理学实操课程', desc: '尸体检验操作演示', prerequisites: '法医病理学', duration: '3小时', views: 2100, progress: 30, collected: false },
-  { id: 5, type: '法规标准', difficulty: 'A', title: '医疗事故处理条例', desc: '相关法律法规汇编', prerequisites: '无', duration: '20分钟', views: 780, progress: 0, collected: false }
-])
+const learningPaths = computed(() =>
+  subjects.map((subject, idx) => ({
+    id: subject.id,
+    name: subject.name,
+    level: idx < 2 ? '入门' : idx < 4 ? '进阶' : '精通',
+    desc: subject.description,
+    duration: `${Math.max(1, Math.ceil(subject.tools.length / 2))}小时`,
+    count: subject.tools.length + subject.relatedBooks.length + subject.atlas.length
+  }))
+)
+
+const resources = computed(() => {
+  const result = []
+  let id = 1
+
+  standards.forEach((standard, idx) => {
+    result.push({
+      id: id++,
+      type: '法规标准',
+      difficulty: 'A',
+      title: `${standard.code} ${standard.name}`,
+      desc:
+        standard.applicable && standard.applicable.length
+          ? `适用：${standard.applicable.join('、')}`
+          : '法医标准与规范资料',
+      prerequisites: '无',
+      duration: '20分钟',
+      views: 600 + ((idx + 3) * 37) % 1200,
+      progress: 0,
+      collected: false,
+      category: 'law'
+    })
+  })
+
+  documents.slice(0, 18).forEach((doc, idx) => {
+    result.push({
+      id: id++,
+      type: '教材资料',
+      difficulty: idx % 3 === 0 ? 'B' : 'C',
+      title: doc.title || doc.filename,
+      desc: doc.subCategory ? `${doc.subCategory}相关资料` : '法医学参考资料',
+      prerequisites: '法医入门',
+      duration: `${(idx % 3) + 1}小时`,
+      views: 300 + ((idx + 5) * 47) % 900,
+      progress: 0,
+      collected: false,
+      category: 'book'
+    })
+  })
+
+  subjects.forEach((subject, idx) => {
+    result.push({
+      id: id++,
+      type: '专题文章',
+      difficulty: subject.tools.some((tool) => tool.difficulty === 'A') ? 'D' : 'C',
+      title: `${subject.name}专题导读`,
+      desc: subject.description,
+      prerequisites: idx === 0 ? '无' : '法医入门',
+      duration: '1小时',
+      views: 240 + ((idx + 7) * 53) % 700,
+      progress: 0,
+      collected: false,
+      category: 'article'
+    })
+  })
+
+  return result
+})
 
 const filteredResources = computed(() => {
   let result = resources.value
-  
+
   if (searchKeyword.value) {
     const keyword = searchKeyword.value.toLowerCase()
-    result = result.filter(r => 
-      r.title.toLowerCase().includes(keyword) || 
-      r.desc.toLowerCase().includes(keyword)
+    result = result.filter(
+      (resource) =>
+        resource.title.toLowerCase().includes(keyword) ||
+        resource.desc.toLowerCase().includes(keyword)
     )
   }
-  
+
   if (activeCategory.value) {
-    result = result.filter(r => r.type === getCategoryName(activeCategory.value))
+    result = result.filter((resource) => resource.type === getCategoryName(activeCategory.value))
   }
-  
+
   return result
 })
 
 const relatedResources = computed(() => {
   if (!currentResource.value) return []
+
   return resources.value
-    .filter(r => r.id !== currentResource.value.id)
+    .filter(
+      (resource) =>
+        resource.id !== currentResource.value.id && resource.type === currentResource.value.type
+    )
     .slice(0, 4)
 })
 
@@ -178,8 +235,8 @@ const getDifficultyLabel = (difficulty) => {
 }
 
 const getCategoryName = (id) => {
-  const cat = categories.value.find(c => c.id === id)
-  return cat ? cat.name : ''
+  const category = categories.value.find((item) => item.id === id)
+  return category ? category.name : ''
 }
 
 const startPath = (path) => {

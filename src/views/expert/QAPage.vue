@@ -140,18 +140,19 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { getSubjects } from '../../utils/toolDataService.js'
 
 const showAskForm = ref(false)
 const viewMode = ref('pending')
 const activeTopic = ref('')
 
-const topics = ref([
-  { id: 'disability', name: '伤残评级', count: 12 },
-  { id: 'nursing', name: '护理依赖', count: 8 },
-  { id: 'death', name: '死亡时间', count: 6 },
-  { id: 'injury', name: '损伤程度', count: 15 },
-  { id: 'forensic', name: '法医物证', count: 5 }
-])
+// 使用真实学科数据作为专题
+const subjects = getSubjects()
+const topics = ref(subjects.map(s => ({
+  id: s.id,
+  name: s.name,
+  count: s.tools.length + 2
+})))
 
 const newQuestion = ref({
   topic: '',
@@ -163,7 +164,7 @@ const newQuestion = ref({
 const questions = ref([
   { 
     id: 1, 
-    tag: '伤残评级', 
+    tag: '法医临床学', 
     status: 'answered', 
     title: '关于肋骨骨折伤残评级的疑问', 
     content: '患者双侧多发肋骨骨折（共计8根），但没有达到胸廓畸形程度，应该评几级伤残？',
@@ -172,11 +173,11 @@ const questions = ref([
     replies: 3, 
     caseType: '交通事故',
     answerType: 'standard',
-    answer: '根据GB/T 2023标准，8根肋骨骨折可评定为九级伤残。如合并胸廓畸形可考虑八级。具体需要结合影像资料和功能丧失情况综合评定。'
+    answer: '根据SF/T 0111-2021《法医临床学检验规范》及GB/T 16180-2014《劳动能力鉴定》标准，8根肋骨骨折可评定为九级伤残。如合并胸廓畸形可考虑八级。具体需要结合影像资料和功能丧失情况综合评定。'
   },
   { 
     id: 2, 
-    tag: '护理依赖', 
+    tag: '赔偿计算', 
     status: 'pending', 
     title: '护理依赖程度如何评定？', 
     content: '脑外伤后植物生存状态的患者，护理依赖程度如何划分？是否需要24小时陪护？',
@@ -188,7 +189,7 @@ const questions = ref([
   },
   { 
     id: 3, 
-    tag: '损伤程度', 
+    tag: '法医临床学', 
     status: 'answered', 
     title: '外伤性鼓膜穿孔的损伤程度鉴定', 
     content: '外伤性鼓膜穿孔愈合后，听力恢复正常，如何评定损伤程度？',
@@ -197,11 +198,11 @@ const questions = ref([
     replies: 2, 
     caseType: '人身伤害',
     answerType: 'experience',
-    answer: '根据《人体损伤程度鉴定标准》，外伤性鼓膜穿孔评定为轻微伤。如愈合后听力完全恢复，可不评定损伤程度。建议关注是否有遗留后遗症。'
+    answer: '根据GB/T 44893-2024《听觉功能障碍法医临床鉴定技术规范》，外伤性鼓膜穿孔评定为轻微伤。如愈合后听力完全恢复，可不评定损伤程度。建议关注是否有遗留后遗症。'
   },
   { 
     id: 4, 
-    tag: '死亡时间', 
+    tag: '法医病理学', 
     status: 'pending', 
     title: '尸体腐败对PMI判断的影响', 
     content: '在高温环境下，尸体腐败进程加快，PMI推断误差会增大多少？',

@@ -17,6 +17,22 @@
     --radius-sm: 10px;
 }
 
+[data-theme="light"] {
+    --bg-0: #f0f2f5;
+    --bg-1: #e4e7ec;
+    --panel: #ffffff;
+    --panel-strong: #f5f7fa;
+    --line: rgba(0, 0, 0, 0.1);
+    --text-main: #1a1a2e;
+    --text-muted: #5a6a7a;
+    --accent: #0d9488;
+    --accent-2: #d97706;
+    --danger: #dc2626;
+    --ok: #16a34a;
+    --warn: #ca8a04;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -34,6 +50,12 @@ body {
                 radial-gradient(circle at 90% 0%, #593f26 0%, transparent 38%),
                 linear-gradient(140deg, var(--bg-0), var(--bg-1));
     line-height: 1.5;
+}
+
+[data-theme="light"] body {
+    background: radial-gradient(circle at 10% -20%, #bfdbfe 0%, transparent 45%),
+                radial-gradient(circle at 90% 0%, #fed7aa 0%, transparent 38%),
+                linear-gradient(140deg, var(--bg-0), var(--bg-1));
 }
 
 a {
@@ -69,6 +91,10 @@ a {
     border-bottom: 1px solid var(--line);
     background: rgba(8, 13, 22, 0.78);
     backdrop-filter: blur(14px);
+}
+
+[data-theme="light"] .top-nav {
+    background: rgba(255, 255, 255, 0.85);
 }
 
 .nav-inner {
@@ -107,6 +133,11 @@ a {
     background: rgba(255, 255, 255, 0.08);
 }
 
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active {
+    background: rgba(0, 0, 0, 0.06);
+}
+
 /* 按钮 */
 .btn {
     display: inline-flex;
@@ -123,9 +154,18 @@ a {
     transition: all 0.2s ease;
 }
 
+[data-theme="light"] .btn {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.7);
+}
+
 .btn:hover {
     background: rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
+}
+
+[data-theme="light"] .btn:hover {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .btn-primary {
@@ -134,9 +174,19 @@ a {
     color: var(--accent);
 }
 
+[data-theme="light"] .btn-primary {
+    background: rgba(13, 148, 136, 0.1);
+    border-color: rgba(13, 148, 136, 0.4);
+    color: var(--accent);
+}
+
 .btn-primary:hover {
     background: rgba(64, 216, 197, 0.25);
     border-color: var(--accent);
+}
+
+[data-theme="light"] .btn-primary:hover {
+    background: rgba(13, 148, 136, 0.18);
 }
 
 /* 卡片 */
@@ -145,6 +195,11 @@ a {
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     padding: 24px;
+}
+
+[data-theme="light"] .panel {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow);
 }
 
 /* 页面区块 */
@@ -175,6 +230,36 @@ a {
     color: var(--text-muted);
     font-size: 13px;
     border-top: 1px solid var(--line);
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--line);
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--accent);
+}
+
+[data-theme="light"] .theme-toggle {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 /* 响应式 */

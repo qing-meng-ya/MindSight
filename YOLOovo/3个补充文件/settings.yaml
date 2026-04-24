@@ -1,0 +1,6 @@
+datasets_dir: .
+weights_dir: weights
+runs_dir: runs
+sync: true
+uuid: 1103823437824
+settings_version: 0.0.1

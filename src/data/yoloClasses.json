@@ -1,0 +1,9 @@
+{
+  "0": { "name": "结构类型A", "description": "待定义——请在YOLOovo/api/model.py和本文件中更新实际名称", "color": "#ff6b6b" },
+  "1": { "name": "结构类型B", "description": "待定义——请在YOLOovo/api/model.py和本文件中更新实际名称", "color": "#4ecdc4" },
+  "2": { "name": "结构类型C", "description": "待定义——请在YOLOovo/api/model.py和本文件中更新实际名称", "color": "#45b7d1" },
+  "3": { "name": "类别3", "description": "预留类别，当前数据集无标注", "color": "#96ceb4" },
+  "4": { "name": "类别4", "description": "预留类别，当前数据集无标注", "color": "#ffeaa7" },
+  "5": { "name": "类别5", "description": "预留类别，当前数据集无标注", "color": "#dfe6e9" },
+  "6": { "name": "类别6", "description": "预留类别，当前数据集无标注", "color": "#fd79a8" }
+}

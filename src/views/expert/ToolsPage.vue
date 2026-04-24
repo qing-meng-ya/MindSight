@@ -46,7 +46,7 @@
               </span>
               <span class="meta-item">
                 <span class="meta-label">依据标准</span>
-                <span class="meta-value">{{ tool.standard }}</span>
+                <span class="meta-value">{{ tool.standardNames }}</span>
               </span>
             </div>
             <div class="tool-actions">
@@ -89,7 +89,7 @@
               </span>
               <span class="meta-item">
                 <span class="meta-label">依据标准</span>
-                <span class="meta-value">{{ tool.standard }}</span>
+                <span class="meta-value">{{ tool.standardNames }}</span>
               </span>
               <span class="meta-item">
                 <span class="meta-label">更新时间</span>
@@ -135,7 +135,7 @@
               </span>
               <span class="meta-item">
                 <span class="meta-label">依据标准</span>
-                <span class="meta-value">{{ tool.standard }}</span>
+                <span class="meta-value">{{ tool.standardNames }}</span>
               </span>
             </div>
             <div class="tool-actions">
@@ -177,7 +177,7 @@
               </span>
               <span class="meta-item">
                 <span class="meta-label">依据标准</span>
-                <span class="meta-value">{{ tool.standard }}</span>
+                <span class="meta-value">{{ tool.standardNames }}</span>
               </span>
             </div>
             <div class="tool-actions">
@@ -277,46 +277,116 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { getAllTools, searchTools } from '../../utils/toolDataService.js'
+import { usePersistentState, usePersistentList } from '../../composables/usePersistentState.js'
 
 const router = useRouter()
 
 const searchKeyword = ref('')
 
-const highFrequencyTools = ref([
-  { id: 1, name: '关节活动度计算', desc: '关节活动度损失程度计算', inputs: 8, scenario: '伤残鉴定', standard: 'GB/T 2023', supportBatch: true, favorited: false, lastUsed: '刚刚' },
-  { id: 2, name: '伤残等级评定', desc: '根据伤情评定伤残等级', inputs: 12, scenario: '伤残鉴定', standard: 'GB/T 2023', supportBatch: true, favorited: true, lastUsed: '2小时前' },
-  { id: 3, name: '护理期计算', desc: '护理期限评估', inputs: 6, scenario: '护理依赖', standard: 'GA/T 1193', supportBatch: false, favorited: false, lastUsed: '昨天' }
-])
+// 从真实文档数据构建工具列表
+const allTools = getAllTools()
 
-const predictTools = ref([
-  { id: 4, name: '骨折预测', desc: '根据伤情预测骨折类型和程度', inputs: 10, scenario: '损伤鉴定', standard: 'SF/T 0104', supportBatch: true, favorited: false, updateTime: '2024-02' },
-  { id: 5, name: '切片预测', desc: '组织切片AI辅助分析', inputs: 5, scenario: '病理鉴定', standard: '行业规范', supportBatch: false, favorited: false, updateTime: '2024-01' }
-])
+// 持久化：收藏工具ID列表
+const favoriteToolIds = usePersistentList('expert:favoriteToolIds', [])
 
-const forensicTools = ref([
-  { id: 6, name: '死亡时间估算', desc: 'PMI计算与推断', inputs: 15, scenario: '死亡鉴定', standard: 'SF/T 0107', supportBatch: false, favorited: false },
-  { id: 7, name: '身高推算', desc: '根据骨骼长度推算身高', inputs: 4, scenario: '个人识别', standard: '法医人类学', supportBatch: true, favorited: false },
-  { id: 8, name: '体表面积估算', desc: 'Du Bois公式计算BSA', inputs: 3, scenario: '烧伤评估', standard: '医学标准', supportBatch: false, favorited: false },
-  { id: 9, name: '烧伤面积计算', desc: '中国九分法估算烧伤面积', inputs: 8, scenario: '烧伤评估', standard: '临床标准', supportBatch: false, favorited: false },
-  { id: 10, name: '血液酒精浓度', desc: 'BAC计算', inputs: 5, scenario: '毒物分析', standard: 'GA/T 842', supportBatch: false, favorited: false }
-])
+// 持久化：最近使用记录 [{id, name, time}]
+const recentToolUsages = usePersistentList('expert:recentToolUsages', [], 20)
 
-const compensationTools = ref([
-  { id: 11, name: '车祸赔偿计算', desc: '交通事故赔偿金额估算', inputs: 18, scenario: '赔偿鉴定', standard: '民法典+交强险', supportBatch: true, favorited: false },
-  { id: 12, name: '工伤赔偿计算', desc: '工伤保险待遇计算', inputs: 20, scenario: '工伤鉴定', standard: '工伤保险条例', supportBatch: true, favorited: false },
-  { id: 13, name: '瘢痕面积计算', desc: '瘢痕面积与等级评估', inputs: 6, scenario: '伤残鉴定', standard: 'GB/T 2023', supportBatch: false, favorited: false }
-])
+// 判断工具是否已收藏
+const isFavorited = (toolId) => favoriteToolIds.value.includes(toolId)
 
-const recentUsedTools = computed(() => highFrequencyTools.value.filter(t => t.lastUsed))
+// 高频工具：临床+赔偿类常用工具（支持批量处理）
+const highFrequencyTools = computed(() => {
+  let result
+  if (searchKeyword.value) {
+    result = searchTools(searchKeyword.value).filter(t => t.supportBatch)
+  } else {
+    result = allTools.filter(t => t.supportBatch).slice(0, 6)
+  }
+  // 注入收藏状态
+  return result.map(t => ({ ...t, favorited: isFavorited(t.id) }))
+})
 
-const favoriteTools = computed(() => [...highFrequencyTools.value, ...predictTools.value, ...forensicTools.value].filter(t => t.favorited))
+// 预测分析类工具
+const predictTools = computed(() => {
+  let result
+  if (searchKeyword.value) {
+    result = searchTools(searchKeyword.value).filter(t => 
+      t.formulaType.includes('predict') || 
+      t.formulaType.includes('estimation') ||
+      t.formulaType.includes('inference') ||
+      t.formulaType.includes('pmi') ||
+      t.formulaType.includes('diatom') ||
+      t.formulaType.includes('weapon')
+    )
+  } else {
+    result = allTools.filter(t => 
+      t.formulaType.includes('predict') || 
+      t.formulaType.includes('estimation') ||
+      t.formulaType.includes('inference') ||
+      t.formulaType.includes('pmi') ||
+      t.formulaType.includes('diatom') ||
+      t.formulaType.includes('weapon')
+    )
+  }
+  return result.map(t => ({ ...t, favorited: isFavorited(t.id) }))
+})
+
+// 法医估算工具：法医病理+毒物+人类学
+const forensicTools = computed(() => {
+  let result
+  if (searchKeyword.value) {
+    result = searchTools(searchKeyword.value).filter(t => t.category === 'forensic' || t.category === 'evidence')
+  } else {
+    result = allTools.filter(t => t.category === 'forensic' || t.category === 'evidence')
+  }
+  return result.map(t => ({ ...t, favorited: isFavorited(t.id) }))
+})
+
+// 赔偿相关工具
+const compensationTools = computed(() => {
+  let result
+  if (searchKeyword.value) {
+    result = searchTools(searchKeyword.value).filter(t => t.category === 'compensation' || t.category === 'traffic' || t.category === 'clinical')
+  } else {
+    result = allTools.filter(t => t.category === 'compensation' || t.category === 'traffic' || t.category === 'clinical')
+  }
+  return result.map(t => ({ ...t, favorited: isFavorited(t.id) }))
+})
+
+const recentUsedTools = computed(() => {
+  return recentToolUsages.value
+    .slice(0, 5)
+    .map(r => {
+      const tool = allTools.find(t => t.id === r.id)
+      return tool ? { ...tool, lastUsed: r.time } : null
+    })
+    .filter(Boolean)
+})
+
+const favoriteTools = computed(() => {
+  return allTools
+    .filter(t => isFavorited(t.id))
+    .map(t => ({ ...t, favorited: true }))
+})
 
 const openTool = (tool) => {
-  console.log('打开工具:', tool.name)
+  // 记录最近使用
+  const existing = recentToolUsages.value.findIndex(r => r.id === tool.id)
+  if (existing >= 0) recentToolUsages.value.splice(existing, 1)
+  recentToolUsages.value.unshift({ id: tool.id, name: tool.name, time: '刚刚' })
+  
+  router.push({ name: 'tool-detail', params: { id: tool.id } })
 }
 
 const toggleFavorite = (tool) => {
-  tool.favorited = !tool.favorited
+  const idx = favoriteToolIds.value.indexOf(tool.id)
+  if (idx >= 0) {
+    favoriteToolIds.value.splice(idx, 1)
+  } else {
+    favoriteToolIds.value.push(tool.id)
+  }
 }
 
 const openBatch = (tool) => {

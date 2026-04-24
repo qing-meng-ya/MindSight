@@ -107,12 +107,47 @@ const routes = [
         meta: { title: '在线答疑' }
       },
       {
+        path: 'profile',
+        name: 'expert-profile',
+        component: () => import('@/views/expert/ProfilePage.vue'),
+        meta: { title: '个人中心' }
+      },
+      {
         path: 'nursing',
-        name: 'expert-nursing',
-        component: () => import('@/views/expert/NursingPage.vue'),
-        meta: { title: '护理计算' }
+        redirect: { name: 'expert-tools' }
+      },
+      {
+        path: 'ai-predict',
+        name: 'expert-ai-predict',
+        component: () => import('@/views/expert/AIPredictPage.vue'),
+        meta: { title: 'AI智能预测' }
+      },
+      {
+        path: 'yolo-image',
+        name: 'expert-yolo-image',
+        component: () => import('@/views/expert/YoloImagePage.vue'),
+        meta: { title: 'YOLO超声影像分析' }
+      },
+      {
+        path: 'batch-calc',
+        name: 'expert-batch-calc',
+        component: () => import('@/views/expert/BatchCalcPage.vue'),
+        meta: { title: '批量计算中心' }
+      },
+      {
+        path: 'cases',
+        name: 'expert-cases',
+        component: () => import('@/views/expert/CaseManagePage.vue'),
+        meta: { title: '案件管理' }
       }
     ]
+  },
+  // 工具计算页面（通用，不区分角色）
+  {
+    path: '/tool/:id',
+    name: 'tool-detail',
+    component: () => import('@/views/expert/ToolDetailPage.vue'),
+    meta: { title: '工具计算', requiresAuth: true }
   },
   // 咨询者路由
   {

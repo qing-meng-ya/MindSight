@@ -1,5 +1,8 @@
 <template>
   <div class="home-page">
+    <button class="theme-toggle home-theme-toggle" @click="themeStore.toggleTheme" :title="themeStore.isDark ? '切换浅色模式' : '切换深色模式'">
+      {{ themeStore.isDark ? '☀️' : '🌙' }}
+    </button>
     <section class="hero-intro panel">
       <p class="section-note">司法辅助业务平台</p>
       <h1 class="gradient-title">法医专业辅助系统</h1>
@@ -88,12 +91,22 @@
 </template>
 
 <script setup>
+import { useThemeStore } from '@/stores/theme'
+const themeStore = useThemeStore()
 </script>
 
 <style scoped>
 .home-page {
   display: grid;
   gap: 28px;
+  position: relative;
+}
+
+.home-theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
 }
 
 .hero-intro {

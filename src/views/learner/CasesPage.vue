@@ -5,15 +5,14 @@
       <p class="section-note">经典案例分析、实战经验分享</p>
     </div>
 
-    <!-- 筛选栏 -->
     <div class="filter-bar panel">
       <div class="filter-group">
         <input v-model="search" type="text" placeholder="搜索案例..." class="search-input" />
       </div>
       <div class="filter-group">
-        <button 
-          v-for="cat in categories" 
-          :key="cat.id" 
+        <button
+          v-for="cat in categories"
+          :key="cat.id"
           class="filter-btn"
           :class="{ active: activeCategory === cat.id }"
           @click="activeCategory = cat.id"
@@ -23,7 +22,6 @@
       </div>
     </div>
 
-    <!-- 案例列表 -->
     <div class="case-list">
       <div v-for="c in filteredCases" :key="c.id" class="case-card panel" @click="viewCase(c)">
         <div class="case-header">
@@ -43,14 +41,15 @@
       </div>
     </div>
 
-    <!-- 案例详情弹窗 -->
     <div v-if="selectedCase" class="modal" @click.self="selectedCase = null">
       <div class="modal-content panel case-detail">
         <div class="modal-header">
           <div>
             <h2>{{ selectedCase.title }}</h2>
             <div class="case-meta">
-              <span class="case-difficulty" :class="'diff-' + selectedCase.difficulty">{{ selectedCase.difficulty }}级</span>
+              <span class="case-difficulty" :class="'diff-' + selectedCase.difficulty">
+                {{ selectedCase.difficulty }}级
+              </span>
               <span>{{ selectedCase.type }}</span>
             </div>
           </div>
@@ -62,7 +61,7 @@
             <h3>案件简介</h3>
             <p>{{ selectedCase.description }}</p>
           </div>
-          
+
           <div class="content-section" v-if="!showAnswer">
             <h3>案件详情</h3>
             <div class="case-facts">
@@ -70,7 +69,7 @@
             </div>
             <button class="btn btn-primary" @click="startAnswer">开始作答</button>
           </div>
-          
+
           <div class="answer-section" v-else>
             <h3>我的答案</h3>
             <div class="answer-form">
@@ -96,12 +95,16 @@
               </div>
               <div class="form-group">
                 <label>分析说明</label>
-                <textarea v-model="userAnswer.reason" placeholder="请说明你的分析依据..." rows="4"></textarea>
+                <textarea
+                  v-model="userAnswer.reason"
+                  placeholder="请说明你的分析依据..."
+                  rows="4"
+                ></textarea>
               </div>
               <button class="btn btn-primary" @click="submitAnswer">提交答案</button>
             </div>
           </div>
-          
+
           <div class="standard-answer" v-if="showAnswer && showStandard">
             <h3>标准答案</h3>
             <div class="answer-box">
@@ -111,7 +114,7 @@
               </div>
               <div class="answer-item">
                 <span class="answer-label">伤残等级</span>
-                <span class="answer-value">{{ selectedCase.standardAnswer.level }}级</span>
+                <span class="answer-value">{{ selectedCase.standardAnswer.level }}</span>
               </div>
               <div class="answer-item">
                 <span class="answer-label">分析说明</span>
@@ -137,7 +140,7 @@
 </template>
 
 <script setup>
-import { ref, computed, reactive } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 const search = ref('')
 const activeCategory = ref('all')
@@ -162,6 +165,7 @@ const userAnswer = reactive({
 const cases = ref([
   {
     id: 1,
+    category: 'traffic',
     title: '交通事故导致胫骨平台骨折案',
     description: '受害人因交通事故导致胫骨平台骨折，经手术治疗后遗留功能障碍。',
     type: '交通事故',
@@ -180,11 +184,13 @@ const cases = ref([
     standardAnswer: {
       opinion: '胫骨平台骨折术后左膝关节功能部分受限',
       level: '九级',
-      reason: '根据《人体损伤程度鉴定标准》，膝关节功能丧失未达25%但构成功能障碍，评定为九级伤残。'
+      reason:
+        '根据 GA/T 1661-2019《法医学 关节活动度检验规范》及 GB/T 16180-2014《劳动能力鉴定》标准，评定为九级伤残。'
     }
   },
   {
     id: 2,
+    category: 'work',
     title: '工作中摔伤导致脊髓损伤案',
     description: '工人在施工过程中从脚手架摔下，导致胸椎骨折伴脊髓损伤。',
     type: '工伤',
@@ -203,11 +209,13 @@ const cases = ref([
     standardAnswer: {
       opinion: '胸椎骨折伴脊髓损伤，双下肢瘫',
       level: '二级',
-      reason: '根据《劳动能力鉴定 职工工伤与职业病致残等级》，脊髓损伤导致双下肢肌力3级，评定为二级伤残。'
+      reason:
+        '根据 GB/T 16180-2014《劳动能力鉴定 职工工伤与职业病致残等级》，脊髓损伤导致双下肢肌力3级，评定为二级伤残。'
     }
   },
   {
     id: 3,
+    category: 'medical',
     title: '医美手术失败导致眼球损伤案',
     description: '患者接受眼部美容手术后出现眼球转动受限、视物模糊。',
     type: '医疗事故',
@@ -226,11 +234,13 @@ const cases = ref([
     standardAnswer: {
       opinion: '右眼眼外肌损伤，视功能障碍',
       level: '十级',
-      reason: '根据《人体损伤程度鉴定标准》，眼外伤导致视力下降，评定为十级伤残。'
+      reason:
+        '根据 GB/T 43639-2024《视觉功能障碍法医临床鉴定技术规范》，眼外伤导致视力下降，评定为十级伤残。'
     }
   },
   {
     id: 4,
+    category: 'injury',
     title: '被打导致肋骨多发骨折案',
     description: '因纠纷被多人围殴，致肋骨多处骨折。',
     type: '人身损伤',
@@ -249,11 +259,13 @@ const cases = ref([
     standardAnswer: {
       opinion: '左侧多发肋骨骨折',
       level: '轻伤二级',
-      reason: '根据《人体损伤程度鉴定标准》，肋骨骨折4处以上，构成轻伤二级。'
+      reason:
+        '根据 SF/T 0111-2021《法医临床学检验规范》及人体损伤程度鉴定相关标准，肋骨骨折4处以上，构成轻伤二级。'
     }
   },
   {
     id: 5,
+    category: 'work',
     title: '烧伤后瘢痕增生案',
     description: '工作场所火灾导致全身多处烧伤，愈后瘢痕增生明显。',
     type: '工伤',
@@ -265,33 +277,35 @@ const cases = ref([
     facts: [
       '伤者男性，42岁',
       '工厂火灾中烧伤',
-      '全身TBSA 35%，深II度-III度',
+      '全身 TBSA 35%，深 II 度-III 度',
       '愈后面部及四肢瘢痕增生',
-      '瘢痕面积约12%体表面积'
+      '瘢痕面积约 12% 体表面积'
     ],
     standardAnswer: {
       opinion: '全身多处瘢痕形成',
       level: '五级',
-      reason: '根据《劳动能力鉴定 职工工伤与职业病致残等级》，瘢痕面积>10%体表面积，评定为五级伤残。'
+      reason:
+        '根据 GB/T 16180-2014《劳动能力鉴定 职工工伤与职业病致残等级》，瘢痕面积大于 10% 体表面积，评定为五级伤残。'
     }
   }
 ])
 
 const filteredCases = computed(() => {
   let result = cases.value
-  
+
   if (search.value) {
     const keyword = search.value.toLowerCase()
-    result = result.filter(c => 
-      c.title.toLowerCase().includes(keyword) || 
-      c.description.toLowerCase().includes(keyword)
+    result = result.filter(
+      (c) =>
+        c.title.toLowerCase().includes(keyword) ||
+        c.description.toLowerCase().includes(keyword)
     )
   }
-  
+
   if (activeCategory.value !== 'all') {
-    result = result.filter(c => c.type === activeCategory.value)
+    result = result.filter((c) => c.category === activeCategory.value)
   }
-  
+
   return result
 })
 
@@ -368,7 +382,8 @@ const submitAnswer = () => {
   transition: all 0.2s ease;
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover,
+.filter-btn.active {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -406,11 +421,30 @@ const submitAnswer = () => {
   font-weight: 600;
 }
 
-.diff-A { background: rgba(107, 203, 119, 0.15); color: #6bcb77; }
-.diff-B { background: rgba(64, 216, 197, 0.15); color: #40d8c5; }
-.diff-C { background: rgba(255, 217, 61, 0.15); color: #ffd93d; }
-.diff-D { background: rgba(255, 180, 84, 0.15); color: #ffb454; }
-.diff-E { background: rgba(255, 107, 107, 0.15); color: #ff6b6b; }
+.diff-A {
+  background: rgba(107, 203, 119, 0.15);
+  color: #6bcb77;
+}
+
+.diff-B {
+  background: rgba(64, 216, 197, 0.15);
+  color: #40d8c5;
+}
+
+.diff-C {
+  background: rgba(255, 217, 61, 0.15);
+  color: #ffd93d;
+}
+
+.diff-D {
+  background: rgba(255, 180, 84, 0.15);
+  color: #ffb454;
+}
+
+.diff-E {
+  background: rgba(255, 107, 107, 0.15);
+  color: #ff6b6b;
+}
 
 .case-desc {
   margin: 0 0 12px;
@@ -445,10 +479,7 @@ const submitAnswer = () => {
 
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
@@ -489,7 +520,9 @@ const submitAnswer = () => {
   gap: 24px;
 }
 
-.content-section h3, .answer-section h3, .standard-answer h3 {
+.content-section h3,
+.answer-section h3,
+.standard-answer h3 {
   margin: 0 0 12px;
   font-size: 16px;
   color: var(--accent);
@@ -518,7 +551,8 @@ const submitAnswer = () => {
   font-size: 14px;
 }
 
-.form-group textarea, .form-group select {
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 12px;
   background: rgba(255, 255, 255, 0.05);

@@ -1,0 +1,18 @@
+常用的conda指令：
+创建新的python环境  conda create -n env_name python=3.x
+查看已有的python环境  conda env list
+进入已有的python环境  conda activate env_name
+退出当前的python环境  conda deactivate
+
+常用的pip指令:
+pip install -r requirements.txt  根据requirements.txt的内容安装所需的包
+pip install package_name          安装包
+pip install ............... --timeout 6000
+
+pip 换清华源后缀:
+-i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --trusted-host=https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
+
+
+
+conda create -n yolo python=3.12
+pip install --no-index --find-links=wheels -r requirements.txt

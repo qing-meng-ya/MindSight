@@ -1,0 +1,114 @@
+﻿const fs = require('fs');
+const path = require('path');
+
+const tree = {
+  version: '1.0',
+  generatedAt: '2026-04-24',
+  subjects: [
+    {
+      id: 'forensic-clinical',
+      name: '法医临床学',
+      icon: 'stethoscope',
+      description: '活体损伤程度鉴定、伤残等级评定、赔偿相关计算',
+      tools: [
+        { id: 'joint-range', name: '关节活动度计算', standardCodes: ['GA/T 1661-2019'], formulaType: 'range_of_motion', difficulty: 'C' },
+        { id: 'disability-grade', name: '伤残等级评定', standardCodes: ['GB/T 16180-2014','GA/T 1555-2019'], formulaType: 'disability_assessment', difficulty: 'B' },
+        { id: 'care-period', name: '护理期/营养期/误工期计算', standardCodes: ['GA/T 1193-2014'], formulaType: 'care_period', difficulty: 'C' },
+        { id: 'dependency-care', name: '护理依赖程度评定', standardCodes: ['GB/T 31147-2014'], formulaType: 'dependency_assessment', difficulty: 'B' },
+        { id: 'visual-function', name: '视觉功能障碍评定', standardCodes: ['GB/T 43639-2024'], formulaType: 'visual_assessment', difficulty: 'B' },
+        { id: 'hearing-function', name: '听觉功能障碍评定', standardCodes: ['GB/T 44893-2024'], formulaType: 'hearing_assessment', difficulty: 'B' },
+        { id: 'limb-function', name: '肢体运动功能评定', standardCodes: ['SF/T 0096-2021'], formulaType: 'limb_function', difficulty: 'C' },
+        { id: 'treatment-end', name: '治疗终结时间判定', standardCodes: ['GA/T 1088-2013'], formulaType: 'treatment_end', difficulty: 'D' }
+      ],
+      relatedBooks: ['法医临床学教材', '临床诊疗指南'],
+      atlas: ['人体解剖图谱']
+    },
+    {
+      id: 'forensic-pathology',
+      name: '法医病理学',
+      icon: 'microscope',
+      description: '尸体检验、死亡原因鉴定、死亡时间推断',
+      tools: [
+        { id: 'death-time', name: '死亡时间推断', standardCodes: ['GA/T 1968-2021'], formulaType: 'pmi_estimation', difficulty: 'A' },
+        { id: 'body-measure', name: '尸体检验记录', standardCodes: ['GA/T 147-2019','GA/T 148-2019'], formulaType: 'body_exam', difficulty: 'C' },
+        { id: 'diatom-test', name: '硅藻检验', standardCodes: ['GA/T 1662-2019','GA/T 813-2008'], formulaType: 'diatom', difficulty: 'A' },
+        { id: 'injury-cause', name: '致伤物推断', standardCodes: ['GA/T 1969-2021'], formulaType: 'weapon_inference', difficulty: 'A' },
+        { id: 'mechanical-injury', name: '机械性损伤检验', standardCodes: ['GA/T 168-2019'], formulaType: 'mechanical_injury', difficulty: 'B' },
+        { id: 'mechanical-asphyxia', name: '机械性窒息检验', standardCodes: ['GA/T 150-2019'], formulaType: 'asphyxia', difficulty: 'A' },
+        { id: 'poisoning', name: '中毒尸体检验', standardCodes: ['GA/T 167-2019'], formulaType: 'toxicology', difficulty: 'A' },
+        { id: 'sudden-death', name: '猝死尸体检验', standardCodes: ['GA/T 170-2019'], formulaType: 'sudden_death', difficulty: 'A' }
+      ],
+      relatedBooks: ['法医病理学教材', '临床诊疗指南'],
+      atlas: ['法医学图谱']
+    },
+    {
+      id: 'forensic-toxicology',
+      name: '法医毒物学',
+      icon: 'flask',
+      description: '毒药物检测、血液酒精浓度分析',
+      tools: [
+        { id: 'blood-alcohol', name: '血液酒精浓度换算与评估', standardCodes: ['GA/T 1073-2013','GA/T 842'], formulaType: 'bac_calculation', difficulty: 'C' },
+        { id: 'toxic-screen', name: '常见毒物筛查', standardCodes: ['GA/T 1530-2018','SF/T 0115-2021'], formulaType: 'toxic_screen', difficulty: 'A' },
+        { id: 'pesticide-test', name: '农药检测', standardCodes: ['GA/T 1611-2019'], formulaType: 'pesticide', difficulty: 'B' },
+        { id: 'drug-analysis', name: '毒药物分析计算', standardCodes: ['SF/T 0115-2021'], formulaType: 'drug_analysis', difficulty: 'A' }
+      ],
+      relatedBooks: ['法医毒理学教材'],
+      atlas: []
+    },
+    {
+      id: 'forensic-evidence',
+      name: '法医物证学',
+      icon: 'dna',
+      description: 'DNA检验、个体识别、亲子鉴定',
+      tools: [
+        { id: 'dna-analysis', name: 'DNA检验分析', standardCodes: ['GA/T 965-2011','GA/T 382-2014'], formulaType: 'dna', difficulty: 'A' },
+        { id: 'paternity-test', name: '亲子鉴定计算', standardCodes: ['GA/T 965-2011'], formulaType: 'paternity', difficulty: 'B' },
+        { id: 'biomaterial-exam', name: '生物检材检验', standardCodes: ['GA/T 1162-2014'], formulaType: 'biomaterial', difficulty: 'C' }
+      ],
+      relatedBooks: ['法医物证学教材'],
+      atlas: []
+    },
+    {
+      id: 'forensic-anthropology',
+      name: '法医人类学',
+      icon: 'user-circle',
+      description: '身高推断、年龄推断、性别鉴定',
+      tools: [
+        { id: 'height-estimate', name: '身高推断', standardCodes: ['GA/T 1588-2019'], formulaType: 'height_estimation', difficulty: 'B' },
+        { id: 'age-estimate', name: '年龄推断', standardCodes: ['GA/T 1588-2019'], formulaType: 'age_estimation', difficulty: 'B' },
+        { id: 'gender-id', name: '性别鉴定', standardCodes: ['GA/T 1588-2019'], formulaType: 'gender_id', difficulty: 'C' }
+      ],
+      relatedBooks: ['法医人类学教材'],
+      atlas: ['人体骨骼图谱']
+    },
+    {
+      id: 'traffic-accident',
+      name: '交通事故法医学',
+      icon: 'car',
+      description: '交通事故损伤鉴定、赔偿计算',
+      tools: [
+        { id: 'traffic-injury', name: '交通事故损伤评定', standardCodes: ['GA/T 1088-2013','GA/T 268-2019'], formulaType: 'traffic_injury', difficulty: 'B' },
+        { id: 'traffic-compensation', name: '交通事故赔偿计算', standardCodes: ['GA/T 1193-2014'], formulaType: 'traffic_compensation', difficulty: 'C' }
+      ],
+      relatedBooks: ['法医临床学教材'],
+      atlas: ['法医学图谱']
+    },
+    {
+      id: 'compensation-calc',
+      name: '赔偿计算',
+      icon: 'calculator',
+      description: '人身损害赔偿、工伤赔偿、后续治疗费',
+      tools: [
+        { id: 'injury-compensation', name: '人身损害赔偿计算', standardCodes: ['GA/T 1193-2014','GB/T 31147-2014'], formulaType: 'injury_compensation', difficulty: 'C' },
+        { id: 'work-injury-comp', name: '工伤赔偿计算', standardCodes: ['GB/T 16180-2014'], formulaType: 'work_injury', difficulty: 'C' },
+        { id: 'follow-up-treatment', name: '后续治疗费评估', standardCodes: ['GA/T 1555-2019'], formulaType: 'follow_up', difficulty: 'B' }
+      ],
+      relatedBooks: ['法医临床学教材'],
+      atlas: []
+    }
+  ]
+};
+
+const outputPath = path.join(__dirname, '..', 'src', 'data', 'knowledgeTree.json');
+fs.writeFileSync(outputPath, JSON.stringify(tree, null, 2), 'utf-8');
+console.log('Generated knowledgeTree.json with', tree.subjects.length, 'subjects');

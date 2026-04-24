@@ -1,0 +1,2597 @@
+{
+  "generatedAt": "2026-04-24T07:18:04.874Z",
+  "summary": {
+    "total": 186,
+    "byCategory": {
+      "临床诊疗指南": 48,
+      "标准规范": 67,
+      "法医学图谱": 5,
+      "法医学教材": 17,
+      "人卫医学教材": 49
+    }
+  },
+  "documents": [
+    {
+      "filename": "传染病学分册.pdf",
+      "relativePath": "临床诊疗指南全集/传染病学分册.pdf",
+      "size": 22434546,
+      "sizeHuman": "21.40 MB",
+      "id": "doc_7jxqq6ata",
+      "category": "临床诊疗指南",
+      "subCategory": "感染科",
+      "standardCode": null,
+      "title": "传染病学分册",
+      "tags": []
+    },
+    {
+      "filename": "免疫学分册.pdf",
+      "relativePath": "临床诊疗指南全集/免疫学分册.pdf",
+      "size": 20911261,
+      "sizeHuman": "19.94 MB",
+      "id": "doc_uxggytrjw",
+      "category": "临床诊疗指南",
+      "subCategory": "风湿免疫科",
+      "standardCode": null,
+      "title": "免疫学分册",
+      "tags": []
+    },
+    {
+      "filename": "内分泌及代谢性疾病分册.pdf",
+      "relativePath": "临床诊疗指南全集/内分泌及代谢性疾病分册.pdf",
+      "size": 9567046,
+      "sizeHuman": "9.12 MB",
+      "id": "doc_yfn58pp7p",
+      "category": "临床诊疗指南",
+      "subCategory": "内分泌科",
+      "standardCode": null,
+      "title": "内分泌及代谢性疾病分册",
+      "tags": []
+    },
+    {
+      "filename": "创伤学分册.pdf",
+      "relativePath": "临床诊疗指南全集/创伤学分册.pdf",
+      "size": 78290133,
+      "sizeHuman": "74.66 MB",
+      "id": "doc_btk0jkaz2",
+      "category": "临床诊疗指南",
+      "subCategory": "骨科/运动医学",
+      "standardCode": null,
+      "title": "创伤学分册",
+      "tags": []
+    },
+    {
+      "filename": "口腔医学分册.pdf",
+      "relativePath": "临床诊疗指南全集/口腔医学分册.pdf",
+      "size": 19221500,
+      "sizeHuman": "18.33 MB",
+      "id": "doc_oibjbo9n1",
+      "category": "临床诊疗指南",
+      "subCategory": "口腔科",
+      "standardCode": null,
+      "title": "口腔医学分册",
+      "tags": []
+    },
+    {
+      "filename": "呼吸病学分册.pdf",
+      "relativePath": "临床诊疗指南全集/呼吸病学分册.pdf",
+      "size": 21220582,
+      "sizeHuman": "20.24 MB",
+      "id": "doc_x4l61xkhp",
+      "category": "临床诊疗指南",
+      "subCategory": "呼吸科",
+      "standardCode": null,
+      "title": "呼吸病学分册",
+      "tags": []
+    },
+    {
+      "filename": "器官移植学分册.pdf",
+      "relativePath": "临床诊疗指南全集/器官移植学分册.pdf",
+      "size": 43074589,
+      "sizeHuman": "41.08 MB",
+      "id": "doc_gc237xbqq",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "器官移植学分册",
+      "tags": []
+    },
+    {
+      "filename": "外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/外科学分册.pdf",
+      "size": 31758756,
+      "sizeHuman": "30.29 MB",
+      "id": "doc_7uy2blekl",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "妇产科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/妇产科学分册.pdf",
+      "size": 30874483,
+      "sizeHuman": "29.44 MB",
+      "id": "doc_kr8kf6jt1",
+      "category": "临床诊疗指南",
+      "subCategory": "妇产科",
+      "standardCode": null,
+      "title": "妇产科学分册",
+      "tags": []
+    },
+    {
+      "filename": "小儿内科分册.pdf",
+      "relativePath": "临床诊疗指南全集/小儿内科分册.pdf",
+      "size": 44337203,
+      "sizeHuman": "42.28 MB",
+      "id": "doc_4hxl8y9au",
+      "category": "临床诊疗指南",
+      "subCategory": "儿科",
+      "standardCode": null,
+      "title": "小儿内科分册",
+      "tags": []
+    },
+    {
+      "filename": "小儿外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/小儿外科学分册.pdf",
+      "size": 18970737,
+      "sizeHuman": "18.09 MB",
+      "id": "doc_8duhk87lk",
+      "category": "临床诊疗指南",
+      "subCategory": "儿科",
+      "standardCode": null,
+      "title": "小儿外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "心血管分册.pdf",
+      "relativePath": "临床诊疗指南全集/心血管分册.pdf",
+      "size": 12928493,
+      "sizeHuman": "12.33 MB",
+      "id": "doc_zxlx2r985",
+      "category": "临床诊疗指南",
+      "subCategory": "心血管科",
+      "standardCode": null,
+      "title": "心血管分册",
+      "tags": []
+    },
+    {
+      "filename": "心血管外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/心血管外科学分册.pdf",
+      "size": 7330619,
+      "sizeHuman": "6.99 MB",
+      "id": "doc_kxn632lat",
+      "category": "临床诊疗指南",
+      "subCategory": "心血管科",
+      "standardCode": null,
+      "title": "心血管外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "急诊医学分册.pdf",
+      "relativePath": "临床诊疗指南全集/急诊医学分册.pdf",
+      "size": 28893527,
+      "sizeHuman": "27.56 MB",
+      "id": "doc_zl364btna",
+      "category": "临床诊疗指南",
+      "subCategory": "急诊医学",
+      "standardCode": null,
+      "title": "急诊医学分册",
+      "tags": []
+    },
+    {
+      "filename": "手外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/手外科学分册.pdf",
+      "size": 4970241,
+      "sizeHuman": "4.74 MB",
+      "id": "doc_q5jl1lcas",
+      "category": "临床诊疗指南",
+      "subCategory": "骨科/运动医学",
+      "standardCode": null,
+      "title": "手外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "护理学分册.PDF",
+      "relativePath": "临床诊疗指南全集/护理学分册.PDF",
+      "size": 38956563,
+      "sizeHuman": "37.15 MB",
+      "id": "doc_rlg4g99im",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "护理学分册",
+      "tags": []
+    },
+    {
+      "filename": "放射学检查技术分册.pdf",
+      "relativePath": "临床诊疗指南全集/放射学检查技术分册.pdf",
+      "size": 83957361,
+      "sizeHuman": "80.07 MB",
+      "id": "doc_j6ikc6fnl",
+      "category": "临床诊疗指南",
+      "subCategory": "影像/放射科",
+      "standardCode": null,
+      "title": "放射学检查技术分册",
+      "tags": []
+    },
+    {
+      "filename": "放射肿瘤学分册.PDF",
+      "relativePath": "临床诊疗指南全集/放射肿瘤学分册.PDF",
+      "size": 11751317,
+      "sizeHuman": "11.21 MB",
+      "id": "doc_aqydtn6fi",
+      "category": "临床诊疗指南",
+      "subCategory": "肿瘤科",
+      "standardCode": null,
+      "title": "放射肿瘤学分册",
+      "tags": []
+    },
+    {
+      "filename": "整形外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/整形外科学分册.pdf",
+      "size": 21607700,
+      "sizeHuman": "20.61 MB",
+      "id": "doc_0bb7ot5mr",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "整形外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "核医学分册.PDF",
+      "relativePath": "临床诊疗指南全集/核医学分册.PDF",
+      "size": 49093071,
+      "sizeHuman": "46.82 MB",
+      "id": "doc_h9tpdp3mx",
+      "category": "临床诊疗指南",
+      "subCategory": "影像/放射科",
+      "standardCode": null,
+      "title": "核医学分册",
+      "tags": []
+    },
+    {
+      "filename": "泌尿外科分册.pdf",
+      "relativePath": "临床诊疗指南全集/泌尿外科分册.pdf",
+      "size": 22227905,
+      "sizeHuman": "21.20 MB",
+      "id": "doc_5krd4q2cd",
+      "category": "临床诊疗指南",
+      "subCategory": "肾内科/泌尿科",
+      "standardCode": null,
+      "title": "泌尿外科分册",
+      "tags": []
+    },
+    {
+      "filename": "消化系统疾病分册.pdf",
+      "relativePath": "临床诊疗指南全集/消化系统疾病分册.pdf",
+      "size": 4459410,
+      "sizeHuman": "4.25 MB",
+      "id": "doc_tb1cvzxkl",
+      "category": "临床诊疗指南",
+      "subCategory": "消化科",
+      "standardCode": null,
+      "title": "消化系统疾病分册",
+      "tags": []
+    },
+    {
+      "filename": "激光医学分册.pdf",
+      "relativePath": "临床诊疗指南全集/激光医学分册.pdf",
+      "size": 16883679,
+      "sizeHuman": "16.10 MB",
+      "id": "doc_q9wxqb9t1",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "激光医学分册",
+      "tags": []
+    },
+    {
+      "filename": "烧伤外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/烧伤外科学分册.pdf",
+      "size": 26806247,
+      "sizeHuman": "25.56 MB",
+      "id": "doc_3hyo0gurs",
+      "category": "临床诊疗指南",
+      "subCategory": "康复科",
+      "standardCode": null,
+      "title": "烧伤外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "物理医学与康复分册.pdf",
+      "relativePath": "临床诊疗指南全集/物理医学与康复分册.pdf",
+      "size": 35352285,
+      "sizeHuman": "33.71 MB",
+      "id": "doc_0wed34o13",
+      "category": "临床诊疗指南",
+      "subCategory": "康复科",
+      "standardCode": null,
+      "title": "物理医学与康复分册",
+      "tags": []
+    },
+    {
+      "filename": "疼痛学分册.pdf",
+      "relativePath": "临床诊疗指南全集/疼痛学分册.pdf",
+      "size": 44712224,
+      "sizeHuman": "42.64 MB",
+      "id": "doc_6eaeuzrvd",
+      "category": "临床诊疗指南",
+      "subCategory": "麻醉科/疼痛科",
+      "standardCode": null,
+      "title": "疼痛学分册",
+      "tags": []
+    },
+    {
+      "filename": "病理学分册.pdf",
+      "relativePath": "临床诊疗指南全集/病理学分册.pdf",
+      "size": 130597991,
+      "sizeHuman": "124.55 MB",
+      "id": "doc_zsu2hs50h",
+      "category": "临床诊疗指南",
+      "subCategory": "检验/病理科",
+      "standardCode": null,
+      "title": "病理学分册",
+      "tags": []
+    },
+    {
+      "filename": "癫痫病分册.pdf",
+      "relativePath": "临床诊疗指南全集/癫痫病分册.pdf",
+      "size": 13735983,
+      "sizeHuman": "13.10 MB",
+      "id": "doc_wpkxr1676",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "癫痫病分册",
+      "tags": []
+    },
+    {
+      "filename": "皮肤病与性病分册.pdf",
+      "relativePath": "临床诊疗指南全集/皮肤病与性病分册.pdf",
+      "size": 45344250,
+      "sizeHuman": "43.24 MB",
+      "id": "doc_iu0es85dk",
+      "category": "临床诊疗指南",
+      "subCategory": "皮肤科",
+      "standardCode": null,
+      "title": "皮肤病与性病分册",
+      "tags": []
+    },
+    {
+      "filename": "眼科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/眼科学分册.pdf",
+      "size": 28454354,
+      "sizeHuman": "27.14 MB",
+      "id": "doc_xdrdchzlw",
+      "category": "临床诊疗指南",
+      "subCategory": "眼科",
+      "standardCode": null,
+      "title": "眼科学分册",
+      "tags": []
+    },
+    {
+      "filename": "神经外科学分册.pdf",
+      "relativePath": "临床诊疗指南全集/神经外科学分册.pdf",
+      "size": 11963941,
+      "sizeHuman": "11.41 MB",
+      "id": "doc_cgjg2xm8h",
+      "category": "临床诊疗指南",
+      "subCategory": "神经精神科",
+      "standardCode": null,
+      "title": "神经外科学分册",
+      "tags": []
+    },
+    {
+      "filename": "神经病学分册.pdf",
+      "relativePath": "临床诊疗指南全集/神经病学分册.pdf",
+      "size": 22297857,
+      "sizeHuman": "21.26 MB",
+      "id": "doc_palsgnaiu",
+      "category": "临床诊疗指南",
+      "subCategory": "神经精神科",
+      "standardCode": null,
+      "title": "神经病学分册",
+      "tags": []
+    },
+    {
+      "filename": "精神病学分册.pdf",
+      "relativePath": "临床诊疗指南全集/精神病学分册.pdf",
+      "size": 7865988,
+      "sizeHuman": "7.50 MB",
+      "id": "doc_v151lkh5h",
+      "category": "临床诊疗指南",
+      "subCategory": "神经精神科",
+      "standardCode": null,
+      "title": "精神病学分册",
+      "tags": []
+    },
+    {
+      "filename": "结核病分册.pdf",
+      "relativePath": "临床诊疗指南全集/结核病分册.pdf",
+      "size": 13210747,
+      "sizeHuman": "12.60 MB",
+      "id": "doc_oqm6l7xac",
+      "category": "临床诊疗指南",
+      "subCategory": "呼吸科",
+      "standardCode": null,
+      "title": "结核病分册",
+      "tags": []
+    },
+    {
+      "filename": "美容医学分册.pdf",
+      "relativePath": "临床诊疗指南全集/美容医学分册.pdf",
+      "size": 47750566,
+      "sizeHuman": "45.54 MB",
+      "id": "doc_3ckgilmv4",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "美容医学分册",
+      "tags": []
+    },
+    {
+      "filename": "耳鼻咽喉头颈外科分册.pdf",
+      "relativePath": "临床诊疗指南全集/耳鼻咽喉头颈外科分册.pdf",
+      "size": 62564200,
+      "sizeHuman": "59.67 MB",
+      "id": "doc_4urhdl9bk",
+      "category": "临床诊疗指南",
+      "subCategory": "耳鼻咽喉头颈外科",
+      "standardCode": null,
+      "title": "耳鼻咽喉头颈外科分册",
+      "tags": []
+    },
+    {
+      "filename": "肠外肠内营养分册.pdf",
+      "relativePath": "临床诊疗指南全集/肠外肠内营养分册.pdf",
+      "size": 11823652,
+      "sizeHuman": "11.28 MB",
+      "id": "doc_jks3y35o2",
+      "category": "临床诊疗指南",
+      "subCategory": "重症医学科",
+      "standardCode": null,
+      "title": "肠外肠内营养分册",
+      "tags": []
+    },
+    {
+      "filename": "肾脏病学分册.pdf",
+      "relativePath": "临床诊疗指南全集/肾脏病学分册.pdf",
+      "size": 2315300,
+      "sizeHuman": "2.21 MB",
+      "id": "doc_1vju9q86i",
+      "category": "临床诊疗指南",
+      "subCategory": "肾内科/泌尿科",
+      "standardCode": null,
+      "title": "肾脏病学分册",
+      "tags": []
+    },
+    {
+      "filename": "肿瘤分册.pdf",
+      "relativePath": "临床诊疗指南全集/肿瘤分册.pdf",
+      "size": 66191258,
+      "sizeHuman": "63.12 MB",
+      "id": "doc_leci9g12q",
+      "category": "临床诊疗指南",
+      "subCategory": "肿瘤科",
+      "standardCode": null,
+      "title": "肿瘤分册",
+      "tags": []
+    },
+    {
+      "filename": "胸外科分册.pdf",
+      "relativePath": "临床诊疗指南全集/胸外科分册.pdf",
+      "size": 7157616,
+      "sizeHuman": "6.83 MB",
+      "id": "doc_475budzc7",
+      "category": "临床诊疗指南",
+      "subCategory": "胸外科",
+      "standardCode": null,
+      "title": "胸外科分册",
+      "tags": []
+    },
+    {
+      "filename": "血液学分册.pdf",
+      "relativePath": "临床诊疗指南全集/血液学分册.pdf",
+      "size": 13762681,
+      "sizeHuman": "13.13 MB",
+      "id": "doc_2fl3jk1io",
+      "category": "临床诊疗指南",
+      "subCategory": "血液科",
+      "standardCode": null,
+      "title": "血液学分册",
+      "tags": []
+    },
+    {
+      "filename": "计划生育分册.PDF",
+      "relativePath": "临床诊疗指南全集/计划生育分册.PDF",
+      "size": 8965400,
+      "sizeHuman": "8.55 MB",
+      "id": "doc_ev9np1vmu",
+      "category": "临床诊疗指南",
+      "subCategory": "综合",
+      "standardCode": null,
+      "title": "计划生育分册",
+      "tags": []
+    },
+    {
+      "filename": "辅助生殖技术与精子库分册_黄....pdf",
+      "relativePath": "临床诊疗指南全集/辅助生殖技术与精子库分册_黄....pdf",
+      "size": 25503366,
+      "sizeHuman": "24.32 MB",
+      "id": "doc_lsb5fa3r0",
+      "category": "临床诊疗指南",
+      "subCategory": "妇产科",
+      "standardCode": null,
+      "title": "辅助生殖技术与精子库分册_黄...",
+      "tags": []
+    },
+    {
+      "filename": "重症医学分册.PDF",
+      "relativePath": "临床诊疗指南全集/重症医学分册.PDF",
+      "size": 34652601,
+      "sizeHuman": "33.05 MB",
+      "id": "doc_ym9zx999i",
+      "category": "临床诊疗指南",
+      "subCategory": "重症医学科",
+      "standardCode": null,
+      "title": "重症医学分册",
+      "tags": []
+    },
+    {
+      "filename": "风湿病分册.pdf",
+      "relativePath": "临床诊疗指南全集/风湿病分册.pdf",
+      "size": 14803946,
+      "sizeHuman": "14.12 MB",
+      "id": "doc_uzmhof5te",
+      "category": "临床诊疗指南",
+      "subCategory": "风湿免疫科",
+      "standardCode": null,
+      "title": "风湿病分册",
+      "tags": []
+    },
+    {
+      "filename": "骨科分册.pdf",
+      "relativePath": "临床诊疗指南全集/骨科分册.pdf",
+      "size": 15874338,
+      "sizeHuman": "15.14 MB",
+      "id": "doc_ddwpb6u0l",
+      "category": "临床诊疗指南",
+      "subCategory": "骨科/运动医学",
+      "standardCode": null,
+      "title": "骨科分册",
+      "tags": []
+    },
+    {
+      "filename": "骨质疏松症和骨矿盐疾病分册.pdf",
+      "relativePath": "临床诊疗指南全集/骨质疏松症和骨矿盐疾病分册.pdf",
+      "size": 5088053,
+      "sizeHuman": "4.85 MB",
+      "id": "doc_bf0vkj5cw",
+      "category": "临床诊疗指南",
+      "subCategory": "骨科/运动医学",
+      "standardCode": null,
+      "title": "骨质疏松症和骨矿盐疾病分册",
+      "tags": []
+    },
+    {
+      "filename": "麻醉分册.PDF",
+      "relativePath": "临床诊疗指南全集/麻醉分册.PDF",
+      "size": 7897867,
+      "sizeHuman": "7.53 MB",
+      "id": "doc_sr53g4979",
+      "category": "临床诊疗指南",
+      "subCategory": "麻醉科/疼痛科",
+      "standardCode": null,
+      "title": "麻醉分册",
+      "tags": []
+    },
+    {
+      "filename": "1.SF∕T 0111—2021《法医临床检验规范》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/1.SF∕T 0111—2021《法医临床检验规范》.pdf",
+      "size": 1748523,
+      "sizeHuman": "1.67 MB",
+      "id": "doc_zi3s49fhe",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "1.SF∕T 0111—2021《法医临床检验规范》",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "1.湖南省法医临床司法鉴定若干问题的执业指引 正式发布稿.pdf",
+      "relativePath": "标准规范/法医临床标准规范/1.湖南省法医临床司法鉴定若干问题的执业指引 正式发布稿.pdf",
+      "size": 843845,
+      "sizeHuman": "0.80 MB",
+      "id": "doc_z8qpbb31h",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "1.湖南省法医临床司法鉴定若干问题的执业指引 正式发布稿",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "10.GB∕T 37237-2018 男性性功能障碍法医学鉴定.pdf",
+      "relativePath": "标准规范/法医临床标准规范/10.GB∕T 37237-2018 男性性功能障碍法医学鉴定.pdf",
+      "size": 2338160,
+      "sizeHuman": "2.23 MB",
+      "id": "doc_eu8led2up",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "10.GB∕T 37237-2018 男性性功能障碍法医学鉴定",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "11.人体前庭、平衡功能检查评定规范——2018.pdf",
+      "relativePath": "标准规范/法医临床标准规范/11.人体前庭、平衡功能检查评定规范——2018.pdf",
+      "size": 2357873,
+      "sizeHuman": "2.25 MB",
+      "id": "doc_8yieyj3sl",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "11.人体前庭、平衡功能检查评定规范——2018",
+      "tags": []
+    },
+    {
+      "filename": "12.外伤性癫痫鉴定实施规范——2014.pdf",
+      "relativePath": "标准规范/法医临床标准规范/12.外伤性癫痫鉴定实施规范——2014.pdf",
+      "size": 640892,
+      "sizeHuman": "0.61 MB",
+      "id": "doc_838elalxn",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "12.外伤性癫痫鉴定实施规范——2014",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "13.SF∕T 0097—2021《医疗损害司法鉴定指南》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/13.SF∕T 0097—2021《医疗损害司法鉴定指南》.pdf",
+      "size": 446410,
+      "sizeHuman": "0.43 MB",
+      "id": "doc_l7550qeoo",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "13.SF∕T 0097—2021《医疗损害司法鉴定指南》",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "14.GAT 1197-2014《法庭科学人体损伤检验照相规范》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/14.GAT 1197-2014《法庭科学人体损伤检验照相规范》.pdf",
+      "size": 1269150,
+      "sizeHuman": "1.21 MB",
+      "id": "doc_wcheeylod",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GAT1197-2014",
+      "title": "14.GAT 1197-2014《法庭科学人体损伤检验照相规范》",
+      "tags": [
+        "法医临床",
+        "GAT1197-2014"
+      ]
+    },
+    {
+      "filename": "15.嗅觉障碍的法医学评定——2018.pdf",
+      "relativePath": "标准规范/法医临床标准规范/15.嗅觉障碍的法医学评定——2018.pdf",
+      "size": 2131269,
+      "sizeHuman": "2.03 MB",
+      "id": "doc_dmfoant5j",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "15.嗅觉障碍的法医学评定——2018",
+      "tags": []
+    },
+    {
+      "filename": "16. 2018男性生育功能障碍法医学鉴定.pdf",
+      "relativePath": "标准规范/法医临床标准规范/16. 2018男性生育功能障碍法医学鉴定.pdf",
+      "size": 315194,
+      "sizeHuman": "0.30 MB",
+      "id": "doc_bab5a5i2k",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "16. 2018男性生育功能障碍法医学鉴定",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "2.GAT 1661-2019《法医学 关节活动度检验规范》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/2.GAT 1661-2019《法医学 关节活动度检验规范》.pdf",
+      "size": 6967092,
+      "sizeHuman": "6.64 MB",
+      "id": "doc_kxo6sily5",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GAT1661-2019",
+      "title": "2.GAT 1661-2019《法医学 关节活动度检验规范》",
+      "tags": [
+        "法医临床",
+        "GAT1661-2019"
+      ]
+    },
+    {
+      "filename": "2.人体损伤致残程度分级.pdf",
+      "relativePath": "标准规范/法医临床标准规范/2.人体损伤致残程度分级.pdf",
+      "size": 13957627,
+      "sizeHuman": "13.31 MB",
+      "id": "doc_i9pb8jwzz",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "2.人体损伤致残程度分级",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "3.GBT16180-2014劳动能力鉴定职工工伤与职业病致残等级.pdf",
+      "relativePath": "标准规范/法医临床标准规范/3.GBT16180-2014劳动能力鉴定职工工伤与职业病致残等级.pdf",
+      "size": 5219789,
+      "sizeHuman": "4.98 MB",
+      "id": "doc_d7md33at5",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": "GBT16180-2014",
+      "title": "3.GBT16180-2014劳动能力鉴定职工工伤与职业病致残等级",
+      "tags": [
+        "司法鉴定",
+        "GBT16180-2014"
+      ]
+    },
+    {
+      "filename": "3.SF∕T 0096—2021《肢体运动功能评定》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/3.SF∕T 0096—2021《肢体运动功能评定》.pdf",
+      "size": 801783,
+      "sizeHuman": "0.76 MB",
+      "id": "doc_mb9def4c2",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "3.SF∕T 0096—2021《肢体运动功能评定》",
+      "tags": []
+    },
+    {
+      "filename": "4.SF∕T 0095—2021《人身损害与疾病因果关系判定指南》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/4.SF∕T 0095—2021《人身损害与疾病因果关系判定指南》.pdf",
+      "size": 394871,
+      "sizeHuman": "0.38 MB",
+      "id": "doc_d3cz4hgad",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "4.SF∕T 0095—2021《人身损害与疾病因果关系判定指南》",
+      "tags": []
+    },
+    {
+      "filename": "4.人体损伤程度鉴定标准（2013年9月11日）.pdf",
+      "relativePath": "标准规范/法医临床标准规范/4.人体损伤程度鉴定标准（2013年9月11日）.pdf",
+      "size": 905735,
+      "sizeHuman": "0.86 MB",
+      "id": "doc_dx0yovlpn",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "4.人体损伤程度鉴定标准（2013年9月11日）",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "5. GAT1193-2014《人身损害误工期、护理期、营养期评定规范》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/5. GAT1193-2014《人身损害误工期、护理期、营养期评定规范》.pdf",
+      "size": 3133098,
+      "sizeHuman": "2.99 MB",
+      "id": "doc_ula85p0wv",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GAT1193-2014",
+      "title": "5. GAT1193-2014《人身损害误工期、护理期、营养期评定规范》",
+      "tags": [
+        "法医临床",
+        "GAT1193-2014"
+      ]
+    },
+    {
+      "filename": "5.SF∕T 0112—2021《法医临床影像学检验实施规范》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/5.SF∕T 0112—2021《法医临床影像学检验实施规范》.pdf",
+      "size": 734090,
+      "sizeHuman": "0.70 MB",
+      "id": "doc_c8erwr80c",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "5.SF∕T 0112—2021《法医临床影像学检验实施规范》",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "6.GBT 31147-2014人身损害护理依赖程度评定-janhovah1.pdf",
+      "relativePath": "标准规范/法医临床标准规范/6.GBT 31147-2014人身损害护理依赖程度评定-janhovah1.pdf",
+      "size": 12513968,
+      "sizeHuman": "11.93 MB",
+      "id": "doc_400hxa5y0",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GBT31147-2014",
+      "title": "6.GBT 31147-2014人身损害护理依赖程度评定-janhovah1",
+      "tags": [
+        "法医临床",
+        "GBT31147-2014"
+      ]
+    },
+    {
+      "filename": "6.周围神经损伤鉴定实施规范——2014.pdf",
+      "relativePath": "标准规范/法医临床标准规范/6.周围神经损伤鉴定实施规范——2014.pdf",
+      "size": 530878,
+      "sizeHuman": "0.51 MB",
+      "id": "doc_ugy95qi6x",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "6.周围神经损伤鉴定实施规范——2014",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "7.人身损害后续诊疗项目评定指南.pdf",
+      "relativePath": "标准规范/法医临床标准规范/7.人身损害后续诊疗项目评定指南.pdf",
+      "size": 312925,
+      "sizeHuman": "0.30 MB",
+      "id": "doc_scg4877cs",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "7.人身损害后续诊疗项目评定指南",
+      "tags": []
+    },
+    {
+      "filename": "7.视觉电生理检查规范——2018.pdf",
+      "relativePath": "标准规范/法医临床标准规范/7.视觉电生理检查规范——2018.pdf",
+      "size": 2911041,
+      "sizeHuman": "2.78 MB",
+      "id": "doc_wg35tjdyb",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "7.视觉电生理检查规范——2018",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "8.视觉功能障碍法医学鉴定规范——2016.pdf",
+      "relativePath": "标准规范/法医临床标准规范/8.视觉功能障碍法医学鉴定规范——2016.pdf",
+      "size": 2374085,
+      "sizeHuman": "2.26 MB",
+      "id": "doc_94owjmvpd",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "8.视觉功能障碍法医学鉴定规范——2016",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "8《人身保险伤残评定标准》2014年1月1日实施.pdf",
+      "relativePath": "标准规范/法医临床标准规范/8《人身保险伤残评定标准》2014年1月1日实施.pdf",
+      "size": 829197,
+      "sizeHuman": "0.79 MB",
+      "id": "doc_oif92isfz",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "8《人身保险伤残评定标准》2014年1月1日实施",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "9 GAT1088-2013道路交通事故受伤人员治疗终结时间.pdf",
+      "relativePath": "标准规范/法医临床标准规范/9 GAT1088-2013道路交通事故受伤人员治疗终结时间.pdf",
+      "size": 21398815,
+      "sizeHuman": "20.41 MB",
+      "id": "doc_s5pked9w3",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GAT1088-2013",
+      "title": "9 GAT1088-2013道路交通事故受伤人员治疗终结时间",
+      "tags": [
+        "法医临床",
+        "GAT1088-2013"
+      ]
+    },
+    {
+      "filename": "9.听力障碍法医学鉴定规范——2010.pdf",
+      "relativePath": "标准规范/法医临床标准规范/9.听力障碍法医学鉴定规范——2010.pdf",
+      "size": 400036,
+      "sizeHuman": "0.38 MB",
+      "id": "doc_sufj1dxe3",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "9.听力障碍法医学鉴定规范——2010",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "《法庭科学法医临床鉴定室建设规范》（GAT 1588 - 2019）.pdf",
+      "relativePath": "标准规范/法医临床标准规范/《法庭科学法医临床鉴定室建设规范》（GAT 1588 - 2019）.pdf",
+      "size": 2485631,
+      "sizeHuman": "2.37 MB",
+      "id": "doc_mycd0p2ff",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "《法庭科学法医临床鉴定室建设规范》（GAT 1588 - 2019）",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "《视觉功能障碍法医临床鉴定技术规范》（GBT 43639-2024).pdf",
+      "relativePath": "标准规范/法医临床标准规范/《视觉功能障碍法医临床鉴定技术规范》（GBT 43639-2024).pdf",
+      "size": 579661,
+      "sizeHuman": "0.55 MB",
+      "id": "doc_n4qf6susc",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GBT43639-2024",
+      "title": "《视觉功能障碍法医临床鉴定技术规范》（GBT 43639-2024)",
+      "tags": [
+        "法医临床",
+        "GBT43639-2024"
+      ]
+    },
+    {
+      "filename": "人身保险伤残评定及代码GBT+44893-2024.pdf",
+      "relativePath": "标准规范/法医临床标准规范/人身保险伤残评定及代码GBT+44893-2024.pdf",
+      "size": 658877,
+      "sizeHuman": "0.63 MB",
+      "id": "doc_h8n43wk9l",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "人身保险伤残评定及代码GBT+44893-2024",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "司法鉴定程序通则.pdf",
+      "relativePath": "标准规范/法医临床标准规范/司法鉴定程序通则.pdf",
+      "size": 225334,
+      "sizeHuman": "0.21 MB",
+      "id": "doc_8md7g73gx",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "司法鉴定程序通则",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "（GAT 1555-2019《法庭科学 人身损害受伤人员后续诊疗项目评定技术规程》.pdf",
+      "relativePath": "标准规范/法医临床标准规范/（GAT 1555-2019《法庭科学 人身损害受伤人员后续诊疗项目评定技术规程》.pdf",
+      "size": 2667183,
+      "sizeHuman": "2.54 MB",
+      "id": "doc_kx28xr8j2",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": "GAT1555-2019",
+      "title": "（GAT 1555-2019《法庭科学 人身损害受伤人员后续诊疗项目评定技术规程》",
+      "tags": [
+        "GAT1555-2019"
+      ]
+    },
+    {
+      "filename": "GA-T-1073-2013 生物样品血液、尿液中乙醇、甲醇、正丙醇、乙醛、丙酮、异丙醇和正丁醇的顶空-气相色谱检验方法.pdf",
+      "relativePath": "标准规范/法医毒物标准规范/GA-T-1073-2013 生物样品血液、尿液中乙醇、甲醇、正丙醇、乙醛、丙酮、异丙醇和正丁醇的顶空-气相色谱检验方法.pdf",
+      "size": 477210,
+      "sizeHuman": "0.46 MB",
+      "id": "doc_9v4nhmodg",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": null,
+      "title": "GA-T-1073-2013 生物样品血液、尿液中乙醇、甲醇、正丙醇、乙醛、丙酮、异丙醇和正丁醇的顶空-气相色谱检验方法",
+      "tags": [
+        "法医毒物"
+      ]
+    },
+    {
+      "filename": "GA_T 1530-2018 法庭科学 230 种药（毒）物液相 色谱-串联质谱筛查方法(OCR).pdf",
+      "relativePath": "标准规范/法医毒物标准规范/GA_T 1530-2018 法庭科学 230 种药（毒）物液相 色谱-串联质谱筛查方法(OCR).pdf",
+      "size": 30038643,
+      "sizeHuman": "28.65 MB",
+      "id": "doc_0qdj4fd4i",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": "GA_T1530-2018",
+      "title": "GA_T 1530-2018 法庭科学 230 种药（毒）物液相 色谱-串联质谱筛查方法(OCR)",
+      "tags": [
+        "法医毒物",
+        "GA_T1530-2018"
+      ]
+    },
+    {
+      "filename": "GA_T 1611-2019 法庭科学　生物检材中甲氰菊酯等五种拟除虫菊酯类农药及其代谢物检验　液相色谱-质谱法 2.pdf",
+      "relativePath": "标准规范/法医毒物标准规范/GA_T 1611-2019 法庭科学　生物检材中甲氰菊酯等五种拟除虫菊酯类农药及其代谢物检验　液相色谱-质谱法 2.pdf",
+      "size": 14472731,
+      "sizeHuman": "13.80 MB",
+      "id": "doc_3rm7wltj0",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": "GA_T1611-2019",
+      "title": "GA_T 1611-2019 法庭科学　生物检材中甲氰菊酯等五种拟除虫菊酯类农药及其代谢物检验　液相色谱-质谱法 2",
+      "tags": [
+        "法医毒物",
+        "GA_T1611-2019"
+      ]
+    },
+    {
+      "filename": "SF_T 0115—2021血液中 45 种有毒生物碱的液相色谱-串联检验方法.pdf",
+      "relativePath": "标准规范/法医毒物标准规范/SF_T 0115—2021血液中 45 种有毒生物碱的液相色谱-串联检验方法.pdf",
+      "size": 629622,
+      "sizeHuman": "0.60 MB",
+      "id": "doc_289p57icb",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": null,
+      "title": "SF_T 0115—2021血液中 45 种有毒生物碱的液相色谱-串联检验方法",
+      "tags": [
+        "法医毒物"
+      ]
+    },
+    {
+      "filename": "血液、尿液中238种毒(药)物的检测 液相色谱质谱法.pdf",
+      "relativePath": "标准规范/法医毒物标准规范/血液、尿液中238种毒(药)物的检测 液相色谱质谱法.pdf",
+      "size": 1505772,
+      "sizeHuman": "1.44 MB",
+      "id": "doc_2t5sob839",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": null,
+      "title": "血液、尿液中238种毒(药)物的检测 液相色谱质谱法",
+      "tags": [
+        "法医毒物"
+      ]
+    },
+    {
+      "filename": "血液中碳氧血红蛋白饱和度的测定分光光度法.pdf",
+      "relativePath": "标准规范/法医毒物标准规范/血液中碳氧血红蛋白饱和度的测定分光光度法.pdf",
+      "size": 135403,
+      "sizeHuman": "0.13 MB",
+      "id": "doc_aoxeitbkt",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": null,
+      "title": "血液中碳氧血红蛋白饱和度的测定分光光度法",
+      "tags": [
+        "法医毒物"
+      ]
+    },
+    {
+      "filename": "血液和尿液中108种毒（药）物的气相色谱-质谱检验方法.pdf",
+      "relativePath": "标准规范/法医毒物标准规范/血液和尿液中108种毒（药）物的气相色谱-质谱检验方法.pdf",
+      "size": 218049,
+      "sizeHuman": "0.21 MB",
+      "id": "doc_pjbnl1v89",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": null,
+      "title": "血液和尿液中108种毒（药）物的气相色谱-质谱检验方法",
+      "tags": [
+        "法医毒物"
+      ]
+    },
+    {
+      "filename": "2022 The Science of Forensic Entomology 2nd Edition_by David B. Rivers.pdf",
+      "relativePath": "标准规范/法医物证标准规范/2022 The Science of Forensic Entomology 2nd Edition_by David B. Rivers.pdf",
+      "size": 46882930,
+      "sizeHuman": "44.71 MB",
+      "id": "doc_cjqm1n2vh",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "2022 The Science of Forensic Entomology 2nd Edition_by David B. Rivers",
+      "tags": []
+    },
+    {
+      "filename": "GA.T 965-2011DNA亲子鉴定规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/GA.T 965-2011DNA亲子鉴定规范.pdf",
+      "size": 11807467,
+      "sizeHuman": "11.26 MB",
+      "id": "doc_y56pylalm",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "GA.T 965-2011DNA亲子鉴定规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "GAT1162-2014法医生物检材.pdf",
+      "relativePath": "标准规范/法医物证标准规范/GAT1162-2014法医生物检材.pdf",
+      "size": 807073,
+      "sizeHuman": "0.77 MB",
+      "id": "doc_wcdrve62y",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": "GAT1162-2014",
+      "title": "GAT1162-2014法医生物检材",
+      "tags": [
+        "GAT1162-2014"
+      ]
+    },
+    {
+      "filename": "GA∕T 382-2014 法庭科学DNA实验室建设规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/GA∕T 382-2014 法庭科学DNA实验室建设规范.pdf",
+      "size": 2856816,
+      "sizeHuman": "2.72 MB",
+      "id": "doc_4i4yuch5k",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "GA∕T 382-2014 法庭科学DNA实验室建设规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "GBT-37223-2018亲权鉴定技术规范预览版.pdf",
+      "relativePath": "标准规范/法医物证标准规范/GBT-37223-2018亲权鉴定技术规范预览版.pdf",
+      "size": 769070,
+      "sizeHuman": "0.73 MB",
+      "id": "doc_w6a84gj6r",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "GBT-37223-2018亲权鉴定技术规范预览版",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "个体识别技术规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/个体识别技术规范.pdf",
+      "size": 1506732,
+      "sizeHuman": "1.44 MB",
+      "id": "doc_zrawqe4dc",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "个体识别技术规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "常染色STR基因组法医学参数计算规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/常染色STR基因组法医学参数计算规范.pdf",
+      "size": 1608162,
+      "sizeHuman": "1.53 MB",
+      "id": "doc_uw4mzboad",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "常染色STR基因组法医学参数计算规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "法医学STR基因座命名.pdf",
+      "relativePath": "标准规范/法医物证标准规范/法医学STR基因座命名.pdf",
+      "size": 1930218,
+      "sizeHuman": "1.84 MB",
+      "id": "doc_txcjdn62h",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "法医学STR基因座命名",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "法医物证鉴定X-STR检验规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/法医物证鉴定X-STR检验规范.pdf",
+      "size": 2037456,
+      "sizeHuman": "1.94 MB",
+      "id": "doc_liprca790",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "法医物证鉴定X-STR检验规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "法医物证鉴定Y-STR检验规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/法医物证鉴定Y-STR检验规范.pdf",
+      "size": 1513890,
+      "sizeHuman": "1.44 MB",
+      "id": "doc_0l7duqpbe",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "法医物证鉴定Y-STR检验规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "法医物证鉴定标准品DNA使用与管理规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/法医物证鉴定标准品DNA使用与管理规范.pdf",
+      "size": 857862,
+      "sizeHuman": "0.82 MB",
+      "id": "doc_b9mb9l2xi",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "法医物证鉴定标准品DNA使用与管理规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "法医物证鉴定线粒体DNA检验规范.pdf",
+      "relativePath": "标准规范/法医物证标准规范/法医物证鉴定线粒体DNA检验规范.pdf",
+      "size": 1957086,
+      "sizeHuman": "1.87 MB",
+      "id": "doc_zvjd0eknz",
+      "category": "标准规范",
+      "subCategory": "法医物证学标准",
+      "standardCode": null,
+      "title": "法医物证鉴定线粒体DNA检验规范",
+      "tags": [
+        "法医物证"
+      ]
+    },
+    {
+      "filename": "GA T 1198-2014-法庭科学尸体检验照相规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GA T 1198-2014-法庭科学尸体检验照相规范.pdf",
+      "size": 293999,
+      "sizeHuman": "0.28 MB",
+      "id": "doc_q16cwxt17",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT1198-2014",
+      "title": "GA T 1198-2014-法庭科学尸体检验照相规范",
+      "tags": [
+        "法医病理",
+        "GAT1198-2014"
+      ]
+    },
+    {
+      "filename": "GA T 1585-2019法庭科学 尸体检验摄像技术规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GA T 1585-2019法庭科学 尸体检验摄像技术规范.pdf",
+      "size": 3471550,
+      "sizeHuman": "3.31 MB",
+      "id": "doc_luj4o1z1i",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT1585-2019",
+      "title": "GA T 1585-2019法庭科学 尸体检验摄像技术规范",
+      "tags": [
+        "法医病理",
+        "GAT1585-2019"
+      ]
+    },
+    {
+      "filename": "GA T 1968-2021 法医学 死亡原因分类及其鉴定指南.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GA T 1968-2021 法医学 死亡原因分类及其鉴定指南.pdf",
+      "size": 289537,
+      "sizeHuman": "0.28 MB",
+      "id": "doc_r8jq2mbtw",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT1968-2021",
+      "title": "GA T 1968-2021 法医学 死亡原因分类及其鉴定指南",
+      "tags": [
+        "法医病理",
+        "GAT1968-2021"
+      ]
+    },
+    {
+      "filename": "GA T 1969-2021 法医学 机械性损伤致伤物分类及推断指南.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GA T 1969-2021 法医学 机械性损伤致伤物分类及推断指南.pdf",
+      "size": 368672,
+      "sizeHuman": "0.35 MB",
+      "id": "doc_2t45gkgn7",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GAT1969-2021",
+      "title": "GA T 1969-2021 法医学 机械性损伤致伤物分类及推断指南",
+      "tags": [
+        "法医临床",
+        "GAT1969-2021"
+      ]
+    },
+    {
+      "filename": "GAT 147-2019 法医学 尸体检验技术总则.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 147-2019 法医学 尸体检验技术总则.pdf",
+      "size": 1692397,
+      "sizeHuman": "1.61 MB",
+      "id": "doc_6h81pfrvh",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT147-2019",
+      "title": "GAT 147-2019 法医学 尸体检验技术总则",
+      "tags": [
+        "法医病理",
+        "GAT147-2019"
+      ]
+    },
+    {
+      "filename": "GAT 148-2019法医学 病理建材的提取、固定、取材及保存规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 148-2019法医学 病理建材的提取、固定、取材及保存规范.pdf",
+      "size": 509128,
+      "sizeHuman": "0.49 MB",
+      "id": "doc_p24ms28k6",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT148-2019",
+      "title": "GAT 148-2019法医学 病理建材的提取、固定、取材及保存规范",
+      "tags": [
+        "法医病理",
+        "GAT148-2019"
+      ]
+    },
+    {
+      "filename": "GAT 150-2019法医学 机械性窒息尸体检验规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 150-2019法医学 机械性窒息尸体检验规范.pdf",
+      "size": 317774,
+      "sizeHuman": "0.30 MB",
+      "id": "doc_4x85emelr",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT150-2019",
+      "title": "GAT 150-2019法医学 机械性窒息尸体检验规范",
+      "tags": [
+        "法医病理",
+        "GAT150-2019"
+      ]
+    },
+    {
+      "filename": "GAT 151-2019法医学 新生儿尸体检验规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 151-2019法医学 新生儿尸体检验规范.pdf",
+      "size": 891581,
+      "sizeHuman": "0.85 MB",
+      "id": "doc_3dt5k5xaq",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT151-2019",
+      "title": "GAT 151-2019法医学 新生儿尸体检验规范",
+      "tags": [
+        "法医病理",
+        "GAT151-2019"
+      ]
+    },
+    {
+      "filename": "GAT 1662-2019法庭科学 硅藻检验技术规范微波消解-真空抽滤-显微镜法.PDF",
+      "relativePath": "标准规范/法医病理标准规范/GAT 1662-2019法庭科学 硅藻检验技术规范微波消解-真空抽滤-显微镜法.PDF",
+      "size": 529729,
+      "sizeHuman": "0.51 MB",
+      "id": "doc_zg2x1f5de",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT1662-2019",
+      "title": "GAT 1662-2019法庭科学 硅藻检验技术规范微波消解-真空抽滤-显微镜法",
+      "tags": [
+        "法医病理",
+        "GAT1662-2019"
+      ]
+    },
+    {
+      "filename": "GAT 167-2019法医学 中毒尸体检验规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 167-2019法医学 中毒尸体检验规范.pdf",
+      "size": 332571,
+      "sizeHuman": "0.32 MB",
+      "id": "doc_7c37sf9gm",
+      "category": "标准规范",
+      "subCategory": "法医毒物学标准",
+      "standardCode": "GAT167-2019",
+      "title": "GAT 167-2019法医学 中毒尸体检验规范",
+      "tags": [
+        "法医毒物",
+        "GAT167-2019"
+      ]
+    },
+    {
+      "filename": "GAT 168-2019法医学 机械性损伤尸体检验规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 168-2019法医学 机械性损伤尸体检验规范.pdf",
+      "size": 365153,
+      "sizeHuman": "0.35 MB",
+      "id": "doc_qesnhurwh",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": "GAT168-2019",
+      "title": "GAT 168-2019法医学 机械性损伤尸体检验规范",
+      "tags": [
+        "法医临床",
+        "GAT168-2019"
+      ]
+    },
+    {
+      "filename": "GAT 170-2019法医学 猝死尸体检验规范.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 170-2019法医学 猝死尸体检验规范.pdf",
+      "size": 430652,
+      "sizeHuman": "0.41 MB",
+      "id": "doc_cd2kqqbqt",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT170-2019",
+      "title": "GAT 170-2019法医学 猝死尸体检验规范",
+      "tags": [
+        "法医病理",
+        "GAT170-2019"
+      ]
+    },
+    {
+      "filename": "GAT 813-2008人体组织器官中硅藻硝酸破机法检验.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GAT 813-2008人体组织器官中硅藻硝酸破机法检验.pdf",
+      "size": 88254,
+      "sizeHuman": "0.08 MB",
+      "id": "doc_z44q176ic",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": "GAT813-2008",
+      "title": "GAT 813-2008人体组织器官中硅藻硝酸破机法检验",
+      "tags": [
+        "法医病理",
+        "GAT813-2008"
+      ]
+    },
+    {
+      "filename": "GA∕T 268-2019 道路交通事故尸体检验.pdf",
+      "relativePath": "标准规范/法医病理标准规范/GA∕T 268-2019 道路交通事故尸体检验.pdf",
+      "size": 2874689,
+      "sizeHuman": "2.74 MB",
+      "id": "doc_x9sribmu9",
+      "category": "标准规范",
+      "subCategory": "法医临床学标准",
+      "standardCode": null,
+      "title": "GA∕T 268-2019 道路交通事故尸体检验",
+      "tags": [
+        "法医临床"
+      ]
+    },
+    {
+      "filename": "SFT-0097-2021医疗损害司法鉴定指南.pdf",
+      "relativePath": "标准规范/法医病理标准规范/SFT-0097-2021医疗损害司法鉴定指南.pdf",
+      "size": 446410,
+      "sizeHuman": "0.43 MB",
+      "id": "doc_2msg5vxm6",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "SFT-0097-2021医疗损害司法鉴定指南",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "SFZ JD0101002-2015《法医学尸体解剖规范》.pdf",
+      "relativePath": "标准规范/法医病理标准规范/SFZ JD0101002-2015《法医学尸体解剖规范》.pdf",
+      "size": 315317,
+      "sizeHuman": "0.30 MB",
+      "id": "doc_98b2ajbfm",
+      "category": "标准规范",
+      "subCategory": "法医病理学标准",
+      "standardCode": null,
+      "title": "SFZ JD0101002-2015《法医学尸体解剖规范》",
+      "tags": [
+        "法医病理"
+      ]
+    },
+    {
+      "filename": "18+SFT+0183+法医精神病鉴定精神检查规范+SET版.pdf",
+      "relativePath": "标准规范/法医精神病标准规范/18+SFT+0183+法医精神病鉴定精神检查规范+SET版.pdf",
+      "size": 353977,
+      "sizeHuman": "0.34 MB",
+      "id": "doc_uq5h78yh3",
+      "category": "标准规范",
+      "subCategory": "司法鉴定管理标准",
+      "standardCode": null,
+      "title": "18+SFT+0183+法医精神病鉴定精神检查规范+SET版",
+      "tags": [
+        "司法鉴定"
+      ]
+    },
+    {
+      "filename": "201549070-法医精神病学精神检查指南（报批稿）20210913.pdf",
+      "relativePath": "标准规范/法医精神病标准规范/201549070-法医精神病学精神检查指南（报批稿）20210913.pdf",
+      "size": 260727,
+      "sizeHuman": "0.25 MB",
+      "id": "doc_o8b149k1l",
+      "category": "标准规范",
+      "subCategory": "其他标准",
+      "standardCode": null,
+      "title": "201549070-法医精神病学精神检查指南（报批稿）20210913",
+      "tags": []
+    },
+    {
+      "filename": "5.法医学铁道图谱.pdf",
+      "relativePath": "法医学图谱/5.法医学铁道图谱.pdf",
+      "size": 23951812,
+      "sizeHuman": "22.84 MB",
+      "id": "doc_t3ue7hqfj",
+      "category": "法医学图谱",
+      "subCategory": "综合图谱",
+      "standardCode": null,
+      "title": "5.法医学铁道图谱",
+      "tags": [
+        "图谱"
+      ]
+    },
+    {
+      "filename": "尸变图鉴（ 自然环境下尸体的变化） (陈禄仕).pdf",
+      "relativePath": "法医学图谱/尸变图鉴（ 自然环境下尸体的变化） (陈禄仕).pdf",
+      "size": 60417752,
+      "sizeHuman": "57.62 MB",
+      "id": "doc_98o83rtx7",
+      "category": "法医学图谱",
+      "subCategory": "尸体变化图谱",
+      "standardCode": null,
+      "title": "尸变图鉴（ 自然环境下尸体的变化） (陈禄仕)",
+      "tags": [
+        "图谱"
+      ]
+    },
+    {
+      "filename": "法医学图谱 电子版.pdf",
+      "relativePath": "法医学图谱/法医学图谱 电子版.pdf",
+      "size": 54513937,
+      "sizeHuman": "51.99 MB",
+      "id": "doc_ahbo3lim7",
+      "category": "法医学图谱",
+      "subCategory": "综合图谱",
+      "standardCode": null,
+      "title": "法医学图谱 电子版",
+      "tags": [
+        "图谱"
+      ]
+    },
+    {
+      "filename": "法医学（第8版）.pdf",
+      "relativePath": "法医学图谱/法医学（第8版）.pdf",
+      "size": 46205552,
+      "sizeHuman": "44.07 MB",
+      "id": "doc_e8ut54aar",
+      "category": "法医学图谱",
+      "subCategory": "综合图谱",
+      "standardCode": null,
+      "title": "法医学（第8版）",
+      "tags": [
+        "图谱"
+      ]
+    },
+    {
+      "filename": "证据：历史上最具争议的法医学案例.pdf",
+      "relativePath": "法医学图谱/证据：历史上最具争议的法医学案例.pdf",
+      "size": 36835829,
+      "sizeHuman": "35.13 MB",
+      "id": "doc_qthmspk5b",
+      "category": "法医学图谱",
+      "subCategory": "综合图谱",
+      "standardCode": null,
+      "title": "证据：历史上最具争议的法医学案例",
+      "tags": [
+        "图谱"
+      ]
+    },
+    {
+      "filename": "《刑事科学技术》（第3版）.pdf",
+      "relativePath": "法医学本科教材全集/《刑事科学技术》（第3版）.pdf",
+      "size": 76236822,
+      "sizeHuman": "72.71 MB",
+      "id": "doc_ae38xkgky",
+      "category": "法医学教材",
+      "subCategory": "法医学综合",
+      "standardCode": null,
+      "title": "《刑事科学技术》（第3版）",
+      "tags": [
+        "法医学",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《医疗纠纷的鉴定与防范》.pdf",
+      "relativePath": "法医学本科教材全集/《医疗纠纷的鉴定与防范》.pdf",
+      "size": 167517830,
+      "sizeHuman": "159.76 MB",
+      "id": "doc_j7525qwps",
+      "category": "法医学教材",
+      "subCategory": "法医学概论",
+      "standardCode": null,
+      "title": "《医疗纠纷的鉴定与防范》",
+      "tags": [
+        "法医学概论",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医临床学》（第5版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医临床学》（第5版）.pdf",
+      "size": 84968747,
+      "sizeHuman": "81.03 MB",
+      "id": "doc_14rdjdbv1",
+      "category": "法医学教材",
+      "subCategory": "法医临床学",
+      "standardCode": null,
+      "title": "《法医临床学》（第5版）",
+      "tags": [
+        "法医临床",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医临床学实验指导》（第2版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医临床学实验指导》（第2版）.pdf",
+      "size": 144544720,
+      "sizeHuman": "137.85 MB",
+      "id": "doc_02mb4nlu9",
+      "category": "法医学教材",
+      "subCategory": "法医临床学",
+      "standardCode": null,
+      "title": "《法医临床学实验指导》（第2版）",
+      "tags": [
+        "法医临床",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医人类学》-贾静涛 1993年.pdf",
+      "relativePath": "法医学本科教材全集/《法医人类学》-贾静涛 1993年.pdf",
+      "size": 21450803,
+      "sizeHuman": "20.46 MB",
+      "id": "doc_9dqfc062i",
+      "category": "法医学教材",
+      "subCategory": "法医人类学",
+      "standardCode": null,
+      "title": "《法医人类学》-贾静涛 1993年",
+      "tags": [
+        "法医人类学",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医人类学》（第3版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医人类学》（第3版）.pdf",
+      "size": 75597055,
+      "sizeHuman": "72.09 MB",
+      "id": "doc_itnzx5901",
+      "category": "法医学教材",
+      "subCategory": "法医人类学",
+      "standardCode": null,
+      "title": "《法医人类学》（第3版）",
+      "tags": [
+        "法医人类学",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医毒物分析》（第5版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医毒物分析》（第5版）.pdf",
+      "size": 86041358,
+      "sizeHuman": "82.06 MB",
+      "id": "doc_0v66prmip",
+      "category": "法医学教材",
+      "subCategory": "法医毒物学",
+      "standardCode": null,
+      "title": "《法医毒物分析》（第5版）",
+      "tags": [
+        "法医毒物",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医毒物分析实验指导》（第2版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医毒物分析实验指导》（第2版）.pdf",
+      "size": 28598839,
+      "sizeHuman": "27.27 MB",
+      "id": "doc_39lumiwgu",
+      "category": "法医学教材",
+      "subCategory": "法医毒物学",
+      "standardCode": null,
+      "title": "《法医毒物分析实验指导》（第2版）",
+      "tags": [
+        "法医毒物",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医毒理学》（第5版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医毒理学》（第5版）.pdf",
+      "size": 76553585,
+      "sizeHuman": "73.01 MB",
+      "id": "doc_pmvchnmj6",
+      "category": "法医学教材",
+      "subCategory": "法医毒物学",
+      "standardCode": null,
+      "title": "《法医毒理学》（第5版）",
+      "tags": [
+        "法医毒物",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医毒理学实验指导》（第1版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医毒理学实验指导》（第1版）.pdf",
+      "size": 38159468,
+      "sizeHuman": "36.39 MB",
+      "id": "doc_c4527ueta",
+      "category": "法医学教材",
+      "subCategory": "法医毒物学",
+      "standardCode": null,
+      "title": "《法医毒理学实验指导》（第1版）",
+      "tags": [
+        "法医毒物",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医法学》（第3版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医法学》（第3版）.pdf",
+      "size": 70051148,
+      "sizeHuman": "66.81 MB",
+      "id": "doc_lx95668yf",
+      "category": "法医学教材",
+      "subCategory": "法医学综合",
+      "standardCode": null,
+      "title": "《法医法学》（第3版）",
+      "tags": [
+        "法医学",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医物证学》（第4版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医物证学》（第4版）.pdf",
+      "size": 67635627,
+      "sizeHuman": "64.50 MB",
+      "id": "doc_q7uicbgnx",
+      "category": "法医学教材",
+      "subCategory": "法医物证学",
+      "standardCode": null,
+      "title": "《法医物证学》（第4版）",
+      "tags": [
+        "法医物证",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医物证学实验指导》（第2版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医物证学实验指导》（第2版）.pdf",
+      "size": 57076014,
+      "sizeHuman": "54.43 MB",
+      "id": "doc_9q0c3i1ui",
+      "category": "法医学教材",
+      "subCategory": "法医物证学",
+      "standardCode": null,
+      "title": "《法医物证学实验指导》（第2版）",
+      "tags": [
+        "法医物证",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医现场学》（第1版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医现场学》（第1版）.pdf",
+      "size": 96512229,
+      "sizeHuman": "92.04 MB",
+      "id": "doc_6eh320ijk",
+      "category": "法医学教材",
+      "subCategory": "法医学综合",
+      "standardCode": null,
+      "title": "《法医现场学》（第1版）",
+      "tags": [
+        "法医学",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医病理学》（第5版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医病理学》（第5版）.pdf",
+      "size": 134420976,
+      "sizeHuman": "128.19 MB",
+      "id": "doc_iew4jv0uu",
+      "category": "法医学教材",
+      "subCategory": "法医病理学",
+      "standardCode": null,
+      "title": "《法医病理学》（第5版）",
+      "tags": [
+        "法医病理",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医病理学实验指导》（第2版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医病理学实验指导》（第2版）.pdf",
+      "size": 69927747,
+      "sizeHuman": "66.69 MB",
+      "id": "doc_90cswnb8i",
+      "category": "法医学教材",
+      "subCategory": "法医病理学",
+      "standardCode": null,
+      "title": "《法医病理学实验指导》（第2版）",
+      "tags": [
+        "法医病理",
+        "教材"
+      ]
+    },
+    {
+      "filename": "《法医精神病学》（第4版）.pdf",
+      "relativePath": "法医学本科教材全集/《法医精神病学》（第4版）.pdf",
+      "size": 88788340,
+      "sizeHuman": "84.68 MB",
+      "id": "doc_w29dn8wnx",
+      "category": "法医学教材",
+      "subCategory": "法医精神病学",
+      "standardCode": null,
+      "title": "《法医精神病学》（第4版）",
+      "tags": [
+        "法医精神病",
+        "教材"
+      ]
+    },
+    {
+      "filename": "中医学（第10版）.pdf",
+      "relativePath": "第10版renwei/中医学（第10版）.pdf",
+      "size": 22741219,
+      "sizeHuman": "21.69 MB",
+      "id": "doc_650ozd8km",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "中医学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "临床流行病学与循证医学（第6版）.pdf",
+      "relativePath": "第10版renwei/临床流行病学与循证医学（第6版）.pdf",
+      "size": 34005439,
+      "sizeHuman": "32.43 MB",
+      "id": "doc_gqqckopt2",
+      "category": "人卫医学教材",
+      "subCategory": "流行病学/医学统计学",
+      "standardCode": null,
+      "title": "临床流行病学与循证医学（第6版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "临床药理学（第7版）.pdf",
+      "relativePath": "第10版renwei/临床药理学（第7版）.pdf",
+      "size": 168960538,
+      "sizeHuman": "161.13 MB",
+      "id": "doc_t5zap9fbe",
+      "category": "人卫医学教材",
+      "subCategory": "药理学",
+      "standardCode": null,
+      "title": "临床药理学（第7版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "临床营养学.pdf",
+      "relativePath": "第10版renwei/临床营养学.pdf",
+      "size": 36747992,
+      "sizeHuman": "35.05 MB",
+      "id": "doc_4sa0y0riq",
+      "category": "人卫医学教材",
+      "subCategory": "预防医学/卫生学",
+      "standardCode": null,
+      "title": "临床营养学",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "人体寄生虫学（第10版）.pdf",
+      "relativePath": "第10版renwei/人体寄生虫学（第10版）.pdf",
+      "size": 182932744,
+      "sizeHuman": "174.46 MB",
+      "id": "doc_t1r013myi",
+      "category": "人卫医学教材",
+      "subCategory": "人体寄生虫学",
+      "standardCode": null,
+      "title": "人体寄生虫学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "传染病学（第10版）.pdf",
+      "relativePath": "第10版renwei/传染病学（第10版）.pdf",
+      "size": 133978936,
+      "sizeHuman": "127.77 MB",
+      "id": "doc_yu35cu0lw",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "传染病学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "体育（第7版）.pdf",
+      "relativePath": "第10版renwei/体育（第7版）.pdf",
+      "size": 22983079,
+      "sizeHuman": "21.92 MB",
+      "id": "doc_jf3af6l27",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "体育（第7版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "儿科学（第10版）.pdf",
+      "relativePath": "第10版renwei/儿科学（第10版）.pdf",
+      "size": 25060575,
+      "sizeHuman": "23.90 MB",
+      "id": "doc_4guslqio0",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "儿科学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "全科医学概论（第6版）.pdf",
+      "relativePath": "第10版renwei/全科医学概论（第6版）.pdf",
+      "size": 135416266,
+      "sizeHuman": "129.14 MB",
+      "id": "doc_108mhjgiw",
+      "category": "人卫医学教材",
+      "subCategory": "医学导论",
+      "standardCode": null,
+      "title": "全科医学概论（第6版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "内科学 （第10版）.pdf",
+      "relativePath": "第10版renwei/内科学 （第10版）.pdf",
+      "size": 185781452,
+      "sizeHuman": "177.17 MB",
+      "id": "doc_bf5xval9x",
+      "category": "人卫医学教材",
+      "subCategory": "内科学",
+      "standardCode": null,
+      "title": "内科学 （第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学免疫学（第8版）.pdf",
+      "relativePath": "第10版renwei/医学免疫学（第8版）.pdf",
+      "size": 98178362,
+      "sizeHuman": "93.63 MB",
+      "id": "doc_159bzeily",
+      "category": "人卫医学教材",
+      "subCategory": "医学微生物学与免疫学",
+      "standardCode": null,
+      "title": "医学免疫学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学导论（第6版）.pdf",
+      "relativePath": "第10版renwei/医学导论（第6版）.pdf",
+      "size": 95353562,
+      "sizeHuman": "90.94 MB",
+      "id": "doc_f22rlw8f6",
+      "category": "人卫医学教材",
+      "subCategory": "医学导论",
+      "standardCode": null,
+      "title": "医学导论（第6版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学影像学（第9版）.pdf",
+      "relativePath": "第10版renwei/医学影像学（第9版）.pdf",
+      "size": 82475548,
+      "sizeHuman": "78.65 MB",
+      "id": "doc_nsju7awtp",
+      "category": "人卫医学教材",
+      "subCategory": "医学影像学",
+      "standardCode": null,
+      "title": "医学影像学（第9版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学微生物学（第10版）.pdf",
+      "relativePath": "第10版renwei/医学微生物学（第10版）.pdf",
+      "size": 34157478,
+      "sizeHuman": "32.58 MB",
+      "id": "doc_2mc0gb8j2",
+      "category": "人卫医学教材",
+      "subCategory": "医学生物化学",
+      "standardCode": null,
+      "title": "医学微生物学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学心理学（第8版）.pdf",
+      "relativePath": "第10版renwei/医学心理学（第8版）.pdf",
+      "size": 29497458,
+      "sizeHuman": "28.13 MB",
+      "id": "doc_int8nmn4m",
+      "category": "人卫医学教材",
+      "subCategory": "医学心理学/精神病学",
+      "standardCode": null,
+      "title": "医学心理学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学物理学（第10版）.pdf",
+      "relativePath": "第10版renwei/医学物理学（第10版）.pdf",
+      "size": 38334615,
+      "sizeHuman": "36.56 MB",
+      "id": "doc_2rj26tn1h",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "医学物理学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学生物学（第10版）.pdf",
+      "relativePath": "第10版renwei/医学生物学（第10版）.pdf",
+      "size": 19976283,
+      "sizeHuman": "19.05 MB",
+      "id": "doc_u3hiew7es",
+      "category": "人卫医学教材",
+      "subCategory": "医学生物化学",
+      "standardCode": null,
+      "title": "医学生物学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学细胞生物学（第7版）.pdf",
+      "relativePath": "第10版renwei/医学细胞生物学（第7版）.pdf",
+      "size": 55462196,
+      "sizeHuman": "52.89 MB",
+      "id": "doc_tps75f5hb",
+      "category": "人卫医学教材",
+      "subCategory": "医学生物化学",
+      "standardCode": null,
+      "title": "医学细胞生物学（第7版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学统计学（第8版）.pdf",
+      "relativePath": "第10版renwei/医学统计学（第8版）.pdf",
+      "size": 32009817,
+      "sizeHuman": "30.53 MB",
+      "id": "doc_kd2m2ikl2",
+      "category": "人卫医学教材",
+      "subCategory": "流行病学/医学统计学",
+      "standardCode": null,
+      "title": "医学统计学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学计算机应用（第7版）.pdf",
+      "relativePath": "第10版renwei/医学计算机应用（第7版）.pdf",
+      "size": 104920047,
+      "sizeHuman": "100.06 MB",
+      "id": "doc_i2zix23yf",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "医学计算机应用（第7版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医学遗传学（第8版）.pdf",
+      "relativePath": "第10版renwei/医学遗传学（第8版）.pdf",
+      "size": 21819773,
+      "sizeHuman": "20.81 MB",
+      "id": "doc_xo28pdyaa",
+      "category": "人卫医学教材",
+      "subCategory": "医学遗传学",
+      "standardCode": null,
+      "title": "医学遗传学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医患沟通（第3版）.pdf",
+      "relativePath": "第10版renwei/医患沟通（第3版）.pdf",
+      "size": 17058355,
+      "sizeHuman": "16.27 MB",
+      "id": "doc_0slj331pe",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "医患沟通（第3版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "医用高等数学（第8版）.pdf",
+      "relativePath": "第10版renwei/医用高等数学（第8版）.pdf",
+      "size": 34687147,
+      "sizeHuman": "33.08 MB",
+      "id": "doc_8wggzld54",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "医用高等数学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "卫生法（第6版）.pdf",
+      "relativePath": "第10版renwei/卫生法（第6版）.pdf",
+      "size": 115053905,
+      "sizeHuman": "109.72 MB",
+      "id": "doc_12i7j6tnp",
+      "category": "人卫医学教材",
+      "subCategory": "预防医学/卫生学",
+      "standardCode": null,
+      "title": "卫生法（第6版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "口腔科学（第10版）.pdf",
+      "relativePath": "第10版renwei/口腔科学（第10版）.pdf",
+      "size": 42044653,
+      "sizeHuman": "40.10 MB",
+      "id": "doc_t9ofrvgnx",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "口腔科学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "基础化学（第10版）.pdf",
+      "relativePath": "第10版renwei/基础化学（第10版）.pdf",
+      "size": 37834746,
+      "sizeHuman": "36.08 MB",
+      "id": "doc_ou56ocik2",
+      "category": "人卫医学教材",
+      "subCategory": "医学导论",
+      "standardCode": null,
+      "title": "基础化学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "外科学 （第10版）.pdf",
+      "relativePath": "第10版renwei/外科学 （第10版）.pdf",
+      "size": 166098218,
+      "sizeHuman": "158.40 MB",
+      "id": "doc_tcwtgeg3c",
+      "category": "人卫医学教材",
+      "subCategory": "外科学",
+      "standardCode": null,
+      "title": "外科学 （第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "妇产科学（第10版）.pdf",
+      "relativePath": "第10版renwei/妇产科学（第10版）.pdf",
+      "size": 40392906,
+      "sizeHuman": "38.52 MB",
+      "id": "doc_sps51jdsd",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "妇产科学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "局部解剖学（第10版）.pdf",
+      "relativePath": "第10版renwei/局部解剖学（第10版）.pdf",
+      "size": 116943885,
+      "sizeHuman": "111.53 MB",
+      "id": "doc_lufyh0a1p",
+      "category": "人卫医学教材",
+      "subCategory": "系统解剖学/局部解剖学",
+      "standardCode": null,
+      "title": "局部解剖学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "康复医学（第7版）.pdf",
+      "relativePath": "第10版renwei/康复医学（第7版）.pdf",
+      "size": 207474322,
+      "sizeHuman": "197.86 MB",
+      "id": "doc_1gxqga99o",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "康复医学（第7版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "急诊与灾难医学（第4版）.pdf",
+      "relativePath": "第10版renwei/急诊与灾难医学（第4版）.pdf",
+      "size": 39623064,
+      "sizeHuman": "37.79 MB",
+      "id": "doc_kt5s9s41l",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "急诊与灾难医学（第4版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "有机化学（第10版）.pdf",
+      "relativePath": "第10版renwei/有机化学（第10版）.pdf",
+      "size": 61119864,
+      "sizeHuman": "58.29 MB",
+      "id": "doc_shl6729il",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "有机化学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "核医学（第10版）.pdf",
+      "relativePath": "第10版renwei/核医学（第10版）.pdf",
+      "size": 51790969,
+      "sizeHuman": "49.39 MB",
+      "id": "doc_049daphgl",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "核医学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "法医学（第8版）.pdf",
+      "relativePath": "第10版renwei/法医学（第8版）.pdf",
+      "size": 46205552,
+      "sizeHuman": "44.07 MB",
+      "id": "doc_24x26rnee",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "法医学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "生物化学与分子生物学（第10版).pdf",
+      "relativePath": "第10版renwei/生物化学与分子生物学（第10版).pdf",
+      "size": 55057883,
+      "sizeHuman": "52.51 MB",
+      "id": "doc_rabcfsqhz",
+      "category": "人卫医学教材",
+      "subCategory": "医学生物化学",
+      "standardCode": null,
+      "title": "生物化学与分子生物学（第10版)",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "生理学（第10版）.pdf",
+      "relativePath": "第10版renwei/生理学（第10版）.pdf",
+      "size": 32880059,
+      "sizeHuman": "31.36 MB",
+      "id": "doc_1ur4q4low",
+      "category": "人卫医学教材",
+      "subCategory": "生理学",
+      "standardCode": null,
+      "title": "生理学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "病理学（第10版）.pdf",
+      "relativePath": "第10版renwei/病理学（第10版）.pdf",
+      "size": 40411233,
+      "sizeHuman": "38.54 MB",
+      "id": "doc_7fb1q61bm",
+      "category": "人卫医学教材",
+      "subCategory": "病理学",
+      "standardCode": null,
+      "title": "病理学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "病理生理学（第10版）.pdf",
+      "relativePath": "第10版renwei/病理生理学（第10版）.pdf",
+      "size": 66504661,
+      "sizeHuman": "63.42 MB",
+      "id": "doc_xr0ez33gi",
+      "category": "人卫医学教材",
+      "subCategory": "病理学",
+      "standardCode": null,
+      "title": "病理生理学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "皮肤性病学（第10版）.pdf",
+      "relativePath": "第10版renwei/皮肤性病学（第10版）.pdf",
+      "size": 37150693,
+      "sizeHuman": "35.43 MB",
+      "id": "doc_xqt1r1z93",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "皮肤性病学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "眼科学（第10版）.pdf",
+      "relativePath": "第10版renwei/眼科学（第10版）.pdf",
+      "size": 30665539,
+      "sizeHuman": "29.24 MB",
+      "id": "doc_rjboti139",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "眼科学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "神经病学（第9版）.pdf",
+      "relativePath": "第10版renwei/神经病学（第9版）.pdf",
+      "size": 36270518,
+      "sizeHuman": "34.59 MB",
+      "id": "doc_tqv6wymax",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "神经病学（第9版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "精神病学（第9版）.pdf",
+      "relativePath": "第10版renwei/精神病学（第9版）.pdf",
+      "size": 115583756,
+      "sizeHuman": "110.23 MB",
+      "id": "doc_m34hkehe8",
+      "category": "人卫医学教材",
+      "subCategory": "医学心理学/精神病学",
+      "standardCode": null,
+      "title": "精神病学（第9版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "系统解剖学（第10版）.pdf",
+      "relativePath": "第10版renwei/系统解剖学（第10版）.pdf",
+      "size": 45133897,
+      "sizeHuman": "43.04 MB",
+      "id": "doc_hfosyaks4",
+      "category": "人卫医学教材",
+      "subCategory": "系统解剖学/局部解剖学",
+      "standardCode": null,
+      "title": "系统解剖学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "组织学与胚胎学（第10版）.pdf",
+      "relativePath": "第10版renwei/组织学与胚胎学（第10版）.pdf",
+      "size": 437865172,
+      "sizeHuman": "417.58 MB",
+      "id": "doc_zn6ha5np5",
+      "category": "人卫医学教材",
+      "subCategory": "组织学与胚胎学",
+      "standardCode": null,
+      "title": "组织学与胚胎学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "耳鼻咽喉头颈外科学（第10版）.pdf",
+      "relativePath": "第10版renwei/耳鼻咽喉头颈外科学（第10版）.pdf",
+      "size": 194621698,
+      "sizeHuman": "185.61 MB",
+      "id": "doc_l7tai17vg",
+      "category": "人卫医学教材",
+      "subCategory": "外科学",
+      "standardCode": null,
+      "title": "耳鼻咽喉头颈外科学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "药理学（第10版）.pdf",
+      "relativePath": "第10版renwei/药理学（第10版）.pdf",
+      "size": 40351277,
+      "sizeHuman": "38.48 MB",
+      "id": "doc_gknpdjoig",
+      "category": "人卫医学教材",
+      "subCategory": "药理学",
+      "standardCode": null,
+      "title": "药理学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "诊断学（第10版）.pdf",
+      "relativePath": "第10版renwei/诊断学（第10版）.pdf",
+      "size": 43722410,
+      "sizeHuman": "41.70 MB",
+      "id": "doc_kyaqh0kze",
+      "category": "人卫医学教材",
+      "subCategory": "诊断学",
+      "standardCode": null,
+      "title": "诊断学（第10版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "预防医学（第8版）.pdf",
+      "relativePath": "第10版renwei/预防医学（第8版）.pdf",
+      "size": 21067915,
+      "sizeHuman": "20.09 MB",
+      "id": "doc_f7mnsn9nf",
+      "category": "人卫医学教材",
+      "subCategory": "预防医学/卫生学",
+      "standardCode": null,
+      "title": "预防医学（第8版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    },
+    {
+      "filename": "麻醉学（第5版）.pdf",
+      "relativePath": "第10版renwei/麻醉学（第5版）.pdf",
+      "size": 150097713,
+      "sizeHuman": "143.14 MB",
+      "id": "doc_afqgk8qrd",
+      "category": "人卫医学教材",
+      "subCategory": "医学综合",
+      "standardCode": null,
+      "title": "麻醉学（第5版）",
+      "tags": [
+        "教材",
+        "第10版"
+      ]
+    }
+  ]
+}

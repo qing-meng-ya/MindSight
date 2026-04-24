@@ -1,0 +1,141 @@
+﻿{
+  "traffic-accident": {
+    "name": "交通事故",
+    "injuries": {
+      "lower-limb-fracture": {
+        "name": "下肢骨折",
+        "keywords": ["胫骨", "腓骨", "股骨", "髌骨", "骨折", "膝关节", "踝关节"],
+        "standards": ["GA/T 1661-2019", "GA/T 1088-2013", "GA/T 1193-2014", "GB/T 16180-2014"],
+        "tools": ["joint-range", "disability-grade", "care-period", "traffic-compensation"],
+        "cases": [1]
+      },
+      "spinal-cord": {
+        "name": "脊髓损伤",
+        "keywords": ["脊髓", "截瘫", "四肢瘫", "马尾神经", "瘫痪", "椎体"],
+        "standards": ["GB/T 16180-2014", "SF/T 0096-2021", "GB/T 31147-2014"],
+        "tools": ["disability-grade", "limb-function", "dependency-care", "care-period"],
+        "cases": [2]
+      },
+      "cranial-brain": {
+        "name": "颅脑损伤",
+        "keywords": ["脑震荡", "脑挫裂伤", "颅内血肿", "开颅", "昏迷", "颅骨"],
+        "standards": ["GA/T 1193-2014", "SF/T 0111-2021", "GB/T 31147-2014"],
+        "tools": ["care-period", "disability-grade", "dependency-care"],
+        "cases": []
+      },
+      "rib-fracture": {
+        "name": "肋骨骨折",
+        "keywords": ["肋骨", "骨折", "血气胸", "肺挫伤", "胸廓"],
+        "standards": ["SF/T 0111-2021", "GA/T 1193-2014", "GB/T 16180-2014"],
+        "tools": ["disability-grade", "care-period"],
+        "cases": [4]
+      },
+      "facial-injury": {
+        "name": "面部损伤",
+        "keywords": ["颌骨", "颧骨", "鼻骨", "眼眶", "牙齿", "面部瘢痕"],
+        "standards": ["SF/T 0111-2021", "GA/T 1193-2014"],
+        "tools": ["disability-grade", "care-period"],
+        "cases": []
+      },
+      "burn": {
+        "name": "烧伤",
+        "keywords": ["烧伤", "烫伤", "瘢痕", "TBSA", "深二度", "三度"],
+        "standards": ["GB/T 16180-2014", "GA/T 1193-2014"],
+        "tools": ["disability-grade", "care-period", "injury-compensation"],
+        "cases": [5]
+      }
+    }
+  },
+  "work-injury": {
+    "name": "工伤",
+    "injuries": {
+      "limb-fracture": {
+        "name": "四肢骨折",
+        "keywords": ["骨折", "上肢", "下肢", "手", "足", "腕", "踝"],
+        "standards": ["GB/T 16180-2014", "GA/T 1661-2019", "GA/T 1193-2014"],
+        "tools": ["joint-range", "disability-grade", "care-period", "work-injury-comp"],
+        "cases": []
+      },
+      "spinal-injury": {
+        "name": "脊柱损伤",
+        "keywords": ["脊柱", "脊髓", "椎体", "椎间盘突出", "马尾"],
+        "standards": ["GB/T 16180-2014", "SF/T 0096-2021"],
+        "tools": ["disability-grade", "limb-function", "care-period"],
+        "cases": [2]
+      },
+      "hand-injury": {
+        "name": "手部损伤",
+        "keywords": ["手", "指", "掌", "肌腱", "神经", "断指"],
+        "standards": ["GB/T 16180-2014", "GA/T 1661-2019"],
+        "tools": ["joint-range", "disability-grade", "care-period"],
+        "cases": []
+      },
+      "hearing-loss": {
+        "name": "听力损伤",
+        "keywords": ["听力", "耳聋", "鼓膜", "耳廓", "听觉"],
+        "standards": ["GB/T 44893-2024", "GB/T 16180-2014"],
+        "tools": ["hearing-function", "disability-grade"],
+        "cases": []
+      },
+      "vision-loss": {
+        "name": "视力损伤",
+        "keywords": ["视力", "眼球", "眼底", "角膜", "晶状体", "失明"],
+        "standards": ["GB/T 43639-2024", "GB/T 16180-2014"],
+        "tools": ["visual-function", "disability-grade"],
+        "cases": []
+      }
+    }
+  },
+  "personal-injury": {
+    "name": "人身损伤",
+    "injuries": {
+      "soft-tissue": {
+        "name": "软组织损伤",
+        "keywords": ["挫伤", "擦伤", "裂伤", "血肿", "软组织"],
+        "standards": ["SF/T 0111-2021", "GA/T 1193-2014"],
+        "tools": ["care-period"],
+        "cases": []
+      },
+      "fracture": {
+        "name": "骨折",
+        "keywords": ["骨折", "骨裂", "粉碎性", "开放性"],
+        "standards": ["GA/T 1661-2019", "SF/T 0111-2021", "GA/T 1193-2014"],
+        "tools": ["joint-range", "disability-grade", "care-period"],
+        "cases": [1, 4]
+      },
+      "joint-injury": {
+        "name": "关节损伤",
+        "keywords": ["关节", "韧带", "半月板", "脱位", "置换"],
+        "standards": ["GA/T 1661-2019", "SF/T 0096-2021"],
+        "tools": ["joint-range", "disability-grade", "care-period"],
+        "cases": []
+      },
+      "nerve-injury": {
+        "name": "周围神经损伤",
+        "keywords": ["神经", "麻木", "肌力", "感觉障碍", "桡神经", "尺神经", "正中神经"],
+        "standards": ["SF/T 0095-2021", "GB/T 16180-2014"],
+        "tools": ["disability-grade", "limb-function"],
+        "cases": []
+      }
+    }
+  },
+  "medical-malpractice": {
+    "name": "医疗损害",
+    "injuries": {
+      "surgical-complication": {
+        "name": "手术并发症",
+        "keywords": ["手术", "术后", "并发症", "感染", "出血"],
+        "standards": ["SF/T 0097-2021", "SF/T 0111-2021"],
+        "tools": ["disability-grade", "care-period"],
+        "cases": [3]
+      },
+      "cosmetic-damage": {
+        "name": "医美损害",
+        "keywords": ["美容", "整形", "注射", "填充", "激光"],
+        "standards": ["SF/T 0097-2021", "SF/T 0111-2021"],
+        "tools": ["disability-grade", "care-period"],
+        "cases": [3]
+      }
+    }
+  }
+}

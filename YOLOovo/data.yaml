@@ -1,0 +1,8 @@
+# 需要把路径替换成实际上的路径
+train: C:\Users\q8533\Desktop\bigc\YOLO_ALL\YOLOovo\dataset\test\images
+val: C:\Users\q8533\Desktop\bigc\YOLO_ALL\YOLOovo\dataset\train\images
+test: C:\Users\q8533\Desktop\bigc\YOLO_ALL\YOLOovo\dataset\valid\images
+
+nc: 7
+names: ["0","1","2","3","4","5","6"]
+
